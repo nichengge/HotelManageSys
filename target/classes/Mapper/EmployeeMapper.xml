@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="demo.Dao.EmployeeMapper">
+  <resultMap id="BaseResultMap" type="demo.Model.Employee">
+    <result column="employee_id" jdbcType="INTEGER" property="employee_id" />
+    <result column="employee_username" jdbcType="VARCHAR" property="employee_username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="employee_name" jdbcType="VARCHAR" property="employee_name" />
+    <result column="employee_gender" jdbcType="VARCHAR" property="employee_gender" />
+  </resultMap>
+  <insert id="insert" parameterType="demo.Model.Employee">
+    insert into employee (employee_id, employee_username, password, 
+      employee_name, employee_gender)
+    values (#{employee_id,jdbcType=INTEGER}, #{employee_username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{employee_name,jdbcType=VARCHAR}, #{employee_gender,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="demo.Model.Employee">
+    insert into employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="employee_id != null">
+        employee_id,
+      </if>
+      <if test="employee_username != null">
+        employee_username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="employee_name != null">
+        employee_name,
+      </if>
+      <if test="employee_gender != null">
+        employee_gender,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="employee_id != null">
+        #{employee_id,jdbcType=INTEGER},
+      </if>
+      <if test="employee_username != null">
+        #{employee_username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="employee_name != null">
+        #{employee_name,jdbcType=VARCHAR},
+      </if>
+      <if test="employee_gender != null">
+        #{employee_gender,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

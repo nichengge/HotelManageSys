@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SpringBoot-Mybatis-generator-Demo:Web exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/SpringBoot_Mybatis_generator_Demo_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SpringBoot-Mybatis-generator-Demo/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SpringBoot-Mybatis-generator-Demo" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
