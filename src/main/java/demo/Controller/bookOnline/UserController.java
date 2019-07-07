@@ -64,11 +64,11 @@ public class UserController extends BaseController {
         ans = customerService.addCustomer(customer);
 
         if(ans==1){
-            message = "帐号创建成功O(∩_∩)O！3秒后跳转到客户账号管理界面";
-            nextURL = "basicSetting/CustomerSetting";
+            message = "帐号创建成功O(∩_∩)O！3秒后跳转到登录页面";
+            nextURL = "CustomerLogin";
         }
         else {
-            message = "Oops~账号创建失败(T_T)！3秒后返回到客户账号添加界面";
+            message = "Oops~账号创建失败(T_T)！3秒后返回到账号添加界面";
             nextURL = "basicSetting/CustomerAccountAdd";
         }
 
