@@ -26,13 +26,13 @@ public class UserLoginController extends BaseController {
         ans = customerService.customerconfirm(customer);
         if(ans==1){
             System.out.println("用户登录成功");
-            nextURL = "/bookOnline/Index.jsp";
-            message = "登录成功!欢迎您!即将为你跳转至主页。";
+            nextURL = "bookOnline/Index";
+            message = "登录成功!  欢迎您!   即将为你跳转至主页";
         }
         else {
             System.out.println("用户登录失败");
-            nextURL = "/CustomerLogin.jsp";
-            message = "登录失败!账号或密码错误!3秒后跳转回登录界面";
+            nextURL = "/CustomerLogin";
+            message = "登录失败!   账号或密码错误!   3秒后跳转回登录界面";
         }
 
         request.setAttribute("nextURL", nextURL);

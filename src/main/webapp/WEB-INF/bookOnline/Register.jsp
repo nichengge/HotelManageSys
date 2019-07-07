@@ -57,21 +57,21 @@
                         </td>
                     </tr>
                     <div class="mdui-textfield">
-                        账号<textarea class="mdui-textfield-input" name="username" placeholder="账号"></textarea>
+                        账号<textarea class="mdui-textfield-input" name="username" placeholder="账号" required></textarea>
                     </div>
                     <div class="mdui-textfield">
-                        密码<textarea class="mdui-textfield-input" name="password" placeholder="密码"></textarea>
+                        密码<textarea class="mdui-textfield-input" name="password" placeholder="密码" required></textarea>
                     </div>
 
                     <tr>
                         <div class="mdui-textfield">
-                            姓名<textarea class="mdui-textfield-input" name="customerName" placeholder="姓名"></textarea>
+                            姓名<textarea class="mdui-textfield-input" name="customerName" placeholder="姓名" required></textarea>
                         </div>
 
                     <tr>
                         <div class="mdui-textfield">
                             性别
-                            <label class="mdui-radio">
+                            <label class="mdui-radio" selected="male">
                                 <input type="radio" name="customerGender" value="male"/>
                                 <i class="mdui-radio-icon"></i>
                                 男
@@ -86,7 +86,7 @@
                     <div class="mdui-textfield">
                         身份证号码
                         <input class="mdui-textfield-input" type="text" pattern="(^\d{15}$)|(^\d{17}([0-9]|X)$)"
-                               name="customerIDNumber" placeholder="身份证号码"/>
+                               name="customerIDNumber" placeholder="身份证号码" required/>
                         <div class="mdui-textfield-error">身份证格式错误</div>
                     </div>
                     </tr>
@@ -96,10 +96,6 @@
                             <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
                                     style="justify-content: center;margin-left: auto;margin-right: auto;width: 200px;">
                                 注册
-                                <%--<div class="main-btn-wrapper">--%>
-                                <%--<a href="/bookOnline/Login.do"--%>
-                                <%--class="mdui-btn main-btn mdui-ripple mdui-ripple-white mdui-m-r-2" >登录</a>--%>
-                                <%--</div>--%>
                             </button>
                         </td>
                 </form>

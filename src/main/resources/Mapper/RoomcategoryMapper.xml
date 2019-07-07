@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="demo.Dao.RoomcategoryMapper">
-  <resultMap id="BaseResultMap" type="demo.Model.Roomcategory">
-    <result column="roomcategory_id" jdbcType="INTEGER" property="roomcategory_id" />
-    <result column="roomcategory_name" jdbcType="VARCHAR" property="roomcategory_name" />
-    <result column="roomcategory_price" jdbcType="DOUBLE" property="roomcategory_price" />
-    <result column="total_number" jdbcType="INTEGER" property="total_number" />
-    <result column="roomcategory_score" jdbcType="DOUBLE" property="roomcategory_score" />
-    <result column="locked_number" jdbcType="INTEGER" property="locked_number" />
-    <result column="inuse_roomnumber" jdbcType="INTEGER" property="inuse_roomnumber" />
-  </resultMap>
-  <insert id="insert" parameterType="demo.Model.Roomcategory">
+    <resultMap id="BaseResultMap" type="demo.Model.Roomcategory">
+        <result column="roomcategory_id" jdbcType="INTEGER" property="roomcategory_id"/>
+        <result column="roomcategory_name" jdbcType="VARCHAR" property="roomcategory_name"/>
+        <result column="roomcategory_price" jdbcType="DOUBLE" property="roomcategory_price"/>
+        <result column="total_number" jdbcType="INTEGER" property="total_number"/>
+        <result column="roomcategory_score" jdbcType="DOUBLE" property="roomcategory_score"/>
+        <result column="locked_number" jdbcType="INTEGER" property="locked_number"/>
+        <result column="inuse_roomnumber" jdbcType="INTEGER" property="inuse_roomnumber"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    roomcategory_id,roomcategory_name,roomcategory_price,total_number,roomcategory_score,locked_number,inuse_roomnumber
+  </sql>
+
+<!--    查找-->
+    <insert id="insert" parameterType="demo.Model.Roomcategory">
     insert into roomcategory (roomcategory_id, roomcategory_name, 
       roomcategory_price, total_number, roomcategory_score, 
       locked_number, inuse_roomnumber)
@@ -18,53 +23,53 @@
       #{roomcategory_price,jdbcType=DOUBLE}, #{total_number,jdbcType=INTEGER}, #{roomcategory_score,jdbcType=DOUBLE}, 
       #{locked_number,jdbcType=INTEGER}, #{inuse_roomnumber,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="demo.Model.Roomcategory">
-    insert into roomcategory
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="roomcategory_id != null">
-        roomcategory_id,
-      </if>
-      <if test="roomcategory_name != null">
-        roomcategory_name,
-      </if>
-      <if test="roomcategory_price != null">
-        roomcategory_price,
-      </if>
-      <if test="total_number != null">
-        total_number,
-      </if>
-      <if test="roomcategory_score != null">
-        roomcategory_score,
-      </if>
-      <if test="locked_number != null">
-        locked_number,
-      </if>
-      <if test="inuse_roomnumber != null">
-        inuse_roomnumber,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="roomcategory_id != null">
-        #{roomcategory_id,jdbcType=INTEGER},
-      </if>
-      <if test="roomcategory_name != null">
-        #{roomcategory_name,jdbcType=VARCHAR},
-      </if>
-      <if test="roomcategory_price != null">
-        #{roomcategory_price,jdbcType=DOUBLE},
-      </if>
-      <if test="total_number != null">
-        #{total_number,jdbcType=INTEGER},
-      </if>
-      <if test="roomcategory_score != null">
-        #{roomcategory_score,jdbcType=DOUBLE},
-      </if>
-      <if test="locked_number != null">
-        #{locked_number,jdbcType=INTEGER},
-      </if>
-      <if test="inuse_roomnumber != null">
-        #{inuse_roomnumber,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
+    <insert id="insertSelective" parameterType="demo.Model.Roomcategory">
+        insert into roomcategory
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="roomcategory_id != null">
+                roomcategory_id,
+            </if>
+            <if test="roomcategory_name != null">
+                roomcategory_name,
+            </if>
+            <if test="roomcategory_price != null">
+                roomcategory_price,
+            </if>
+            <if test="total_number != null">
+                total_number,
+            </if>
+            <if test="roomcategory_score != null">
+                roomcategory_score,
+            </if>
+            <if test="locked_number != null">
+                locked_number,
+            </if>
+            <if test="inuse_roomnumber != null">
+                inuse_roomnumber,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="roomcategory_id != null">
+                #{roomcategory_id,jdbcType=INTEGER},
+            </if>
+            <if test="roomcategory_name != null">
+                #{roomcategory_name,jdbcType=VARCHAR},
+            </if>
+            <if test="roomcategory_price != null">
+                #{roomcategory_price,jdbcType=DOUBLE},
+            </if>
+            <if test="total_number != null">
+                #{total_number,jdbcType=INTEGER},
+            </if>
+            <if test="roomcategory_score != null">
+                #{roomcategory_score,jdbcType=DOUBLE},
+            </if>
+            <if test="locked_number != null">
+                #{locked_number,jdbcType=INTEGER},
+            </if>
+            <if test="inuse_roomnumber != null">
+                #{inuse_roomnumber,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
 </mapper>

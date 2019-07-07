@@ -47,7 +47,7 @@
         </h2>
         <div class="mdui-center" style="width: 500px;">
             <table style="justify-content: center;margin-left: auto;margin-right: auto;">
-                <form action="/bookOnline/Login.do" method="post">
+                <form action="nameCustomerLogin" method="post">
                     <tr>
                         <td>
                             用户名：
@@ -76,24 +76,18 @@
                             <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
                                     style="justify-content: center;margin-left: auto;margin-right: auto;width: 200px;">
                                 登录
-                                <div class="main-btn-wrapper">
-                                    <a href="/bookOnline/Login.do"
-                                       class="mdui-btn main-btn mdui-ripple mdui-ripple-white mdui-m-r-2">登录</a>
-                                </div>
                             </button>
                         </td>
                 </form>
-                <form action="bookOnline/Register.jsp">
+
+
                     <td>
-                        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
-                                style="justify-content: center;margin-left: auto;margin-right: auto;width: 200px;">注册
-                            <div class="main-btn-wrapper">
-                                <a href="bookOnline/Register.jsp"
-                                   class="mdui-btn main-btn mdui-ripple mdui-ripple-white mdui-m-r-2">注册</a>
-                            </div>
-                        </button>
+                        <a href="go?url=bookOnline/Register">
+                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
+                                  style="justify-content: center;margin-left: auto;margin-right: auto;width: 200px;">注册
+                            </button>
+                        </a>
                     </td>
-                </form>
                 </tr>
             </table>
         </div>

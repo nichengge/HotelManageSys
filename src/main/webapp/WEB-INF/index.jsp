@@ -52,7 +52,7 @@
             <a href="go?url=ManagerLogin" class="mdui-btn main-btn mdui-ripple mdui-ripple-white mdui-m-r-2">经理登录</a>
             <a href="go?url=ReceptionistLogin" class="mdui-btn main-btn mdui-ripple mdui-ripple-white mdui-m-r-2">接待员登录</a>
             <a href="go?url=CustomerLogin" class="mdui-btn main-btn mdui-ripple mdui-ripple-white">客户登录</a>
-            <%--<a href="/basicSetting/test.jsp" class="mdui-btn main-btn mdui-ripple mdui-ripple-white">test</a>--%>
+            <%--<a href="go?url=basicSetting/test" class="mdui-btn main-btn mdui-ripple mdui-ripple-white">test</a>--%>
         </div>
     </div>
 </div>

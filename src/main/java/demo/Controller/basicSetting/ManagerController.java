@@ -36,7 +36,7 @@ public class ManagerController extends BaseController {
         }
         else {
             message = "经理账号登录失败！ 即将为您跳转回登录界面！";
-            nextURL = "/ManagerLogin.jsp";
+            nextURL = "/ManagerLogin";
         }
 
         request.setAttribute("nextURL", nextURL);

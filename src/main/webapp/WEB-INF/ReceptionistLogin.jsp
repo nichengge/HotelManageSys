@@ -78,7 +78,7 @@
             <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
                     style="justify-content: center;margin-left: auto;margin-right: auto;width: 200px;">登录
                 <div class="main-btn-wrapper">
-                    <a href="ManagerLogin.jsp" class="mdui-btn main-btn mdui-ripple mdui-ripple-white mdui-m-r-2">登录</a>
+                    <a href="go?url=ManagerLogin" class="mdui-btn main-btn mdui-ripple mdui-ripple-white mdui-m-r-2">登录</a>
                 </div>
             </button>
 
