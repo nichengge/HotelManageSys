@@ -12,6 +12,8 @@
     <sql id="Base_Column_List">
     admin_id,username,password,admin_name,admin_gender,admin_type
   </sql>
+
+
     <insert id="insert" parameterType="demo.Model.Administrator">
     insert into administrator (admin_id, username, password, 
       admin_name, admin_gender, admin_type
