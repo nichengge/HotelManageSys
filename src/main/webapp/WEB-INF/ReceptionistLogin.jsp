@@ -57,7 +57,7 @@
                         <td>
                             <div class="mdui-textfield">
                                 <input class="mdui-textfield-input" type="text" placeholder="用户名"
-                                       name="receptionistName"/>
+                                       name="receptionistName" required autofocus/>
                             </div>
                         </td>
                     </tr>
@@ -67,7 +67,7 @@
                         <td>
                             <div class="mdui-textfield">
                                 <input class="mdui-textfield-input" type="password" placeholder="密码"
-                                       name="receptionistPassword"/>
+                                       name="receptionistPassword" required/>
                             </div>
                         </td>
                     </tr>

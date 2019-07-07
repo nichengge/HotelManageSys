@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="demo.Dao.CustomerMapper">
-  <resultMap id="BaseResultMap" type="demo.Model.Customer">
-    <result column="customer_id" jdbcType="INTEGER" property="customer_id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="real_name" jdbcType="VARCHAR" property="real_name" />
-    <result column="customer_phone" jdbcType="VARCHAR" property="customer_phone" />
-    <result column="id_card" jdbcType="VARCHAR" property="id_card" />
-    <result column="customer_gender" jdbcType="VARCHAR" property="customer_gender" />
-  </resultMap>
-  <insert id="insert" parameterType="demo.Model.Customer">
+    <resultMap id="BaseResultMap" type="demo.Model.Customer">
+        <result column="customer_id" jdbcType="INTEGER" property="customer_id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="real_name" jdbcType="VARCHAR" property="real_name"/>
+        <result column="customer_phone" jdbcType="VARCHAR" property="customer_phone"/>
+        <result column="id_card" jdbcType="VARCHAR" property="id_card"/>
+        <result column="customer_gender" jdbcType="VARCHAR" property="customer_gender"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    customer_id,username,password,real_name,customer_phone,id_card,customer_gender
+  </sql>
+
+
+    <!--  增加-->
+    <insert id="insert" parameterType="demo.Model.Customer">
     insert into customer (customer_id, username, password, 
       real_name, customer_phone, id_card, 
       customer_gender)
@@ -18,53 +25,68 @@
       #{real_name,jdbcType=VARCHAR}, #{customer_phone,jdbcType=VARCHAR}, #{id_card,jdbcType=VARCHAR}, 
       #{customer_gender,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="demo.Model.Customer">
-    insert into customer
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="customer_id != null">
-        customer_id,
-      </if>
-      <if test="username != null">
-        username,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="real_name != null">
-        real_name,
-      </if>
-      <if test="customer_phone != null">
-        customer_phone,
-      </if>
-      <if test="id_card != null">
-        id_card,
-      </if>
-      <if test="customer_gender != null">
-        customer_gender,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="customer_id != null">
-        #{customer_id,jdbcType=INTEGER},
-      </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="real_name != null">
-        #{real_name,jdbcType=VARCHAR},
-      </if>
-      <if test="customer_phone != null">
-        #{customer_phone,jdbcType=VARCHAR},
-      </if>
-      <if test="id_card != null">
-        #{id_card,jdbcType=VARCHAR},
-      </if>
-      <if test="customer_gender != null">
-        #{customer_gender,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
+    <insert id="insertSelective" parameterType="demo.Model.Customer">
+        insert into customer
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="customer_id != null">
+                customer_id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="real_name != null">
+                real_name,
+            </if>
+            <if test="customer_phone != null">
+                customer_phone,
+            </if>
+            <if test="id_card != null">
+                id_card,
+            </if>
+            <if test="customer_gender != null">
+                customer_gender,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="customer_id != null">
+                #{customer_id,jdbcType=INTEGER},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="real_name != null">
+                #{real_name,jdbcType=VARCHAR},
+            </if>
+            <if test="customer_phone != null">
+                #{customer_phone,jdbcType=VARCHAR},
+            </if>
+            <if test="id_card != null">
+                #{id_card,jdbcType=VARCHAR},
+            </if>
+            <if test="customer_gender != null">
+                #{customer_gender,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+
+    <!--查询-->
+
+
+
+<!--    用户认证-->
+<!--    语句类似于select customer_id,username,password,real_name,customer_phone,id_card,customer_gender from administrator  where username = ?  and password = ?-->
+    <select id="customerconfirm" parameterType="demo.Model.Customer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from customer
+        where username = #{username,jdbcType=VARCHAR}
+        and password = #{password,jdbcType=VARCHAR}
+    </select>
 </mapper>

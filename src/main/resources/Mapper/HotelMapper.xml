@@ -8,10 +8,23 @@
         <result column="introduction" jdbcType="VARCHAR" property="introduction"/>
     </resultMap>
     <sql id="Base_Column_List">
-    employee_id,employee_username,password,employee_name,employee_gender
+    location_info,traffic_Info,hotel_name,introdution
   </sql>
 
     <!--  查询-->
+
+
+<!--    获取酒店对象-->
+    <select id="getHotelinfo" resultMap="BaseResultMap">
+        select *
+        from hotel
+    </select>
+
+
+
+
+
+<!--    插入-->
     <insert id="insert" parameterType="demo.Model.Hotel">
     insert into hotel (location_info, traffic_Info, hotel_name, 
       introduction)

@@ -55,17 +55,19 @@
                         <td>
                             <div class="mdui-textfield">
                                 <input class="mdui-textfield-input" name="nameCustomerLogin" type="text"
-                                       placeholder="用户名"/>
+                                       placeholder="用户名" required autofocus/>
                             </div>
                         </td>
                     </tr>
 
                     <tr>
-                        <td>密&nbsp;&nbsp;码：</td>
+                        <td>密&nbsp;&nbsp;&nbsp;码：</td>
                         <td>
                             <div class="mdui-textfield">
-                                <input class="mdui-textfield-input" name="passwordCustomerLogin" type="password"
-                                       placeholder="密码"/>
+                                <label>
+                                    <input class="mdui-textfield-input" name="passwordCustomerLogin" type="password"
+                                           placeholder="密码" required/>
+                                </label>
                             </div>
                         </td>
                     </tr>

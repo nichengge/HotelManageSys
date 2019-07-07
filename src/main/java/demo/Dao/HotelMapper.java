@@ -23,6 +23,6 @@ public interface HotelMapper {
     //查
 
     //获取酒店信息
-    Hotel getHotelinfo(Hotel hotel);
+    Hotel getHotelinfo();
 
 }

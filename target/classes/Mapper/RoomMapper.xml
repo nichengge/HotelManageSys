@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="demo.Dao.RoomMapper">
-  <resultMap id="BaseResultMap" type="demo.Model.Room">
-    <result column="room_id" jdbcType="INTEGER" property="room_id" />
-    <result column="room_number" jdbcType="VARCHAR" property="room_number" />
-    <result column="room_type" jdbcType="VARCHAR" property="room_type" />
-    <result column="room_floor" jdbcType="VARCHAR" property="room_floor" />
-    <result column="room_direction" jdbcType="VARCHAR" property="room_direction" />
-    <result column="room_square" jdbcType="DOUBLE" property="room_square" />
-    <result column="can_addbed" jdbcType="VARCHAR" property="can_addbed" />
-    <result column="bed_num" jdbcType="INTEGER" property="bed_num" />
-    <result column="room_description" jdbcType="VARCHAR" property="room_description" />
-    <result column="room_status" jdbcType="VARCHAR" property="room_status" />
-  </resultMap>
-  <insert id="insert" parameterType="demo.Model.Room">
+    <resultMap id="BaseResultMap" type="demo.Model.Room">
+        <result column="room_id" jdbcType="INTEGER" property="room_id"/>
+        <result column="room_number" jdbcType="VARCHAR" property="room_number"/>
+        <result column="room_type" jdbcType="VARCHAR" property="room_type"/>
+        <result column="room_floor" jdbcType="VARCHAR" property="room_floor"/>
+        <result column="room_direction" jdbcType="VARCHAR" property="room_direction"/>
+        <result column="room_square" jdbcType="DOUBLE" property="room_square"/>
+        <result column="can_addbed" jdbcType="VARCHAR" property="can_addbed"/>
+        <result column="bed_num" jdbcType="INTEGER" property="bed_num"/>
+        <result column="room_description" jdbcType="VARCHAR" property="room_description"/>
+        <result column="room_status" jdbcType="VARCHAR" property="room_status"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    room_id,room_number,room_type,room_floor,room_square,can_addbed,bed_num,room_description,room_status
+  </sql>
+
+<!--    查找-->
+    <insert id="insert" parameterType="demo.Model.Room">
     insert into room (room_id, room_number, room_type, 
       room_floor, room_direction, room_square, 
       can_addbed, bed_num, room_description, 
@@ -23,71 +28,71 @@
       #{can_addbed,jdbcType=VARCHAR}, #{bed_num,jdbcType=INTEGER}, #{room_description,jdbcType=VARCHAR}, 
       #{room_status,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="demo.Model.Room">
-    insert into room
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="room_id != null">
-        room_id,
-      </if>
-      <if test="room_number != null">
-        room_number,
-      </if>
-      <if test="room_type != null">
-        room_type,
-      </if>
-      <if test="room_floor != null">
-        room_floor,
-      </if>
-      <if test="room_direction != null">
-        room_direction,
-      </if>
-      <if test="room_square != null">
-        room_square,
-      </if>
-      <if test="can_addbed != null">
-        can_addbed,
-      </if>
-      <if test="bed_num != null">
-        bed_num,
-      </if>
-      <if test="room_description != null">
-        room_description,
-      </if>
-      <if test="room_status != null">
-        room_status,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="room_id != null">
-        #{room_id,jdbcType=INTEGER},
-      </if>
-      <if test="room_number != null">
-        #{room_number,jdbcType=VARCHAR},
-      </if>
-      <if test="room_type != null">
-        #{room_type,jdbcType=VARCHAR},
-      </if>
-      <if test="room_floor != null">
-        #{room_floor,jdbcType=VARCHAR},
-      </if>
-      <if test="room_direction != null">
-        #{room_direction,jdbcType=VARCHAR},
-      </if>
-      <if test="room_square != null">
-        #{room_square,jdbcType=DOUBLE},
-      </if>
-      <if test="can_addbed != null">
-        #{can_addbed,jdbcType=VARCHAR},
-      </if>
-      <if test="bed_num != null">
-        #{bed_num,jdbcType=INTEGER},
-      </if>
-      <if test="room_description != null">
-        #{room_description,jdbcType=VARCHAR},
-      </if>
-      <if test="room_status != null">
-        #{room_status,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
+    <insert id="insertSelective" parameterType="demo.Model.Room">
+        insert into room
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="room_id != null">
+                room_id,
+            </if>
+            <if test="room_number != null">
+                room_number,
+            </if>
+            <if test="room_type != null">
+                room_type,
+            </if>
+            <if test="room_floor != null">
+                room_floor,
+            </if>
+            <if test="room_direction != null">
+                room_direction,
+            </if>
+            <if test="room_square != null">
+                room_square,
+            </if>
+            <if test="can_addbed != null">
+                can_addbed,
+            </if>
+            <if test="bed_num != null">
+                bed_num,
+            </if>
+            <if test="room_description != null">
+                room_description,
+            </if>
+            <if test="room_status != null">
+                room_status,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="room_id != null">
+                #{room_id,jdbcType=INTEGER},
+            </if>
+            <if test="room_number != null">
+                #{room_number,jdbcType=VARCHAR},
+            </if>
+            <if test="room_type != null">
+                #{room_type,jdbcType=VARCHAR},
+            </if>
+            <if test="room_floor != null">
+                #{room_floor,jdbcType=VARCHAR},
+            </if>
+            <if test="room_direction != null">
+                #{room_direction,jdbcType=VARCHAR},
+            </if>
+            <if test="room_square != null">
+                #{room_square,jdbcType=DOUBLE},
+            </if>
+            <if test="can_addbed != null">
+                #{can_addbed,jdbcType=VARCHAR},
+            </if>
+            <if test="bed_num != null">
+                #{bed_num,jdbcType=INTEGER},
+            </if>
+            <if test="room_description != null">
+                #{room_description,jdbcType=VARCHAR},
+            </if>
+            <if test="room_status != null">
+                #{room_status,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
 </mapper>
