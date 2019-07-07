@@ -11,6 +11,11 @@ public class Employee {
 
     private String employee_gender;
 
+    public Employee(String usernmae, String password) {
+        this.employee_username=usernmae;
+        this.password=password;
+    }
+
     public Integer getEmployee_id() {
         return employee_id;
     }

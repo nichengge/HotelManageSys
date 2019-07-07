@@ -13,6 +13,11 @@ public class Administrator {
 
     private String admin_type;
 
+    public Administrator(String usernmae, String password) {
+        this.username=usernmae;
+        this.password=password;
+    }
+
     public Integer getAdmin_id() {
         return admin_id;
     }

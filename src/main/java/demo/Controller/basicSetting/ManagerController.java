@@ -20,16 +20,14 @@ public class ManagerController extends BaseController {
     @RequestMapping("/adminlogin")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response, @RequestParam("username")String usernmae, @RequestParam("password")String password){
         HttpSession session = request.getSession();
-        Administrator administrator = new Administrator();
-        administrator.setUsername(usernmae);
-        administrator.setPassword(password);
+        Administrator administrator = new Administrator(usernmae,password);
         System.out.println("用户登录验证中");
         ans = administratorService.adminlogin(administrator);
         if(ans==1){
             message = "Aha O(∩_∩)O  经理账号登录成功！ 即将为您跳转至经理管理界面！";
             nextURL = "basicSetting/Index";
             //对一些会话期间的参数进行初始化
-            Helper.loginInitializatjion(request);
+            Helper.loginInitializatjion(request); //此处易报错
         }
         else {
             message = "Oops (T_T)  经理账号登录失败！ 即将为您跳转回登录界面！";
@@ -42,7 +40,6 @@ public class ManagerController extends BaseController {
         mv.addObject("request",request);
         mv.addObject("response",response);
         mv.setViewName("General/intermediatePage");
-        System.out.println("页面跳转");
 
         return mv;
     }

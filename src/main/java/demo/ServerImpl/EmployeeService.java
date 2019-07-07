@@ -1,4 +1,6 @@
 package demo.ServerImpl;
+import demo.Model.Customer;
+import demo.Model.Employee;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +29,23 @@ public class EmployeeService extends BaseService{
             e.printStackTrace();
         }
         return allemployeeid;
+    }
+
+    //登录验证
+    public int employeeconfirm(Employee employee) {
+        Employee em = null;
+        try {
+            em = employeeMapper.employeeconfirm(employee);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        if(em!=null){
+            ans=1;
+        }
+        else{
+            ans=0;
+        }
+        return ans;
     }
 
     //改

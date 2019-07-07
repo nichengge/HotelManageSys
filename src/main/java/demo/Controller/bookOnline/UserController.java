@@ -20,17 +20,15 @@ public class UserController extends BaseController {
     public ModelAndView userlogin(HttpServletRequest request, HttpServletResponse response, @RequestParam("nameCustomerLogin") String usernmae, @RequestParam("passwordCustomerLogin") String password) {
         System.out.println("用户正在登录");
         HttpSession session = request.getSession();
-
-        Customer customer = new Customer();
-        customer.setUsername(usernmae);
-        customer.setPassword(password);
+        Customer customer = new Customer(usernmae,password);
         ans = customerService.customerconfirm(customer);
-
         if (ans == 1) {
             System.out.println("用户登录成功");
             nextURL = "bookOnline/Index";
             message = "Aha O(∩_∩)O 登录成功!  欢迎您!   即将为你跳转至主页";
             Hotel hotel = hotelService.getHotel();
+
+            //添加信息至会话作用域
             if (hotel != null) {
                 session.setAttribute("locationinfo", hotel.getLocation_info());
                 session.setAttribute("trafficinfo", hotel.getTraffic_Info());

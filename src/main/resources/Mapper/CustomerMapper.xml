@@ -99,7 +99,7 @@
     </select>
 
 
-    <select id="getAllCustomerid" resultMap="java.lang.String">
+    <select id="getAllCustomerid" resultType="java.lang.String">
         select
         customer_id
         from customer

@@ -37,7 +37,13 @@ public class CustomerService extends BaseService{
 
     //用户验证
     public int customerconfirm(Customer customer){
-        Customer customer1 = customerMapper.customerconfirm(customer);
+        Customer customer1 = null;
+        try {
+            customer1 = customerMapper.customerconfirm(customer);
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("sql错误...from CustomerService");
+        }
         if(customer1!=null){
             ans=1;
         }

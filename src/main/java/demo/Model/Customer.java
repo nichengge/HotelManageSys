@@ -14,6 +14,11 @@ public class Customer {
     public Customer() {
     }
 
+    public Customer(String usernmae, String password) {
+        this.username=usernmae;
+        this.password=password;
+    }
+
     private Integer customer_id;
 
     private String username;
@@ -27,6 +32,8 @@ public class Customer {
     private String id_card;
 
     private String customer_gender;
+
+
 
     public Integer getCustomer_id() {
         return customer_id;

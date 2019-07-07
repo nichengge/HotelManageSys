@@ -18,7 +18,7 @@
   </sql>
 
 <!--    查找-->
-    <select id="getallroomid" resultMap="java.lang.String">
+    <select id="getallroomid" resultType="java.lang.String">
         select
         room_id
         from room

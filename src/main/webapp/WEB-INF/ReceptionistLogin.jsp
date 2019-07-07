@@ -47,7 +47,7 @@
             接待员登录登录
         </h2>
 
-        <form action="/receptionManagement/Login.do" method="post">
+        <form action="employeelogin" method="post">
             <div class="mdui-center" style="width: 500px;">
                 <table style="justify-content: center;margin-left: auto;margin-right: auto;">
                     <tr>

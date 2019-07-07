@@ -21,7 +21,7 @@ public class EncodingFilter implements Filter {
         chain.doFilter(req, resp);
     }
 
-    public void init(FilterConfig config) throws ServletException {
+    public void init(FilterConfig config){
 
     }
 

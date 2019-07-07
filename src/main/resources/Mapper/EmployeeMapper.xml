@@ -14,11 +14,20 @@
 
 
     <!--  查找-->
-    <select id="getallemployeeid" resultMap="java.lang.String">
+    <select id="getallemployeeid" resultType="java.lang.String">
         select
         employee_id
         from employee
     </select>
+
+    <select id="employeeconfirm" parameterType="demo.Model.Employee" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from employee
+        where employee_username = #{employee_username,jdbcType=VARCHAR}
+        and password = #{password,jdbcType=VARCHAR}
+    </select>
+<!--    此处注意上面花括号的属性与实体类的属性名一致，mybatis自动取值-->
 
 
 

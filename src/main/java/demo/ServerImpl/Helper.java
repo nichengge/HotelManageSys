@@ -29,9 +29,7 @@ public class Helper {
         EmployeeService employeeService = new EmployeeService();
         RoomcategoryService roomcategoryService = new RoomcategoryService();
 
-
         try {
-
             ArrayList<String> arrayListAllCustomerID = customerService.getAllCustomersID(); //获取所有用户id
             session.setAttribute("AllCustomerID", arrayListAllCustomerID);
 
