@@ -3,22 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ebf17cc7-3ee2-47d9-a215-0e21b5592c24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/CustomerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/CustomerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/EmployeeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/OrdersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/OrdersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/RoomMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/RoomMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/RoomcategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/RoomcategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Controller/basicSetting/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Controller/basicSetting/ManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Dao/CustomerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Dao/CustomerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Dao/EmployeeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Dao/EmployeeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Dao/OrdersMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Dao/OrdersMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Dao/RoomMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Dao/RoomMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Dao/RoomcategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Dao/RoomcategoryMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/ServerImpl/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/ServerImpl/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/ServerImpl/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/ServerImpl/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/ServerImpl/OrdersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/ServerImpl/OrdersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/ServerImpl/RoomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/ServerImpl/RoomService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/ServerImpl/RoomcategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/ServerImpl/RoomcategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/AdministratorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/AdministratorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/demo/Model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Model/Customer.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -107,7 +93,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/RoomMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
+            <state relative-caret-position="262">
               <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
             </state>
           </provider>
@@ -597,7 +583,7 @@
       <workItem from="1562418359842" duration="6484000" />
       <workItem from="1562425058050" duration="616000" />
       <workItem from="1562431693426" duration="3110000" />
-      <workItem from="1562470857029" duration="38386000" />
+      <workItem from="1562470857029" duration="38631000" />
     </task>
     <task id="LOCAL-00001" summary="增加了用户验证模块，基本框架搭好">
       <created>1562493357197</created>
@@ -641,15 +627,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562513936254</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="修正了一些sql的xml文件错误~写代码要细心">
+      <created>1562514189467</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562514189467</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51507000" />
+    <option name="totallyTimeSpent" value="51752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.82216495" visible="true" weight="0.211126" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -670,7 +662,7 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932975" weight="0.32960895" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.22654155" side_tool="true" weight="0.45810056" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.22654155" side_tool="true" visible="true" weight="0.45810056" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32914925" />
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -1087,7 +1079,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/RoomMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state relative-caret-position="262">
           <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
         </state>
       </provider>
