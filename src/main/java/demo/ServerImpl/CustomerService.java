@@ -21,6 +21,17 @@ public class CustomerService extends BaseService{
 
     //查
 
+    public int customerconfirm(Customer customer){
+        Customer customer1 = customerMapper.customerconfirm(customer);
+        if(customer1!=null){
+            ans=1;
+        }
+        else{
+            ans=0;
+        }
+        return ans;
+    }
+
     //改
 
 

@@ -8,9 +8,17 @@ import org.springframework.stereotype.Service;
 @Service
 public interface AdministratorMapper {
 
-
+    //增
     int insert(Administrator record);
+    int insertSelective(Administrator record);
+
+
+    //删
+
+    //改
+
+    //查
     Administrator adminconfirm(Administrator record);
 
-    int insertSelective(Administrator record);
+
 }

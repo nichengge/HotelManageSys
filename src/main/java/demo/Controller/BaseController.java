@@ -3,8 +3,6 @@ package demo.Controller;
 import demo.ServerImpl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
-
-
 public class BaseController {
 
     //标记状态

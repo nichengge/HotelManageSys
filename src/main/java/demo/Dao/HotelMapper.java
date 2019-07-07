@@ -7,7 +7,22 @@ import org.springframework.stereotype.Service;
 @Mapper
 @Service
 public interface HotelMapper {
+
+    //增
     int insert(Hotel record);
 
     int insertSelective(Hotel record);
+
+    //删
+
+    //改
+
+    //修改酒店信息
+    int changeinfo(Hotel hotel);
+
+    //查
+
+    //获取酒店信息
+    Hotel getHotelinfo(Hotel hotel);
+
 }

@@ -44,7 +44,7 @@ public class ManagerController extends BaseController {
         request.setAttribute("message", message);
         mv.addObject("request",request);
         mv.addObject("response",response);
-        mv.setViewName("General/intermediatePage"); //不需要加:forward:
+        mv.setViewName("General/intermediatePage");
         System.out.println("页面跳转");
 
         return mv;
