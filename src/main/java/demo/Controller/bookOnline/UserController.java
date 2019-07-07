@@ -59,8 +59,8 @@ public class UserController extends BaseController {
     @RequestMapping("/userRegister")
     public ModelAndView newuser(HttpServletRequest request,HttpServletResponse response,
                             @RequestParam("username") String username,@RequestParam("password") String password,
-                            @RequestParam("idcard") String idcard,@RequestParam("realname") String realname,@RequestParam("phone") String phone){
-        Customer customer = new Customer(username,password,realname,phone,idcard);
+                            @RequestParam("idcard") String idcard,@RequestParam("realname") String realname,@RequestParam("phone") String phone,@RequestParam("gender") String gender){
+        Customer customer = new Customer(username,password,realname,phone,idcard,gender);
         ans = customerService.addCustomer(customer);
 
         if(ans==1){

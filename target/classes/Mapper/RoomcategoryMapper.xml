@@ -15,6 +15,15 @@
   </sql>
 
 <!--    查找-->
+
+    <select id="getallcategoryid" resultMap="java.lang.String">
+        select
+        roomcategory_id
+        from roomcategory
+    </select>
+
+
+<!--    插入-->
     <insert id="insert" parameterType="demo.Model.Roomcategory">
     insert into roomcategory (roomcategory_id, roomcategory_name, 
       roomcategory_price, total_number, roomcategory_score, 

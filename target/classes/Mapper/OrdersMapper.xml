@@ -22,6 +22,17 @@
 
 
 <!--    查找-->
+
+    <select id="getallordersid" resultMap="java.lang.String">
+        select
+        orders_id
+        from orders
+    </select>
+
+
+
+
+<!--    增加-->
     <insert id="insert" parameterType="demo.Model.Orders">
     insert into orders (orders_id, room_number, record_time, 
       start_time, end_time, customer_id, 

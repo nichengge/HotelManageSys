@@ -2,6 +2,7 @@ package demo.Controller.basicSetting;
 
 import demo.Controller.BaseController;
 import demo.Model.Administrator;
+import demo.ServerImpl.Helper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
 
 @Controller
 public class ManagerController extends BaseController {
@@ -26,13 +28,8 @@ public class ManagerController extends BaseController {
         if(ans==1){
             message = "Aha O(∩_∩)O  经理账号登录成功！ 即将为您跳转至经理管理界面！";
             nextURL = "basicSetting/Index";
-
-//            //对一些会话期间的参数进行初始化
-//            try {
-//                Helper.loginInitializatjion(request);
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
+            //对一些会话期间的参数进行初始化
+            Helper.loginInitializatjion(request);
         }
         else {
             message = "Oops (T_T)  经理账号登录失败！ 即将为您跳转回登录界面！";

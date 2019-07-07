@@ -4,6 +4,8 @@ import demo.Model.Customer;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Mapper
 @Service
 public interface CustomerMapper {
@@ -25,5 +27,9 @@ public interface CustomerMapper {
     //查
 
     Customer customerconfirm(Customer customer);
+
+    Customer selectByid(String username);
+
+    ArrayList<String> getAllCustomerid();
 
 }

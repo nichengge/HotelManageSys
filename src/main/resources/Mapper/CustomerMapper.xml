@@ -89,4 +89,20 @@
         where username = #{username,jdbcType=VARCHAR}
         and password = #{password,jdbcType=VARCHAR}
     </select>
+
+<!--    根据用户id查找-->
+    <select id="selectByid" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from customer
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+
+
+    <select id="getAllCustomerid" resultMap="java.lang.String">
+        select
+        customer_id
+        from customer
+    </select>
+
 </mapper>

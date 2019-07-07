@@ -4,6 +4,8 @@ import demo.Model.Orders;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Mapper
 @Service
 public interface OrdersMapper {
@@ -21,5 +23,6 @@ public interface OrdersMapper {
     //改
 
     //查
+    ArrayList<String> getallordersid();
 
 }

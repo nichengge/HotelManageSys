@@ -18,6 +18,15 @@
   </sql>
 
 <!--    查找-->
+    <select id="getallroomid" resultMap="java.lang.String">
+        select
+        room_id
+        from room
+    </select>
+
+
+
+<!--    新建-->
     <insert id="insert" parameterType="demo.Model.Room">
     insert into room (room_id, room_number, room_type, 
       room_floor, room_direction, room_square, 

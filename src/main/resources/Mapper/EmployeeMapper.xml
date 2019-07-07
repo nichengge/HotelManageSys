@@ -13,9 +13,16 @@
   </sql>
 
 
-    <!--  增加-->
+    <!--  查找-->
+    <select id="getallemployeeid" resultMap="java.lang.String">
+        select
+        employee_id
+        from employee
+    </select>
 
 
+
+<!--    插入-->
     <insert id="insert" parameterType="demo.Model.Employee">
     insert into employee (employee_id, employee_username, password, 
       employee_name, employee_gender)
