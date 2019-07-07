@@ -13,8 +13,20 @@ public class CustomerService extends BaseService{
     //增
 
     //增加客户
-    public void addCustomer(Customer customer){
+    public int addCustomer(Customer customer){
+        try {
+            ans = customerMapper.insert(customer);
+            if(ans==1){
+                System.out.println("用户新建成功");
+            }
+            else{
 
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("用户新建失败");
+        }
+        return ans;
     }
 
     //删

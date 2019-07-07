@@ -1,6 +1,17 @@
 package demo.Model;
 
 public class Customer {
+
+    public Customer(String username, String password, String real_name, String customer_phone, String id_card) {
+        this.username = username;
+        this.password = password;
+        this.real_name = real_name;
+        this.customer_phone = customer_phone;
+        this.id_card = id_card;
+    }
+
+    public Customer(){}
+
     private Integer customer_id;
 
     private String username;

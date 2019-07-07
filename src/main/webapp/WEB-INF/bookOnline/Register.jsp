@@ -20,7 +20,19 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-    <style></style>
+<%--    检查手机号--%>
+    <script>
+        var TEL_REGEXP = /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/;
+
+        function validateTel (customerPhone){
+            if(TEL_REGEXP.test(tel)){
+                return true;
+            }
+            return false;
+        }
+    </script>
+
+
     <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
     .en-markup-crop-options {
         top: 18px !important;
@@ -47,32 +59,33 @@
         </h2>
         <div class="mdui-center" style="width: 500px;">
             <table style="justify-content: center;margin-left: auto;margin-right: auto;">
-                <form action="/bookOnline/Register.do" method="post">
-                    <tr>
-                        <td>
-                            <div class="mdui-textfield mdui-textfield-floating-label">
-                                <label class="mdui-textfield-label"></label>
-                                <%--<input class="mdui-textfield-input" type = "text" size = "20" name = "customerName" required/>--%>
-                            </div>
-                        </td>
-                    </tr>
+                <form action="/userRegister" method="post">
                     <div class="mdui-textfield">
-                        账号<textarea class="mdui-textfield-input" name="username" placeholder="账号" required></textarea>
+                        用户名<input type="text" pattern="^[a-zA-Z][a-zA-Z0-9]{3,15}$" class="mdui-textfield-input" name="username" placeholder="用户名由英文字母和数字组成的4-16位字符，以字母开头" required />
+                        <div class="mdui-textfield-error">用户名格式错误</div>
                     </div>
                     <div class="mdui-textfield">
-                        密码<textarea class="mdui-textfield-input" name="password" placeholder="密码" required></textarea>
+                        密码<input type="password" pattern="^[a-zA-Z0-9]{4,10}$" class="mdui-textfield-input" name="password" placeholder="密码由英文字母和数字组成的4-10位字符" required />
+                        <div class="mdui-textfield-error">密码格式错误</div>
                     </div>
 
                     <tr>
                         <div class="mdui-textfield">
-                            姓名<textarea class="mdui-textfield-input" name="customerName" placeholder="姓名" required></textarea>
+                            姓名<textarea class="mdui-textfield-input" name="realname" placeholder="姓名" required></textarea>
+                        </div>
+
+                    <tr>
+                    <tr>
+                        <div class="mdui-textfield">
+                            手机号码<input  class="mdui-textfield-input" name="phone" type="text" pattern="^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$" placeholder="电话号码" required />
+                            <div class="mdui-textfield-error">手机号格式不正确</div>
                         </div>
 
                     <tr>
                         <div class="mdui-textfield">
                             性别
                             <label class="mdui-radio" selected="male">
-                                <input type="radio" name="customerGender" value="male"/>
+                                <input type="radio" name="gender" value="male"/>
                                 <i class="mdui-radio-icon"></i>
                                 男
                             </label>
@@ -86,7 +99,7 @@
                     <div class="mdui-textfield">
                         身份证号码
                         <input class="mdui-textfield-input" type="text" pattern="(^\d{15}$)|(^\d{17}([0-9]|X)$)"
-                               name="customerIDNumber" placeholder="身份证号码" required/>
+                               name="idcard" placeholder="身份证号码" required/>
                         <div class="mdui-textfield-error">身份证格式错误</div>
                     </div>
                     </tr>

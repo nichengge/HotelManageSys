@@ -18,10 +18,10 @@
 
     <!--  增加-->
     <insert id="insert" parameterType="demo.Model.Customer">
-    insert into customer (customer_id, username, password, 
+    insert into customer (username, password,
       real_name, customer_phone, id_card, 
       customer_gender)
-    values (#{customer_id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{real_name,jdbcType=VARCHAR}, #{customer_phone,jdbcType=VARCHAR}, #{id_card,jdbcType=VARCHAR}, 
       #{customer_gender,jdbcType=VARCHAR})
   </insert>

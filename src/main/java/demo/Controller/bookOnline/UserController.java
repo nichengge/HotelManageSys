@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-public class UserLoginController extends BaseController {
+public class UserController extends BaseController {
 
     @RequestMapping("nameCustomerLogin")
     public ModelAndView userlogin(HttpServletRequest request, HttpServletResponse response, @RequestParam("nameCustomerLogin") String usernmae, @RequestParam("passwordCustomerLogin") String password) {
@@ -50,8 +50,34 @@ public class UserLoginController extends BaseController {
         mv.addObject("request", request);
         mv.addObject("response", response);
         mv.setViewName("General/intermediatePage");
-        System.out.println("页面跳转");
 
+        return mv;
+    }
+
+
+    //用户注册
+    @RequestMapping("/userRegister")
+    public ModelAndView newuser(HttpServletRequest request,HttpServletResponse response,
+                            @RequestParam("username") String username,@RequestParam("password") String password,
+                            @RequestParam("idcard") String idcard,@RequestParam("realname") String realname,@RequestParam("phone") String phone){
+        Customer customer = new Customer(username,password,realname,phone,idcard);
+        ans = customerService.addCustomer(customer);
+
+        if(ans==1){
+            message = "帐号创建成功O(∩_∩)O！3秒后跳转到客户账号管理界面";
+            nextURL = "basicSetting/CustomerSetting";
+        }
+        else {
+            message = "Oops~账号创建失败(T_T)！3秒后返回到客户账号添加界面";
+            nextURL = "basicSetting/CustomerAccountAdd";
+        }
+
+        request.setAttribute("nextURL", nextURL);
+        request.setAttribute("intermediateTimer", 3);
+        request.setAttribute("message", message);
+        mv.addObject("request", request);
+        mv.addObject("response", response);
+        mv.setViewName("General/intermediatePage");
         return mv;
     }
 }

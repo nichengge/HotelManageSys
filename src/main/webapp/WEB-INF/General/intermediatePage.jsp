@@ -49,9 +49,6 @@
         <br>
     </div>
     <%
-        System.out.println(request.getAttribute("nextURL"));
-        //response.sendRedirect("");
-        //request.getRequestDispatcher((String)request.getAttribute("nextURL")).forward(request,response);
         response.setHeader("Refresh", request.getAttribute("intermediateTimer") + "; URL=go?url=" + request.getAttribute("nextURL")); //一定时间后，当前页面跳转到下一个页面。
     %>
     <br>
