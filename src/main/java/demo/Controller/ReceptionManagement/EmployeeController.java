@@ -1,4 +1,4 @@
-package demo.Controller.employeeManagement;
+package demo.Controller.ReceptionManagement;
 
 import demo.Controller.BaseController;
 import demo.Model.Employee;

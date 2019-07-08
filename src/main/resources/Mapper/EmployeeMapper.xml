@@ -20,6 +20,16 @@
         from employee
     </select>
 
+    //按照主键查找员工
+    <select id="selectById" parameterType="demo.Model.Employee" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from employee
+        where employee_id = #{employee_id,jdbcType=INTEGER}
+    </select>
+
+
+
     <select id="employeeconfirm" parameterType="demo.Model.Employee" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>

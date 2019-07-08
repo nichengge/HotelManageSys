@@ -53,6 +53,17 @@ public class EmployeeService extends BaseService {
         return ans;
     }
 
+    //根据Id查找员工
+    public Employee queryById(int i) {
+        Employee employee = null;
+        try {
+            employee = employeeMapper.selectById(i);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return employee;
+    }
+
     //改
 
 

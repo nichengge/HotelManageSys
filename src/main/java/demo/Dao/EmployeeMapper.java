@@ -26,4 +26,6 @@ public interface EmployeeMapper {
     Employee employeeconfirm(Employee employee);
 
     ArrayList<String> getallemployeeid();
+
+    Employee selectById(int i);
 }

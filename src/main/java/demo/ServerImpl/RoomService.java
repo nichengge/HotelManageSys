@@ -1,5 +1,6 @@
 package demo.ServerImpl;
 
+import demo.Model.Room;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,7 +38,21 @@ public class RoomService extends BaseService {
         return allroomid;
     }
 
+
+
     //改
+
+    //修改房间信息
+    public int updateRoomInformation(Room room) {
+        try {
+            ans = roomMapper.updateRoomInfo(room);
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("房间信息更新失败...from RoomService");
+        }
+        return ans;
+
+    }
 
 
 }

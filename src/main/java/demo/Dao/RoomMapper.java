@@ -22,6 +22,9 @@ public interface RoomMapper {
 
     //改
 
+    //更新房间信息
+    int updateRoomInfo(Room room);
+
     //查
 
     ArrayList<String> getallroomid();
