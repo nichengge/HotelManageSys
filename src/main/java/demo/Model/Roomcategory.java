@@ -15,6 +15,16 @@ public class Roomcategory {
 
     private Integer inuse_roomnumber;
 
+    //Constructor
+    public Roomcategory(String roomcategory_name, Double roomcategory_price, Integer total_number, Double roomcategory_score, Integer locked_number, Integer inuse_roomnumber) {
+        this.roomcategory_name = roomcategory_name;
+        this.roomcategory_price = roomcategory_price;
+        this.total_number = total_number;
+        this.roomcategory_score = roomcategory_score;
+        this.locked_number = locked_number;
+        this.inuse_roomnumber = inuse_roomnumber;
+    }
+
     public Integer getRoomcategory_id() {
         return roomcategory_id;
     }

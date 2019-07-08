@@ -62,6 +62,8 @@ public interface CustomerMapper {
 
     Customer selectByid(String username);
 
+    ArrayList<Orders> selectAllOrders(int userId);
+
     //获取所有客户id
     ArrayList<String> getAllCustomersId();
 
@@ -72,6 +74,6 @@ public interface CustomerMapper {
     List<Orders> showOrders();
 
     //显示不可用房间类型号
-    HashMap<String,Integer> getUnavailableRoomTypeWithNumber(Date starttime, Date endtime);
+    HashMap<String, Integer> getUnavailableRoomTypeWithNumber(Date starttime, Date endtime);
 
 }

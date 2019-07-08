@@ -1,5 +1,6 @@
 package demo.Model;
 
+//顾客
 public class Customer {
 
     public Customer(String username, String password, String real_name, String customer_phone, String id_card, String gender) {
@@ -9,6 +10,11 @@ public class Customer {
         this.customer_phone = customer_phone;
         this.id_card = id_card;
         this.customer_gender = gender;
+    }
+
+
+    public Customer(String username){
+        this.username=username;
     }
 
     public Customer() {

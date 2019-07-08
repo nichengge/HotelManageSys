@@ -16,19 +16,23 @@ public interface RoomMapper {
     int insertSelective(Room record);
 
 
-
-
     //删
+    int deleteRoom(int roomId);
 
     //改
 
     //更新房间信息
     int updateRoomInfo(Room room);
 
+    //更改房间号
+    int changeRoomNumber(int roomId, String roomNumber);
+
+    int updateStatusByRoomID(int roomId, String status);
+
+
     //查
 
     ArrayList<String> getallroomid();
-
 
 
 }

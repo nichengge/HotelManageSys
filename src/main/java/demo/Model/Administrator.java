@@ -1,5 +1,6 @@
 package demo.Model;
 
+//经理&管理员
 public class Administrator {
     private Integer admin_id;
 

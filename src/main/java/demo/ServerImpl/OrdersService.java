@@ -3,7 +3,10 @@ package demo.ServerImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 @Service("OrdersService")
@@ -36,6 +39,30 @@ public class OrdersService extends BaseService {
     }
 
     //改
+
+    //更新订单信息
+    public int updateOrderInformationByOrderID(int orderId) {
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            Date date = new Date();
+            //String nowDate = dateFormat.format(date);
+            ans = (ordersMapper.updateDateEndByOrderID(orderId, date) == 1
+                    && ordersMapper.updateStatusByOrderID(orderId, "退房") == 1) ? 1 : 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
+    //续房
+    public int extendCheckoutTimeByOrderID(int orderId, Date newDate) {
+        try {
+            ordersMapper.updateDateEndByOrderID(orderId, newDate);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ans;
+    }
 
 
 }

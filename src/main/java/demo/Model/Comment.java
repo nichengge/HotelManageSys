@@ -2,6 +2,7 @@ package demo.Model;
 
 import java.util.Date;
 
+//评论
 public class Comment {
     private Integer coment_id;
 

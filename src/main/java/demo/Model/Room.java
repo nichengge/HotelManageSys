@@ -1,5 +1,6 @@
 package demo.Model;
 
+//房间
 public class Room {
     private Integer room_id;
 

@@ -1,5 +1,6 @@
 package demo.Model;
 
+//接待员
 public class Employee {
     private Integer employee_id;
 

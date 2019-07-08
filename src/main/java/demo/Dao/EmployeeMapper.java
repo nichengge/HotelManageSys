@@ -16,8 +16,8 @@ public interface EmployeeMapper {
     int insertSelective(Employee record);
 
 
-
     //删
+    int deleteEmployeeeById(int id);
 
     //改
 

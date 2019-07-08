@@ -20,7 +20,7 @@
         from employee
     </select>
 
-    //按照主键查找
+<!--    按照主键查找员工-->
     <select id="selectById" parameterType="demo.Model.Employee" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
@@ -85,4 +85,13 @@
             </if>
         </trim>
     </insert>
+
+
+    <delete id="deleteEmployeeeById" parameterType="java.lang.Integer">
+        delete
+        from employee
+        where employee_id = #{0}
+
+    </delete>
+
 </mapper>

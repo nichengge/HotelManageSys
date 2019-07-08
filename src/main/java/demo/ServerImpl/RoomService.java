@@ -39,19 +39,48 @@ public class RoomService extends BaseService {
     }
 
 
-
     //改
+
 
     //修改房间信息
     public int updateRoomInformation(Room room) {
         try {
             ans = roomMapper.updateRoomInfo(room);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("房间信息更新失败...from RoomService");
         }
         return ans;
+    }
 
+    //修改房间号
+    public int changeRoomNumber(int roomId, String newRoomNumber) {
+        try {
+            ans = roomMapper.changeRoomNumber(roomId, newRoomNumber);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
+    //更改房间状态为可用
+    public int fixDoneByRoomID(int roomId) {
+        try {
+            ans = roomMapper.updateStatusByRoomID(roomId, "可用");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
+    //更改房间状态为维修中
+    public int fixingRoomByRoomID(int roomId) {
+        try {
+            ans = roomMapper.updateStatusByRoomID(roomId, "维修中");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ans;
     }
 
 

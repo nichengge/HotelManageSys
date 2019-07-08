@@ -25,6 +25,16 @@
     </select>
 
 
+    <!--    删除-->
+
+    <delete id="deleteRoom" parameterType="java.lang.Integer">
+        delete
+        from room
+        where room_id = #{0}
+
+    </delete>
+
+
     <!--    修改-->
 
     <!--    更新房间信息-->
@@ -50,6 +60,19 @@
         where room_id = #{room_id,jdbcType=INTEGER}
     </update>
 
+    <!--    更改房间信息-->
+    <update id="updateStatusByRoomID">
+        update room
+        <set>
+            room_status = #{1}
+        </set>
+        where room_id = #{0}
+    </update>
+    <update id="updateRoomNumberByRoomId">
+        update room
+        set room_number = #{1}
+        where room_id = #{0}
+    </update>
 
     <!--    新建-->
     <insert id="insert" parameterType="demo.Model.Room">

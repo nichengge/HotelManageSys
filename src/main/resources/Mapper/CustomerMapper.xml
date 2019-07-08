@@ -157,6 +157,15 @@
         from customer
     </select>
 
+    <!--    获取所有客户订单-->
+    <select id="selectAllOrders" parameterType="java.lang.Integer" resultType="demo.Model.Orders">
+        select
+        *
+        from orders
+        where customer_id = #{0}
+    </select>
+
+
     <!--    查询在住客户-->
     <select id="queryCustomersLiving" resultMap="BaseResultMap">>
         select
