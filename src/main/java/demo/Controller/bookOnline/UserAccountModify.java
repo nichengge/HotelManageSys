@@ -10,7 +10,7 @@ public class UserAccountModify extends BaseController {
 
 
     @RequestMapping("basicSetting/CustomerAccountModifyID")
-    public ModelAndView CustomerAccountmodifyid(){
+    public ModelAndView CustomerAccountmodifyid() {
         //方法体
 
         return mv;

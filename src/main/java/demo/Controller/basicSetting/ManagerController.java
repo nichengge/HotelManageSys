@@ -34,18 +34,11 @@ public class ManagerController extends BaseController {
             message = "Oops (T_T)  经理账号登录失败！ 即将为您跳转回登录界面！";
             nextURL = "/ManagerLogin";
         }
-
-        request.setAttribute("nextURL", nextURL);
-        request.setAttribute("intermediateTimer", 3);
-        request.setAttribute("message", message);
-        mv.addObject("request", request);
-        mv.addObject("response", response);
-        mv.setViewName("General/intermediatePage");
-
-        return mv;
+        return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
-
+    //客户管理
+    //增加客户
     @RequestMapping("adminAddUser")
     public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
                                 @RequestParam("customerUsernameAdd") String username,
@@ -62,12 +55,13 @@ public class ManagerController extends BaseController {
             message = "操作失败！3秒后返回到客户账号添加界面。";
             nextURL = "basicSetting/CustomerAccountAdd";
         }
-        request.setAttribute("nextURL", nextURL);
-        request.setAttribute("intermediateTimer", 3);
-        request.setAttribute("message", message);
-        mv.addObject("request", request);
-        mv.addObject("response", response);
-        mv.setViewName("General/intermediatePage");
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
+
+    //删除客户
+    public ModelAndView deleUser() {
+
+
         return mv;
     }
 

@@ -1,6 +1,7 @@
 package demo.Controller;
 
 import demo.ServerImpl.*;
+import demo.Util.IntermediateModelAndViewDispatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,4 +30,6 @@ public class BaseController {
     protected RoomcategoryService roomcategoryService;
     @Autowired
     protected RoomService roomService;
+
+    protected IntermediateModelAndViewDispatcher dispatcher = new IntermediateModelAndViewDispatcher();
 }
