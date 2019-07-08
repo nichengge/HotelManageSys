@@ -1,5 +1,6 @@
 package demo.ServerImpl;
 
+import demo.Dao.CustomerMapper;
 import demo.Model.Customer;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,6 +39,9 @@ public class CustomerService extends BaseService {
     public int customerconfirm(Customer customer) {
         Customer customer1 = null;
         try {
+
+            CustomerMapper customerMapper1 = customerMapper;
+
             customer1 = customerMapper.customerconfirm(customer);
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,11 +73,11 @@ public class CustomerService extends BaseService {
     }
 
     //获取所有用户的idlist，string类型
-    public ArrayList<Integer> getAllCustomersID() {
-        ArrayList<Integer> allcustomerid = null;
+    public ArrayList<String> getAllCustomersID() {
+        ArrayList<String> allcustomerid = null;
         try {
-            System.out.println("customerMapper.getAllCustomersId().size():"+customerMapper.getAllCustomersId().size());
-            if (null != customerMapper.getAllCustomersId())
+            //此处报错；
+            if (customerMapper.getAllCustomersId() != null)
                 allcustomerid = customerMapper.getAllCustomersId();
             if (allcustomerid == null) {
                 System.out.println("查询失败...from CustomerService");

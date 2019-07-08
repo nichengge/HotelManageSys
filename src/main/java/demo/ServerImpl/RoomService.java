@@ -20,8 +20,8 @@ public class RoomService extends BaseService {
     //查
 
     //获取所有房间id
-    public ArrayList<Integer> getAllRoomID() {
-        ArrayList<Integer> allroomid = null;
+    public ArrayList<String> getAllRoomID() {
+        ArrayList<String> allroomid = null;
         try {
             if (null != roomMapper.getallroomid())
                 allroomid = roomMapper.getallroomid();

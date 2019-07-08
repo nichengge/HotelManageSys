@@ -24,7 +24,7 @@ public interface RoomMapper {
 
     //查
 
-    ArrayList<Integer> getallroomid();
+    ArrayList<String> getallroomid();
 
 
 

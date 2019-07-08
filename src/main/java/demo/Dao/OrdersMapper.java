@@ -23,6 +23,6 @@ public interface OrdersMapper {
     //改
 
     //查
-    ArrayList<Integer> getallordersid();
+    ArrayList<String> getallordersid();
 
 }

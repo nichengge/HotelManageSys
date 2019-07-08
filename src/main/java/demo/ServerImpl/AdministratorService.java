@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service("AdministratorService")
 @Transactional
+//隐藏警告
 @SuppressWarnings("all")
 public class AdministratorService extends BaseService{
     int ans=0;
@@ -21,10 +22,10 @@ public class AdministratorService extends BaseService{
         System.out.println("正在管理员登录验证..from AdminiService");
         Administrator administrator1 = null;
         try {
-            System.out.println("username:"+administrator.getUsername()+"  password:"+administrator.getPassword());
             administrator1 = administratorMapper.adminconfirm(administrator);
         }catch (Exception e){
             e.printStackTrace();
+            System.out.println("管理员验证数据库出现错误...from AdminisService");
         }
         if(administrator1!=null){
             System.out.println("验证成功");

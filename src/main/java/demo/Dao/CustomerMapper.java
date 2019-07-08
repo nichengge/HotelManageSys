@@ -63,7 +63,7 @@ public interface CustomerMapper {
     Customer selectByid(String username);
 
     //获取所有客户id
-    ArrayList<Integer> getAllCustomersId();
+    ArrayList<String> getAllCustomersId();
 
     //查询所有在住客户
     List<Customer> queryCustomersLiving();

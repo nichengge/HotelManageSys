@@ -23,6 +23,6 @@ public interface RoomcategoryMapper {
 
     //查
 
-    ArrayList<Integer> getallcategoryid();
+    ArrayList<String> getallcategoryid();
 
 }

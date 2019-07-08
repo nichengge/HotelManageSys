@@ -20,8 +20,8 @@ public class EmployeeService extends BaseService {
 
     //查
 
-    public ArrayList<Integer> getAllEmployeesId() {
-        ArrayList<Integer> allemployeeid = null;
+    public ArrayList<String> getAllEmployeesId() {
+        ArrayList<String> allemployeeid = null;
         try {
             if (null != employeeMapper.getallemployeeid())
                 allemployeeid = employeeMapper.getallemployeeid();

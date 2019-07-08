@@ -14,7 +14,7 @@
 
 
     <!--  查找-->
-    <select id="getallemployeeid" resultType="java.lang.Integer">
+    <select id="getallemployeeid" resultType="java.lang.String">
         select
         employee_id
         from employee

@@ -151,7 +151,7 @@
     </select>
 
     <!--    获取所有客户id-->
-    <select id="getAllCustomersId" resultType="java.lang.Integer">
+    <select id="getAllCustomersId" resultType="java.lang.String">
         select
         customer_id
         from customer

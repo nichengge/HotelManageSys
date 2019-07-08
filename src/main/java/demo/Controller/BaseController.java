@@ -3,34 +3,30 @@ package demo.Controller;
 import demo.ServerImpl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
+
+
 public class BaseController {
-
     //标记状态
-    protected int ans=0;
-
+    protected int ans = 0;
     //跳转使用
     protected String message, nextURL;
-
-
     protected ModelAndView mv = new ModelAndView();
     @Autowired
-    protected AdministratorService administratorService = new AdministratorService();
+    protected AdministratorService administratorService;
     @Autowired
-    protected     CommentService commentService = new CommentService();
+    protected CommentService commentService;
     @Autowired
-    protected    CustomerService customerService = new CustomerService();
+    protected CustomerService customerService;
     @Autowired
-    protected   EmployeeService employeeService = new EmployeeService();
+    protected EmployeeService employeeService;
     @Autowired
-    protected  HotelService hotelService = new HotelService();
+    protected HotelService hotelService;
     @Autowired
-    protected  OrdersService ordersService = new OrdersService();
+    protected OrdersService ordersService;
     @Autowired
-    protected  QuestionService questionService = new QuestionService();
+    protected QuestionService questionService;
     @Autowired
-    protected  RoomcategoryService roomcategoryService = new RoomcategoryService();
+    protected RoomcategoryService roomcategoryService;
     @Autowired
-    protected  RoomService roomService = new RoomService();
-
-
+    protected RoomService roomService;
 }

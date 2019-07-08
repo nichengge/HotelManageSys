@@ -17,8 +17,8 @@ public class RoomcategoryService extends BaseService{
     //删
 
     //查
-    public ArrayList<Integer> getAllCategory() {
-        ArrayList<Integer>allcategory = null;
+    public ArrayList<String> getAllCategory() {
+        ArrayList<String>allcategory = null;
         try {
             if(null!=roomcategoryMapper.getallcategoryid())
                 allcategory = roomcategoryMapper.getallcategoryid();

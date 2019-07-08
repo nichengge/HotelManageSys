@@ -10,17 +10,18 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @SuppressWarnings("all")
 public class BaseService {
-    @Autowired
-    protected AdministratorMapper administratorMapper;
-
-    @Autowired
-    protected CommentMapper commentMapper;
 
     @Autowired
     protected CustomerMapper customerMapper;
 
     @Autowired
     protected EmployeeMapper employeeMapper;
+
+    @Autowired
+    protected AdministratorMapper administratorMapper;
+
+    @Autowired
+    protected CommentMapper commentMapper;
 
     @Autowired
     protected HotelMapper hotelMapper;

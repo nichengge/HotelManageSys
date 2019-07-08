@@ -18,8 +18,8 @@ public class OrdersService extends BaseService {
     //删
 
     //查
-    public ArrayList<Integer> getAllOrdersID() {
-        ArrayList<Integer> allordersid = null;
+    public ArrayList<String> getAllOrdersID() {
+        ArrayList<String> allordersid = null;
         try {
             if (null != ordersMapper.getallordersid()) //注意这里处理不当会报错，空指针Exception
                 allordersid = ordersMapper.getallordersid();

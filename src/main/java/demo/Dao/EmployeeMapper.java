@@ -25,5 +25,5 @@ public interface EmployeeMapper {
 
     Employee employeeconfirm(Employee employee);
 
-    ArrayList<Integer> getallemployeeid();
+    ArrayList<String> getallemployeeid();
 }
