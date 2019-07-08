@@ -12,6 +12,13 @@ public class Customer {
         this.customer_gender = gender;
     }
 
+    public Customer(String username, String password, String realname, String phone, String idcard) {
+        this.username = username;
+        this.password = password;
+        this.real_name = realname;
+        this.customer_phone = phone;
+        this.id_card = idcard;
+    }
 
     public Customer(String username){
         this.username=username;
@@ -38,6 +45,7 @@ public class Customer {
     private String id_card;
 
     private String customer_gender;
+
 
 
 

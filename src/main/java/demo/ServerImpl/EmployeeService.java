@@ -93,9 +93,9 @@ public class EmployeeService extends BaseService {
     //改
 
     //房间入住
-    public int preservationCheckin(int orderId, int roomId) {
+    public int preservationCheckin(int orderId, String roomId) {
         try {
-            ans = (ordersMapper.updateStatusByOrderID(orderId, "在住") == 1 && ordersMapper.updateRoomIDByOrderID(orderId, roomId) == 1) ? 1 : 0;
+            ans = (ordersMapper.updateStatusByOrderID(orderId, "在住") == 1 && ordersMapper.updateRoomNameByOrderID(orderId, roomId) == 1) ? 1 : 0;
         } catch (Exception e) {
             System.out.println("something went wrong...from Service");
             e.printStackTrace();

@@ -87,21 +87,15 @@
 
     <!--    更新身份证信息-->
     <update id="updateIdcard">
-        update customer
-        set id_card = #{1}
-        where customer_id = #{0}
+        update customer set id_card = #{1} where customer_id = #{0}
     </update>
     <!--    更新密码-->
     <update id="updatePassword">
-        update customer
-        set password = #{1}
-        where customer_id = #{0}
+        update customer set password = #{1} here customer_id = #{0}
     </update>
     <!--    更新用户名-->
     <update id="updateUsername">
-        update customer
-        set username = #{1}
-        where customer_id = #{0}
+        update customer set username = #{1} where customer_id = #{0}
     </update>
 
 

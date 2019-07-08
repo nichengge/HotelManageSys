@@ -22,6 +22,17 @@
         from roomcategory
     </select>
 
+    <select id="getRoomPreservationInitialize" resultMap="BaseResultMap">
+        select roomcategory_name,total_number,locked_number from roomcategory order by roomcategory_name;
+    </select>
+
+    <select id="getTypeAndPrice" resultType="java.util.HashMap">
+        select roomcategory_name,roomcategory_price from roomcategory ;
+    </select>
+    <select id="getAllCategory" resultType="java.lang.String">
+        select roomcategory_name from roomcategory;
+    </select>
+
 
 <!--    插入-->
     <insert id="insert" parameterType="demo.Model.Roomcategory">

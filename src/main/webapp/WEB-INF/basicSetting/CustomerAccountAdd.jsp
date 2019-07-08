@@ -7,22 +7,26 @@
     <h1>
         客户账号增加
     </h1>
-    <form action="/basicSetting/CustomerAccountAdd.do" method="post">
+    <form action="adminAddUser" method="post">
         <div class="mdui-textfield mdui-textfield-floating-label">
-            <label class="mdui-textfield-label">客户账号名</label>
-            <input type="text" class="mdui-textfield-input" size="10" name="customerUsernameAdd"/>
+            <label class="mdui-textfield-label">客户用户名</label>
+            <input type="text" class="mdui-textfield-input" size="10" name="customerUsernameAdd" required/>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">客户密码</label>
-            <input type="password" class="mdui-textfield-input" size="10" name="customerPasswordAdd"/>
+            <input type="password" class="mdui-textfield-input" size="10" name="customerPasswordAdd" required/>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">客户姓名</label>
-            <input type="text" class="mdui-textfield-input" size="10" name="customerNameAdd"/>
+            <input type="text" class="mdui-textfield-input" size="10" name="customerNameAdd" required/>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
-            <label class="mdui-textfield-label">客户身份证</label>
-            <input type="text" class="mdui-textfield-input" size="10" name="customerIDNumberAdd"/>
+            <label class="mdui-textfield-label">客户手机号</label>
+            <input type="text" class="mdui-textfield-input" size="10" name="customerPhoneAdd" required/>
+        </div>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">客户身份证号</label>
+            <input type="text" class="mdui-textfield-input" size="10" name="customerIDNumberAdd" required/>
         </div>
         <button type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">提交</button>
     </form>
