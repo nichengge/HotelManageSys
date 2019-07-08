@@ -3,6 +3,7 @@ package demo.ServerImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.ResultSet;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -66,11 +67,28 @@ public class OrdersService extends BaseService {
     }
 
     //更新订单房间信息
-    public int updateRoomIDByOrderID(int orderId, int roomId) {
+    public int updateRoomIDByOrderID(int orderId, String roomName) {
         try {
-            ans = ordersMapper.updateRoomIDByOrderID(orderId, roomId);
+            ans = ordersMapper.updateRoomNameByOrderID(orderId, roomName);
         } catch (Exception e) {
             System.out.println("something went wrong...from Service");
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
+    public int updateOrderAccountByID(int orderId) {
+        try {
+            ResultSet r = ordersMapper.getOrderPrice(orderId);
+            while (r.next()) {
+                int day = 1;
+                double price = r.getDouble("roomcategory_price");
+                double account = day * price;
+                System.out.println(account);
+                ans = ordersMapper.updateOrderAccount(orderId, account);
+            }
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return ans;
@@ -79,7 +97,7 @@ public class OrdersService extends BaseService {
     //换房
     public int changeRoomByOrderID(int orderId, int newRoomId) {
         try {
-            ans = ordersMapper.singleUpdate("roomId", newRoomId, "orderId", orderId);
+            ans = ordersMapper.singleUpdate("roomId", String.valueOf(newRoomId), "orderId", String.valueOf(orderId));
         } catch (Exception e) {
             e.printStackTrace();
         }

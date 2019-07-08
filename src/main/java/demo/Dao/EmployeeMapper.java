@@ -21,6 +21,8 @@ public interface EmployeeMapper {
 
     //改
 
+    int updateEmployee(Employee employee);
+
     //查
 
     Employee employeeconfirm(Employee employee);

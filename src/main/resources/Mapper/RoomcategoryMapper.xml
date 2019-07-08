@@ -22,7 +22,7 @@
         from roomcategory
     </select>
 
-    <select id="getRoomPreservationInitialize" resultType="BaseResultMap">
+    <select id="getRoomPreservationInitialize" resultMap="BaseResultMap">
         select roomcategory_name,total_number,locked_number from roomcategory order by roomcategory_name;
     </select>
 

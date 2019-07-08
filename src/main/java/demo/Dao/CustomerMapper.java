@@ -51,10 +51,10 @@ public interface CustomerMapper {
     查找
      */
 
-    List<Customer> queryByUsername(String username); //返回List类型
+    ArrayList<Customer> queryByUsername(String username); //返回List类型
 
     //获取所有客户对象
-    List<Customer> getAllCustomers();
+    ArrayList<Customer> getAllCustomers();
 
     Customer queryByUserId(int userId);
 
