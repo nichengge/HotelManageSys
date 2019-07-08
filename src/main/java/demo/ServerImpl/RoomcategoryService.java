@@ -17,12 +17,19 @@ public class RoomcategoryService extends BaseService{
     //删
 
     //查
-    public ArrayList<String> getAllCategory() {
-        ArrayList<String>allcategory = null;
+    public ArrayList<Integer> getAllCategory() {
+        ArrayList<Integer>allcategory = null;
         try {
-            allcategory = roomcategoryMapper.getallcategoryid();
+            if(null!=roomcategoryMapper.getallcategoryid())
+                allcategory = roomcategoryMapper.getallcategoryid();
+            if(allcategory==null){
+                System.out.println("查询失败...from RoomcategoryService");
+            }else{
+                System.out.println("查询成功...from RoomcategoryService");
+            }
         }catch (Exception e){
             e.printStackTrace();
+            System.out.println("数据库错误...from RoomcategoryService");
         }
         return allcategory;
     }

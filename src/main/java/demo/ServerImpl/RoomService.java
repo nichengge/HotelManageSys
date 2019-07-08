@@ -9,8 +9,8 @@ import java.util.ArrayList;
 @Service("RoomService")
 @Transactional
 @SuppressWarnings("all")
-public class RoomService extends BaseService{
-    int ans=0;
+public class RoomService extends BaseService {
+    int ans = 0;
 
 
     //增
@@ -20,18 +20,24 @@ public class RoomService extends BaseService{
     //查
 
     //获取所有房间id
-    public ArrayList<String> getAllRoomID() {
-        ArrayList<String>allroomid = null;
+    public ArrayList<Integer> getAllRoomID() {
+        ArrayList<Integer> allroomid = null;
         try {
-            allroomid = roomMapper.getallroomid();
-        }catch (Exception e){
+            if (null != roomMapper.getallroomid())
+                allroomid = roomMapper.getallroomid();
+            if (allroomid == null) {
+                System.out.println("查询失败...from RoomService");
+            } else {
+                System.out.println("查询成功...from RoomService");
+            }
+        } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("数据库错误...from RoomService");
         }
         return allroomid;
     }
 
     //改
-
 
 
 }

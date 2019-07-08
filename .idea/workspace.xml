@@ -2,37 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebf17cc7-3ee2-47d9-a215-0e21b5592c24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/Controller/employeeManagement/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLScript/test.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/demo/Controller/basicSetting/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Controller/basicSetting/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Controller/bookOnline/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Controller/bookOnline/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Model/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Model/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Dao/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Dao/CustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Dao/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Dao/EmployeeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Dao/OrdersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Dao/OrdersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Dao/RoomMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Dao/RoomMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Dao/RoomcategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Dao/RoomcategoryMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/AdministratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/AdministratorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/EmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Util/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Util/EncodingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/OrdersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomcategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomcategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/AdministratorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/AdministratorMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/CustomerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/CustomerMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/EmployeeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/OrdersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/OrdersMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/RoomMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/RoomMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/RoomcategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/RoomcategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ReceptionistLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ReceptionistLogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/AdministratorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/AdministratorMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Mapper/CustomerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/CustomerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/EmployeeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/OrdersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/OrdersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/RoomMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/RoomMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/RoomcategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/RoomcategoryMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/demo/Controller/basicSetting/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Controller/basicSetting/ManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Model/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Model/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Model/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Model/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/demo/Dao/CustomerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Dao/CustomerMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/demo/ServerImpl/AdministratorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/ServerImpl/AdministratorService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/demo/ServerImpl/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/ServerImpl/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/ServerImpl/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/ServerImpl/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo/Util/EncodingFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo/Util/EncodingFilter.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -74,7 +70,14 @@
         <item name="hotelmanagementsystem@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="hotelmanagementsystem: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="employee: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="administrator: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hotelmanagementsystem@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="hotelmanagementsystem: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="customer: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -82,6 +85,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="hotelmanagementsystem: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="hotel: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hotelmanagementsystem@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="hotelmanagementsystem: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="orders: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -92,87 +102,110 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/demo/Controller/employeeManagement/EmployeeController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/EmployeeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            <state relative-caret-position="181">
+              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#492#501#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://42bd095c-142f-4d74-b6c6-e33a18abba90/schema/hotelmanagementsystem/table/employee">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="7b980c1c-fb4b-4e19-8a9e-096cb49463c3">
-              <filtering>
-                <filter text="" />
-              </filtering>
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/OrdersService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="106">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+              <folding>
+                <element signature="e#458#467#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/EmployeeService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="37" column="41" lean-forward="true" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+            <state relative-caret-position="79">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="e#436#445#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/EmployeeMapper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomcategoryService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="25" column="28" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/EmployeeMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/CommentMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/AdministratorMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1100">
-              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/CustomerMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="86" column="8" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="43" />
+            <state relative-caret-position="79">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#439#448#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/ReceptionistLogin.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/CustomerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="59" column="61" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="61" />
+            <state relative-caret-position="79">
+              <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
+              <folding>
+                <element signature="e#239#263#0" expanded="true" />
+                <element signature="e#1876#1885#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/CustomerMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/CommentService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#181#205#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/BaseService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/AdministratorService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/AdministratorMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -190,9 +223,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>test</find>
-      <find>thy</find>
-      <find>BaseResultMap</find>
       <find>Base_Column_List</find>
       <find>go?url=</find>
       <find>href=</find>
@@ -211,6 +241,18 @@
       <find>java.lang.String</find>
       <find>resultMap</find>
       <find>employeeconfirm</find>
+      <find>updateIDNumber</find>
+      <find>deleteByUsernaId</find>
+      <find>queryByUsername</find>
+      <find>queryByUserId</find>
+      <find>getAllCustomersId</find>
+      <find>get</find>
+      <find>queryCustomersLiving</find>
+      <find>getUnavailableRoomTypeWithNumber</find>
+      <find>confirm</find>
+      <find>getAllCusto</find>
+      <find>getallroomid</find>
+      <find>adminconfirm</find>
     </findStrings>
     <replaceStrings>
       <replace>go?url=basicSetting/</replace>
@@ -229,9 +271,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/basicSetting/ReceptionistSetting.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookOnline/RegisterSuccess.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/receptionManagement/DrawerBar.html" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Dao/QuestionMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Dao/AdministratorMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Dao/CommentMapper.java" />
@@ -253,33 +292,36 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/bookOnline/Register.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/General/intermediatePage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Util/Helper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/Dao/CustomerMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/Dao/OrdersMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/OrdersService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/Dao/RoomMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomcategoryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/Dao/RoomcategoryMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/Mapper/AdministratorMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Util/EncodingFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Model/Employee.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Model/Customer.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/AdministratorService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/EmployeeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Controller/bookOnline/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Model/Administrator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/Controller/basicSetting/ManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/Helper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/Mapper/RoomMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/Mapper/RoomcategoryMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/Mapper/OrdersMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/Mapper/CustomerMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/CustomerService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/ReceptionistLogin.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Controller/employeeManagement/EmployeeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/Controller/basicSetting/ManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Mapper/AdministratorMapper.xml" />
+        <option value="$PROJECT_DIR$/SQLScript/test.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/AdministratorService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Mapper/CustomerMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/Dao/CustomerMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/Helper.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/Dao/EmployeeMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Mapper/EmployeeMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/Mapper/RoomcategoryMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/Dao/RoomcategoryMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/Dao/OrdersMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Mapper/OrdersMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/Dao/RoomMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Mapper/RoomMapper.xml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/42bd095c-142f-4d74-b6c6-e33a18abba90/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/CommentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomcategoryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/OrdersService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/EmployeeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/ServerImpl/CustomerService.java" />
       </list>
     </option>
   </component>
@@ -297,10 +339,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="275" />
-    <option name="y" value="31" />
-    <option name="width" value="1358" />
-    <option name="height" value="983" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1359" />
+    <option name="height" value="998" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -320,6 +362,11 @@
             <path>
               <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="SQLScript" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -342,45 +389,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="basicSetting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="bookOnline" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="employeeManagement" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -431,64 +439,12 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="basicSetting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="bookOnline" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="General" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HotelManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="receptionManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -633,6 +589,8 @@
       <workItem from="1562425058050" duration="616000" />
       <workItem from="1562431693426" duration="3110000" />
       <workItem from="1562470857029" duration="43880000" />
+      <workItem from="1562519590891" duration="169000" />
+      <workItem from="1562546699707" duration="8861000" />
     </task>
     <task id="LOCAL-00001" summary="增加了用户验证模块，基本框架搭好">
       <created>1562493357197</created>
@@ -690,24 +648,31 @@
       <option name="project" value="LOCAL" />
       <updated>1562514240753</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="修正了前台管理员登录的一些页面和后端问题&#10;修正了mybatis的一些xml文件内容的错误">
+      <created>1562519734928</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562519734929</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57001000" />
+    <option name="totallyTimeSpent" value="66031000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="220" y="26" width="1085" height="785" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.82239383" visible="true" weight="0.3067186" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8584071" visible="true" weight="0.19168901" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" sideWeight="0.17760618" side_tool="true" visible="true" weight="0.3067186" />
-      <window_info anchor="bottom" id="SQL Generator" weight="0.3282123" />
+      <window_info id="Web" order="7" sideWeight="0.14159292" side_tool="true" visible="true" weight="0.19168901" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32914925" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.37796375" />
@@ -722,16 +687,17 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32914925" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49932975" weight="0.32960895" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.7734584" visible="true" weight="0.20673813" />
-      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32914925" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.7734584" visible="true" weight="0.5265363" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.26536313" />
       <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.49932975" weight="0.32960895" />
+      <window_info anchor="bottom" id="SQL Generator" order="17" weight="0.3282123" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.23726542" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.29016554" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.21380697" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
@@ -750,46 +716,10 @@
     <MESSAGE value="包含注册信息正则校验的用户创建及页面跳转完成啦！" />
     <MESSAGE value="修正了一些sql的xml文件错误~写代码要细心" />
     <MESSAGE value="fix some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix some bugs" />
+    <MESSAGE value="修正了前台管理员登录的一些页面和后端问题&#10;修正了mybatis的一些xml文件内容的错误" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正了前台管理员登录的一些页面和后端问题&#10;修正了mybatis的一些xml文件内容的错误" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/CustomerLogin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="917">
-          <caret line="72" column="25" lean-forward="true" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
-          <folding>
-            <element signature="e#2641#2647#0#HTML" expanded="true" />
-            <element signature="e#2647#2653#0#HTML" expanded="true" />
-            <element signature="e#2653#2659#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#td#0;n#tr#2;n#form#0;n#table#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/basicSetting/Index.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bookOnline/DrawerBar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/basicSetting/DrawerBar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bookOnline/Index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
@@ -825,16 +755,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Controller/bookOnline/UserRegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Controller/bookOnline/UserRegisterController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bookOnline/Register.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="607">
@@ -860,48 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/HotelService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/OrdersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomcategoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/CustomerMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -943,48 +822,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/AdministratorMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="32" column="80" selection-start-line="32" selection-start-column="80" selection-end-line="32" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/OrdersMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/QuestionMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/RoomcategoryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/RoomMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -994,30 +835,6 @@
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Controller/basicSetting/ManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/AdministratorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/OrdersMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -1035,37 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Controller/bookOnline/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="44" column="60" selection-start-line="44" selection-start-column="60" selection-end-line="44" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/RoomMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/RoomcategoryMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/receptionManagement/Index.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1076,71 +862,273 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://42bd095c-142f-4d74-b6c6-e33a18abba90/schema/hotelmanagementsystem/table/employee">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7b980c1c-fb4b-4e19-8a9e-096cb49463c3">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demo/Controller/employeeManagement/EmployeeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state relative-caret-position="300">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/EmployeeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="37" column="41" lean-forward="true" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/EmployeeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="28" />
+    <entry file="das://42bd095c-142f-4d74-b6c6-e33a18abba90/schema/hotelmanagementsystem/table/employee">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="e716be6a-5d1e-4249-b3f9-58b79be73931">
+          <filtering />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/CommentMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
+        <state>
           <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/AdministratorMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1100">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/EmployeeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/CustomerMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="86" column="8" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/ReceptionistLogin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="59" column="61" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="61" />
+        <state relative-caret-position="1474">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#2609#2615#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Controller/bookOnline/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1055">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://42bd095c-142f-4d74-b6c6-e33a18abba90/schema/hotelmanagementsystem/table/administrator">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="e716be6a-5d1e-4249-b3f9-58b79be73931">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQLScript/test.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/CustomerMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="153" column="64" selection-start-line="153" selection-start-column="64" selection-end-line="153" selection-end-column="64" />
+          <folding>
+            <element signature="e#6056#6060#0" expanded="true" />
+            <element signature="e#6080#6084#0" expanded="true" />
+            <element signature="e#6104#6108#0" expanded="true" />
+            <element signature="e#6128#6132#0" expanded="true" />
+            <element signature="e#6158#6162#0" expanded="true" />
+            <element signature="e#6191#6195#0" expanded="true" />
+            <element signature="e#6216#6220#0" expanded="true" />
+            <element signature="e#6252#6256#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/EmployeeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/RoomcategoryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/OrdersMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/RoomMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/OrdersMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/RoomcategoryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/RoomMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Controller/basicSetting/ManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/QuestionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/HotelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="40" column="71" lean-forward="true" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/AdministratorMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="73" column="28" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/42bd095c-142f-4d74-b6c6-e33a18abba90/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Mapper/EmployeeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/AdministratorMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/CommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#181#205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/AdministratorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Dao/CustomerMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/OrdersService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding>
+            <element signature="e#458#467#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/EmployeeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding>
+            <element signature="e#492#501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomcategoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#439#448#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/RoomService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#436#445#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/ServerImpl/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
+          <folding>
+            <element signature="e#239#263#0" expanded="true" />
+            <element signature="e#1876#1885#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

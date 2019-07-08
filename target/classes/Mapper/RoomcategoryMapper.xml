@@ -16,7 +16,7 @@
 
 <!--    查找-->
 
-    <select id="getallcategoryid" resultType="java.lang.String">
+    <select id="getallcategoryid" resultType="java.lang.Integer">
         select
         roomcategory_id
         from roomcategory

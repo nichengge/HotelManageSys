@@ -13,7 +13,8 @@
     admin_id,username,password,admin_name,admin_gender,admin_type
   </sql>
 
-
+<!--    增加-->
+<!--    插入新管理员-->
     <insert id="insert" parameterType="demo.Model.Administrator">
     insert into administrator (admin_id, username, password, 
       admin_name, admin_gender, admin_type
@@ -66,6 +67,10 @@
         </trim>
     </insert>
 
+
+<!--    查找-->
+
+<!--    管理员验证-->
     <select id="adminconfirm" parameterType="demo.Model.Administrator" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>

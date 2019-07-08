@@ -29,26 +29,29 @@ public class Helper {
         EmployeeService employeeService = new EmployeeService();
         RoomcategoryService roomcategoryService = new RoomcategoryService();
 
+        //对会话信息进行初始化
         try {
-            ArrayList<String> arrayListAllCustomerID = customerService.getAllCustomersID(); //获取所有用户id
+            ArrayList<Integer> arrayListAllCustomerID = customerService.getAllCustomersID(); //获取所有用户id
             session.setAttribute("AllCustomerID", arrayListAllCustomerID);
 
-            ArrayList<String> arrayListAllOrdersID = ordersService.getAllOrdersID();
+            ArrayList<Integer> arrayListAllOrdersID = ordersService.getAllOrdersID(); //获取所有订单信息
             session.setAttribute("AllOrdersID", arrayListAllOrdersID);
 
-            ArrayList<String> arrayListAllRoomID = roomService.getAllRoomID();
+            //获取所有room信息
+            ArrayList<Integer> arrayListAllRoomID = roomService.getAllRoomID();
             session.setAttribute("AllRoomID", arrayListAllRoomID);
 
-            ArrayList<String> arrayListAllRoomType = roomcategoryService.getAllCategory();
+            //获取所有房间类型信息
+            ArrayList<Integer> arrayListAllRoomType = roomcategoryService.getAllCategory();
             session.setAttribute("AllRoomType", arrayListAllRoomType);
 
-            ArrayList<String> allemployeeid = employeeService.getAllEmployeesId();
+            //获取所有雇员信息
+            ArrayList<Integer> allemployeeid = employeeService.getAllEmployeesId();
             session.setAttribute("AllReceptionistID", allemployeeid);
         }catch (Exception e){
             e.printStackTrace();
+            System.out.println("初始化错误...from Helper.java");
         }
-
-
 
     }
 

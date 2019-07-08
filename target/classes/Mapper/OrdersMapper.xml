@@ -23,7 +23,7 @@
 
 <!--    查找-->
 
-    <select id="getallordersid" resultType="java.lang.String">
+    <select id="getallordersid" resultType="java.lang.Integer">
         select
         orders_id
         from orders

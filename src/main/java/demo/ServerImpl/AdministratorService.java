@@ -18,10 +18,11 @@ public class AdministratorService extends BaseService{
 
     //管理员登录
     public int adminlogin(Administrator administrator){
-        System.out.println("正在管理员登录验证");
+        System.out.println("正在管理员登录验证..from AdminiService");
         Administrator administrator1 = null;
         try {
-            administratorMapper.adminconfirm(administrator);
+            System.out.println("username:"+administrator.getUsername()+"  password:"+administrator.getPassword());
+            administrator1 = administratorMapper.adminconfirm(administrator);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -30,6 +31,7 @@ public class AdministratorService extends BaseService{
             ans=1;
         }
         else {
+            System.out.println("验证失败");
             ans=0;
         }
         return ans;

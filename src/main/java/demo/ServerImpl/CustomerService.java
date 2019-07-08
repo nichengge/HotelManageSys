@@ -9,22 +9,21 @@ import java.util.ArrayList;
 @Service("CustomerService")
 @Transactional
 @SuppressWarnings("all")
-public class CustomerService extends BaseService{
-    int ans=0;
+public class CustomerService extends BaseService {
+    int ans = 0;
 
     //增
 
     //增加客户
-    public int addCustomer(Customer customer){
+    public int addCustomer(Customer customer) {
         try {
             ans = customerMapper.insert(customer);
-            if(ans==1){
+            if (ans == 1) {
                 System.out.println("用户新建成功");
-            }
-            else{
+            } else {
 
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("用户新建失败");
         }
@@ -36,35 +35,33 @@ public class CustomerService extends BaseService{
     //查
 
     //用户验证
-    public int customerconfirm(Customer customer){
+    public int customerconfirm(Customer customer) {
         Customer customer1 = null;
         try {
             customer1 = customerMapper.customerconfirm(customer);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("sql错误...from CustomerService");
         }
-        if(customer1!=null){
-            ans=1;
-        }
-        else{
-            ans=0;
+        if (customer1 != null) {
+            ans = 1;
+        } else {
+            ans = 0;
         }
         return ans;
     }
 
     //根据用户ID查找
-    public Customer queryByUserID(String customerid){
-        Customer customer=null;
+    public Customer queryByUserID(String customerid) {
+        Customer customer = null;
         try {
             customer = customerMapper.selectByid(customerid);
-            if(customer!=null){
+            if (customer != null) {
                 System.out.println("查询成功...from CustomerService");
-            }
-            else{
+            } else {
                 System.out.println("查询失败...from CustomerService");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("查找失败...from CustomerService");
         }
@@ -72,24 +69,24 @@ public class CustomerService extends BaseService{
     }
 
     //获取所有用户的idlist，string类型
-    public ArrayList<String> getAllCustomersID(){
-        ArrayList<String>allcustomerid=null;
+    public ArrayList<Integer> getAllCustomersID() {
+        ArrayList<Integer> allcustomerid = null;
         try {
-            allcustomerid = customerMapper.getAllCustomerid();
-            if(allcustomerid!=null){
+            System.out.println("customerMapper.getAllCustomersId().size():"+customerMapper.getAllCustomersId().size());
+            if (null != customerMapper.getAllCustomersId())
+                allcustomerid = customerMapper.getAllCustomersId();
+            if (allcustomerid == null) {
+                System.out.println("查询失败...from CustomerService");
+            } else {
                 System.out.println("查询成功...from CustomerService");
             }
-            else{
-                System.out.println("查询失败...from CustomerService");
-            }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("数据库错误...from CustomerService");
         }
         return allcustomerid;
 
     }
-
 
 
     //改

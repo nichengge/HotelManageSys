@@ -1,5 +1,5 @@
 package demo.ServerImpl;
-import demo.Model.Customer;
+
 import demo.Model.Employee;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,9 +10,8 @@ import java.util.ArrayList;
 @Service("EmployeeService")
 @Transactional
 @SuppressWarnings("all")
-public class EmployeeService extends BaseService{
-    int ans=0;
-
+public class EmployeeService extends BaseService {
+    int ans = 0;
 
 
     //增
@@ -21,12 +20,19 @@ public class EmployeeService extends BaseService{
 
     //查
 
-    public ArrayList<String> getAllEmployeesId() {
-        ArrayList<String>allemployeeid=null;
+    public ArrayList<Integer> getAllEmployeesId() {
+        ArrayList<Integer> allemployeeid = null;
         try {
-            allemployeeid = employeeMapper.getallemployeeid();
-        }catch (Exception e){
+            if (null != employeeMapper.getallemployeeid())
+                allemployeeid = employeeMapper.getallemployeeid();
+            if (allemployeeid == null) {
+                System.out.println("查询失败...from EmployeeService");
+            } else {
+                System.out.println("查询成功...from EmployeeService");
+            }
+        } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("数据库错误...from EmployeeService");
         }
         return allemployeeid;
     }
@@ -36,14 +42,13 @@ public class EmployeeService extends BaseService{
         Employee em = null;
         try {
             em = employeeMapper.employeeconfirm(employee);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        if(em!=null){
-            ans=1;
-        }
-        else{
-            ans=0;
+        if (em != null) {
+            ans = 1;
+        } else {
+            ans = 0;
         }
         return ans;
     }
