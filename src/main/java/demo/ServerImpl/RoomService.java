@@ -13,12 +13,16 @@ import java.util.ArrayList;
 public class RoomService extends BaseService {
     int ans = 0;
 
+    //基本负责功能的增删查改
+    //增****************************************************************
 
-    //增
+    public int addNewRoom() {
+        return 0;
+    }
 
-    //删
+    //删****************************************************************
 
-    //查
+    //查****************************************************************
 
     //获取所有房间id
     public ArrayList<String> getAllRoomID() {
@@ -39,7 +43,7 @@ public class RoomService extends BaseService {
     }
 
 
-    //改
+    //改****************************************************************
 
 
     //修改房间信息
@@ -54,10 +58,10 @@ public class RoomService extends BaseService {
     }
 
     //退房
-    public int roomCheckout(int roomId){
+    public int roomCheckout(int roomId) {
         try {
             ans = roomMapper.updateStatusByRoomID(roomId, "可用");
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return ans;

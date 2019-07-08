@@ -20,14 +20,13 @@
         from employee
     </select>
 
-<!--    按照主键查找员工-->
+    <!--    按照主键查找员工-->
     <select id="selectById" parameterType="demo.Model.Employee" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from employee
         where employee_id = #{employee_id,jdbcType=INTEGER}
     </select>
-
 
 
     <select id="employeeconfirm" parameterType="demo.Model.Employee" resultMap="BaseResultMap">
@@ -37,11 +36,10 @@
         where employee_username = #{employee_username,jdbcType=VARCHAR}
         and password = #{password,jdbcType=VARCHAR}
     </select>
-<!--    此处注意上面花括号的属性与实体类的属性名一致，mybatis自动取值-->
+    <!--    此处注意上面花括号的属性与实体类的属性名一致，mybatis自动取值-->
 
 
-
-<!--    插入-->
+    <!--    插入-->
     <insert id="insert" parameterType="demo.Model.Employee">
     insert into employee (employee_id, employee_username, password, 
       employee_name, employee_gender)

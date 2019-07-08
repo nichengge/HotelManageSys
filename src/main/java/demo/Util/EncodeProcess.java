@@ -3,6 +3,9 @@ package demo.Util;
 import org.apache.tomcat.util.codec.binary.Base64;
 
 import java.security.MessageDigest;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static java.lang.System.out;
 
@@ -28,5 +31,13 @@ public class EncodeProcess {
             e.printStackTrace();
             return "fail";
         }
+    }
+
+
+    //获取今天日期
+    static public String getToday() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 }

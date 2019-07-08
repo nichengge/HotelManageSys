@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @Mapper
 @Service
@@ -13,8 +14,8 @@ public interface RoomcategoryMapper {
     //增
     int insert(Roomcategory record);
 
+    //严格插入,自动去掉空格以及判断非空
     int insertSelective(Roomcategory record);
-
 
 
     //删
@@ -22,7 +23,13 @@ public interface RoomcategoryMapper {
     //改
 
     //查
+    //获取房间预留初始化
+    ArrayList<Roomcategory> getRoomPreservationInitialize();
+
+    HashMap<String,Double> getTypeAndPrice();
 
     ArrayList<String> getallcategoryid();
+
+    ArrayList<String> getAllCategory();
 
 }
