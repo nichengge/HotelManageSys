@@ -34,5 +34,6 @@ public interface RoomMapper {
 
     ArrayList<String> getallroomid();
 
-
+    //获取可用房间
+    ArrayList<Room> getAvailableRoomByOrdersId(int orderId);
 }

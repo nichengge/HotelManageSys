@@ -38,4 +38,20 @@ public class BaseService {
     @Autowired
     protected RoomcategoryMapper roomcategoryMapper;
 
+
+    //try-catch template
+    /*
+
+
+    try {
+            ans =
+        }catch (Exception e){
+            System.out.println("something went wrong...from Service");
+            e.printStackTrace();
+        }
+     return ans;
+
+
+     */
+
 }

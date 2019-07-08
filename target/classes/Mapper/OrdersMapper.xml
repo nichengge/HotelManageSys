@@ -21,7 +21,7 @@
   </sql>
 
 
-<!--    查找-->
+    <!--    查找-->
 
     <select id="getallordersid" resultType="java.lang.String">
         select
@@ -29,10 +29,17 @@
         from orders
     </select>
 
+<!--    查找收入-->
+    <select id="getBillByRoomId" parameterType="java.lang.Integer" resultType="demo.Model.TempModel.Bill">
+        select orders.customer_id,orders.customer_name,orders_id,room.room_id,room.room_number,
+                room.room_type,room.room_floor,orders.start_time,orders.end_time
+        from orders
+        left join room
+        on orders_status = '在住' and and room_id = #{0}
 
+    </select>
 
-
-<!--    增加-->
+    <!--    增加-->
     <insert id="insert" parameterType="demo.Model.Orders">
     insert into orders (orders_id, room_number, record_time, 
       start_time, end_time, customer_id, 
@@ -116,4 +123,26 @@
             </if>
         </trim>
     </insert>
+
+    <!--    sql语句需要添加判断更严格的判断条件，判断新时段内房间未被占用预定-->
+    <!--    新时间晚于当前时间并且早于存在的预定订单时间-->
+    <update id="updateDateEndByOrderID">
+        update orders
+        set end_time = #{1}
+        where orders_id = #{0}
+        and unix_timestamp(end_time) &lt; unix_timestamp(#{1})
+        and (not exists (select start_time from orders where room_number = (select room_number from orders
+                where orders_id = #{0}) and start_time &lt; #{1}
+                and start_time &gt; (select end_time from orders where orders_id = #{0}))
+        )
+    </update>
+
+    <!--    更新订单状态-->
+    <update id="updateStatusByOrderID">
+        update orders
+        set orders_status = #{1}
+        where orders_id = #{0}
+    </update>
+
+
 </mapper>

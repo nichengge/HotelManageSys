@@ -1176,7 +1176,7 @@
     </column>
     <column id="283" parent="238" name="orders_status">
       <Position>9</Position>
-      <Comment>订单状态</Comment>
+      <Comment>订单状态（在住、预定等）</Comment>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>

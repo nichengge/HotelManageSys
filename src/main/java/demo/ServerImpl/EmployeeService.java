@@ -1,6 +1,8 @@
 package demo.ServerImpl;
 
 import demo.Model.Employee;
+import demo.Model.Room;
+import demo.Model.TempModel.Bill;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 public class EmployeeService extends BaseService {
     int ans = 0;
 
+    //包含前台管理
 
     //增
 
@@ -58,13 +61,47 @@ public class EmployeeService extends BaseService {
         Employee employee = null;
         try {
             employee = employeeMapper.selectById(i);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return employee;
     }
 
+    //获取薪水信息
+    public Bill getBillByRoomId(int roomId) {
+        Bill bill = new Bill();
+        try {
+            bill = ordersMapper.getBillByRoomId(roomId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return bill;
+    }
+
+    //预定签入查询
+    public ArrayList<Room> preservationCheckinRoomQuery(int orderId) {
+        ArrayList<Room> arrayList = null;
+        try {
+            arrayList = roomMapper.getAvailableRoomByOrdersId(orderId);
+        } catch (Exception e) {
+            System.out.println("something went wrong...from Service");
+            e.printStackTrace();
+        }
+        return arrayList;
+    }
+
     //改
+
+    //房间入住
+    public int preservationCheckin(int orderId, int roomId) {
+        try {
+            ans = (ordersMapper.updateStatusByOrderID(orderId, "在住") == 1 && ordersMapper.updateRoomIDByOrderID(orderId, roomId) == 1) ? 1 : 0;
+        } catch (Exception e) {
+            System.out.println("something went wrong...from Service");
+            e.printStackTrace();
+        }
+        return ans;
+    }
 
 
 }

@@ -38,16 +38,48 @@ public class OrdersService extends BaseService {
         return allordersid;
     }
 
+
+    //计算收入
+    public int calculateBillByOrderID(int ordreId) {
+        try {
+            ans = ordersMapper.updateOrderAccountByID(ordreId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
     //改
 
     //更新订单信息
     public int updateOrderInformationByOrderID(int orderId) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        //String nowDate = dateFormat.format(date);
         try {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-            Date date = new Date();
-            //String nowDate = dateFormat.format(date);
             ans = (ordersMapper.updateDateEndByOrderID(orderId, date) == 1
                     && ordersMapper.updateStatusByOrderID(orderId, "退房") == 1) ? 1 : 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
+    //更新订单房间信息
+    public int updateRoomIDByOrderID(int orderId, int roomId) {
+        try {
+            ans = ordersMapper.updateRoomIDByOrderID(orderId, roomId);
+        } catch (Exception e) {
+            System.out.println("something went wrong...from Service");
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
+    //换房
+    public int changeRoomByOrderID(int orderId, int newRoomId) {
+        try {
+            ans = ordersMapper.singleUpdate("roomId", newRoomId, "orderId", orderId);
         } catch (Exception e) {
             e.printStackTrace();
         }

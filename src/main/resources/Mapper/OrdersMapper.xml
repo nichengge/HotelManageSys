@@ -29,6 +29,15 @@
         from orders
     </select>
 
+<!--    查找收入-->
+    <select id="getBillByRoomId" parameterType="java.lang.Integer" resultType="demo.Model.TempModel.Bill">
+        select orders.customer_id,orders.customer_name,orders_id,room.room_id,room.room_number,
+                room.room_type,room.room_floor,orders.start_time,orders.end_time
+        from orders
+        left join room
+        on orders_status = '在住' and and room_id = #{0}
+
+    </select>
 
     <!--    增加-->
     <insert id="insert" parameterType="demo.Model.Orders">

@@ -53,6 +53,16 @@ public class RoomService extends BaseService {
         return ans;
     }
 
+    //退房
+    public int roomCheckout(int roomId){
+        try {
+            ans = roomMapper.updateStatusByRoomID(roomId, "可用");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
     //修改房间号
     public int changeRoomNumber(int roomId, String newRoomNumber) {
         try {

@@ -24,6 +24,14 @@
         from room
     </select>
 
+<!--    根据订单号查询可用房间-->
+<!--    暂未实现-->
+    <select id="getAvailableRoomByOrdersId" parameterType="java.lang.Integer" resultType="demo.Model.Room">
+
+
+
+    </select>
+
 
     <!--    删除-->
 
