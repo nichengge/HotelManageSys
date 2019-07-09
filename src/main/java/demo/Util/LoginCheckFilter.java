@@ -27,17 +27,16 @@ public class LoginCheckFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) resp;
         HttpSession session = request.getSession();
         Customer loginedCustomer = (Customer) session.getAttribute("LoginedCustomer");
-        System.out.println("过滤请求...");
         String requestPath = request.getServletPath();
         if (loginedCustomer != null
                 || requestPath.endsWith("Login")
                 || requestPath.endsWith("Register") || m == 1) {
-            m=0;
+            m = 0;
             chain.doFilter(req, resp);
         } else {
             System.out.println("1");
-            m=1;
-            response.setHeader("Refresh", "1; URL=go?url=CustomerLogin");
+            m = 1;
+            response.setHeader("Refresh", "1; URL=go?url=index");
         }
     }
 

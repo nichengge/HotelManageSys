@@ -8,7 +8,7 @@
             <br>
             入住日期：<input type="date" value="datetime-local" id="dateBeginID" name="dateBegin" min="today" required/>
             <br>
-            离店日期：<input type="date" value="datetime-local" name="dateEnd" min="dateBegin" required/>
+            离店日期：<input type="date" value="datetime-local" id="dateEndID" name="dateEnd" min="today" required/>
             <br>
             <br>
             <button type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">查询</button>
@@ -19,6 +19,11 @@
 <script type="text/javascript">
     //限制入住日期从今天开始
     document.getElementById("dateBeginID").setAttribute("min", new Date().toISOString().substring(0, 10));
+</script>
+
+<script type="text/javascript">
+    //限制结束日期日期从今天开始
+    document.getElementById("dateEndID").setAttribute("min", new Date().toISOString().substring(0, 10));
 </script>
 
 

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 @Mapper
 @Service
@@ -44,7 +45,7 @@ public interface RoomMapper {
     //按照房间id查找
     Room roomQueryByID(int roomId);
 
-    HashMap<String, Integer> getAllRoomTypeWithNumber();
+    List<HashMap<String, Integer>> getAllRoomTypeWithNumber();
 
     //获取所有时间段内不可用房间
     ArrayList<Room> getRoomUnavailableBetween(Date startTime, Date endTime);

@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 @Service("RoomService")
@@ -44,8 +45,8 @@ public class RoomService extends BaseService {
     }
 
     //获取所有房间类型
-    public HashMap<String, Integer> getAllroomType() {
-        HashMap<String, Integer> hashMap = null;
+    public List<HashMap<String, Integer>> getAllroomType() {
+        List<HashMap<String, Integer>> hashMap = null;
         try {
             hashMap = roomMapper.getAllRoomTypeWithNumber();
         } catch (Exception e) {
