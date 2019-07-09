@@ -50,7 +50,7 @@ public interface OrdersMapper {
     ArrayList<String> getallordersid();
 
     //获取收入
-    Bill getBillByRoomId(int roomId);
+    Bill getBillByRoomId(String roomId);
 
     //单一变动,填入设置的属性名,设置的值,判断条件的属性名,判断条件的属性值
     int singleUpdate(String setAttribute, String setValue, String whereAttribute, String whereValue);

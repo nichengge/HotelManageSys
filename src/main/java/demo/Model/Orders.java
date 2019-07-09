@@ -25,6 +25,17 @@ public class Orders {
 
     private Double orders_cost;
 
+    public Orders(Integer orders_id, String room_number, String customer_id, String customer_name, Date start_time, Date end_time, String orders_type, String orders_status) {
+        this.orders_id = orders_id;
+        this.room_number = room_number;
+        this.start_time = start_time;
+        this.end_time = end_time;
+        this.customer_id = customer_id;
+        this.customer_name = customer_name;
+        this.orders_status = orders_status;
+        this.orders_type = orders_type;
+    }
+
     public Integer getOrders_id() {
         return orders_id;
     }

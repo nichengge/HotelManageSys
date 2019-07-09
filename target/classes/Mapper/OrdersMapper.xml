@@ -41,7 +41,7 @@
                 room.room_type,room.room_floor,orders.start_time,orders.end_time
         from orders
         left join room
-        on orders_status = '在住' and and room_id = #{0}
+        on orders_status = '在住' and and room_id = #{param1}
 
     </select>
 
@@ -54,13 +54,13 @@
 
     <!--    增加-->
     <insert id="insert" parameterType="demo.Model.Orders">
-    insert into orders (orders_id, room_number, record_time, 
-      start_time, end_time, customer_id, 
-      customer_idcard, customer_name, orders_status, 
+    insert into orders (orders_id, room_number, record_time,
+      start_time, end_time, customer_id,
+      customer_idcard, customer_name, orders_status,
       orders_type, orders_cost)
-    values (#{orders_id,jdbcType=INTEGER}, #{room_number,jdbcType=VARCHAR}, #{record_time,jdbcType=TIMESTAMP}, 
-      #{start_time,jdbcType=TIMESTAMP}, #{end_time,jdbcType=TIMESTAMP}, #{customer_id,jdbcType=VARCHAR}, 
-      #{customer_idcard,jdbcType=VARCHAR}, #{customer_name,jdbcType=VARCHAR}, #{orders_status,jdbcType=VARCHAR}, 
+    values (#{orders_id,jdbcType=INTEGER}, #{room_number,jdbcType=VARCHAR}, #{record_time,jdbcType=TIMESTAMP},
+      #{start_time,jdbcType=TIMESTAMP}, #{end_time,jdbcType=TIMESTAMP}, #{customer_id,jdbcType=VARCHAR},
+      #{customer_idcard,jdbcType=VARCHAR}, #{customer_name,jdbcType=VARCHAR}, #{orders_status,jdbcType=VARCHAR},
       #{orders_type,jdbcType=VARCHAR}, #{orders_cost,jdbcType=DOUBLE})
   </insert>
     <insert id="insertSelective" parameterType="demo.Model.Orders">

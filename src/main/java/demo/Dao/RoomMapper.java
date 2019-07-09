@@ -34,8 +34,7 @@ public interface RoomMapper {
     int updateRoomNumberByRoomID(int roomId, String roomNumber);
 
 
-    //更改房间号
-    int changeRoomNumber(int roomId, String roomNumber);
+
 
     int updateStatusByRoomID(int roomId, String status);
 

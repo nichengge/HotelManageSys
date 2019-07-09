@@ -17,14 +17,24 @@ public class IntermediateModelAndViewDispatcher {
         return mv;
     }
 
-    static public ModelAndView trunPage(HttpServletRequest request, HttpServletResponse response, String nextURL, String message){
+    //页面跳转
+    static public ModelAndView trunPage(HttpServletRequest request, HttpServletResponse response, String nextURL, String message) {
         ModelAndView mv = new ModelAndView();
         request.setAttribute("nextURL", nextURL);
         request.setAttribute("intermediateTimer", 1);
         request.setAttribute("message", message);
-        mv.addObject("request",request);
-        mv.addObject("response",response);
+        mv.addObject("request", request);
+        mv.addObject("response", response);
         mv.setViewName("General/intermediatePage");
         return mv;
+    }
+
+    //参数跳转
+    public ModelAndView goPage2(ModelAndView mv, HttpServletRequest request, HttpServletResponse response, String nextURL) {
+        mv.addObject("request", request);
+        mv.addObject("response", response);
+        mv.setViewName(nextURL);
+        return mv;
+
     }
 }

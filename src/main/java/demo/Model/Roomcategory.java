@@ -25,6 +25,13 @@ public class Roomcategory {
         this.inuse_roomnumber = inuse_roomnumber;
     }
 
+    public Roomcategory(String nameOfCategory, Double priceOfCategory, Integer totalNumberOfCategory, Double scoreOfCategory) {
+        this.roomcategory_name = nameOfCategory;
+        this.roomcategory_price = priceOfCategory;
+        this.total_number = totalNumberOfCategory;
+        this.roomcategory_score = scoreOfCategory;
+    }
+
     public Integer getRoomcategory_id() {
         return roomcategory_id;
     }

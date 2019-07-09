@@ -1,5 +1,7 @@
 package demo.ServerImpl;
 
+import demo.Model.Orders;
+import demo.Model.TempModel.Bill;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -48,6 +50,35 @@ public class OrdersService extends BaseService {
             e.printStackTrace();
         }
         return ans;
+    }
+
+    //获取订单
+    public Bill getBillByRoomID(String roomId){
+        Bill bill = null;
+        try {
+            bill = ordersMapper.getBillByRoomId(roomId);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        /*
+        ResultSet r = stm.executeQuery();
+        Bill bill = new Bill();
+        while (r.next()) {
+            bill.setCustomerID(r.getString("customerID"));
+            bill.setCustomerName(r.getString("customerName"));
+            bill.setOrderID(r.getString("OrderID"));
+            bill.setID(r.getString("ID"));
+            bill.setType(r.getString("type"));
+            bill.setFloor(r.getString("floor"));
+            bill.setDateBegin(r.getString("dateBegin"));
+            bill.setDateEnd(r.getString("dateEnd"));
+            bill.setRoomNumber(r.getString("number"));
+        }
+         */
+
+
+        return bill;
     }
 
     //改
@@ -115,4 +146,13 @@ public class OrdersService extends BaseService {
     }
 
 
+    //直接根据订单对象更新信息
+    public int updateOrderById(Orders orders) {
+        try {
+            ans  = ordersMapper.updateOrderByID(orders);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ans;
+    }
 }

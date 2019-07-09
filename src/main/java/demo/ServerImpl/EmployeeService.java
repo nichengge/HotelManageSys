@@ -91,8 +91,8 @@ public class EmployeeService extends BaseService {
         return employee;
     }
 
-    //获取薪水信息
-    public Bill getBillByRoomId(int roomId) {
+    //获取账单信息
+    public Bill getBillByRoomId(String roomId) {
         Bill bill = new Bill();
         try {
             bill = ordersMapper.getBillByRoomId(roomId);
@@ -138,6 +138,17 @@ public class EmployeeService extends BaseService {
         }
         return ans;
     }
+
+    //退房
+    public int roomCheckOut(int roomId) {
+        try {
+            ans = employeeMapper.roomCheckOut(roomId);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
 
 
 }

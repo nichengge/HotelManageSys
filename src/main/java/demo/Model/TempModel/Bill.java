@@ -3,7 +3,7 @@ package demo.Model.TempModel;
 public class Bill {
     private int customerID = 0;
     private String customerName = null;
-    private String OrderID = null;
+    private int OrderID = 0;
     private int ID = 0;
     private String type = null;
     private String floor;
@@ -22,11 +22,11 @@ public class Bill {
         this.customerName = customerName;
     }
 
-    public String getOrderID() {
+    public int getOrderID() {
         return OrderID;
     }
 
-    public void setOrderID(String orderID) {
+    public void setOrderID(int orderID) {
         OrderID = orderID;
     }
 

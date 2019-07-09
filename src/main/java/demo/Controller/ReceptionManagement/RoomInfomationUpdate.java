@@ -2,8 +2,10 @@ package demo.Controller.ReceptionManagement;
 
 import demo.Controller.BaseController;
 import demo.Model.Room;
+import demo.Model.TempModel.Bill;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,6 +39,31 @@ public class RoomInfomationUpdate extends BaseController {
             message = "房间信息更新失败! 请重试! 3秒后返回客房信息设置页.";
         }
         nextURL = "basicSetting/RoomInformationSettingID";
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
+
+
+    //退房    Checkout.do
+    @RequestMapping("EmployeeDoCheckout")
+    public ModelAndView CheckOut(HttpServletRequest request, HttpServletResponse response,
+                                 @RequestParam("checkoutRoomID") Integer roomId) {
+        HttpSession session = request.getSession();
+        System.out.println(roomId);
+        Bill bill = employeeService.getBillByRoomId(String.valueOf(roomId));
+        if (bill != null) {
+            //可能存在问题
+            int orderId = bill.getOrderID();
+            ans = (employeeService.roomCheckOut(roomId) == 1) && (ordersService.updateOrderInformationByOrderID(orderId) == 1
+                    && (ordersService.calculateBillByOrderID(orderId) == 1)) ? 1 : 0;
+            session.setAttribute("checkoutBill", bill);
+        }
+        if (ans == 1) {
+            message = "退房成功！ 3秒后显示账单。";
+            nextURL = "receptionManagement/CheckoutShowBill";
+        } else {
+            message = "退房失败！ 请重试！ 3秒后回到退房界面。";
+            nextURL = "receptionManagement/Checkout";
+        }
         return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 

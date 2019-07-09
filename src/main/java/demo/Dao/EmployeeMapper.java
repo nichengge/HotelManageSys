@@ -23,6 +23,8 @@ public interface EmployeeMapper {
 
     int updateEmployee(Employee employee);
 
+    int roomCheckOut(int roomId);
+
     //查
 
     Employee employeeconfirm(Employee employee);
@@ -30,6 +32,7 @@ public interface EmployeeMapper {
     ArrayList<String> getallemployeeid();
 
     Employee selectById(int i);
+
 
 
 }

@@ -26,6 +26,16 @@ public class RoomService extends BaseService {
 
     //查****************************************************************
 
+    public Room roomQueryByID(int id){
+        Room room = null;
+        try {
+            room = roomMapper.roomQueryByID(id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return room;
+    }
+
     //获取所有房间id
     public ArrayList<String> getAllRoomID() {
         ArrayList<String> allroomid = null;
@@ -59,6 +69,17 @@ public class RoomService extends BaseService {
         return hashMap;
     }
 
+    //通过房间类型获取所有房间
+    public ArrayList<Room> getAllRoomByType(String type){
+        ArrayList<Room> arrayList = null;
+        try {
+            arrayList = roomMapper.getAllRoomByType(type);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return arrayList;
+    }
+
     //改****************************************************************
 
 
@@ -73,6 +94,7 @@ public class RoomService extends BaseService {
         return ans;
     }
 
+
     //退房
     public int roomCheckout(int roomId) {
         try {
@@ -83,10 +105,12 @@ public class RoomService extends BaseService {
         return ans;
     }
 
+
+
     //修改房间号
     public int changeRoomNumber(int roomId, String newRoomNumber) {
         try {
-            ans = roomMapper.changeRoomNumber(roomId, newRoomNumber);
+            ans = roomMapper.updateRoomNumberByRoomID(roomId, newRoomNumber);
         } catch (Exception e) {
             e.printStackTrace();
         }
