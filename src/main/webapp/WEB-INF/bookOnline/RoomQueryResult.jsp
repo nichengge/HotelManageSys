@@ -10,7 +10,7 @@
             空房查询结果
         </h1>
 
-        <form action="/bookOnline/RoomQueryResultChosen.do" method="post">
+        <form action="RoomQueryResultChosen" method="post">
             <div class="mdui-table-fluid">
                 <table class="mdui-table mdui-table-hoverable">
                     <thead>

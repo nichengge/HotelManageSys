@@ -46,7 +46,6 @@ public class RoomService extends BaseService {
     //获取所有房间类型
     public HashMap<String, Integer> getAllroomType() {
         HashMap<String, Integer> hashMap = null;
-        ;
         try {
             hashMap = roomMapper.getAllRoomTypeWithNumber();
         } catch (Exception e) {

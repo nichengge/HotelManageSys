@@ -6,9 +6,9 @@
         <form action="customerRoomQuery" method="post">
             <h1>请输入起始时间</h1>
             <br>
-            入住日期：<input type="date" value="datetime-local" id="dateBeginID" name="dateBegin" min="today"/>
+            入住日期：<input type="date" value="datetime-local" id="dateBeginID" name="dateBegin" min="today" required/>
             <br>
-            离店日期：<input type="date" value="datetime-local" name="dateEnd"/>
+            离店日期：<input type="date" value="datetime-local" name="dateEnd" min="dateBegin" required/>
             <br>
             <br>
             <button type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">查询</button>

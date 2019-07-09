@@ -16,4 +16,15 @@ public class IntermediateModelAndViewDispatcher {
         mv.setViewName("General/intermediatePage");
         return mv;
     }
+
+    static public ModelAndView trunPage(HttpServletRequest request, HttpServletResponse response, String nextURL, String message){
+        ModelAndView mv = new ModelAndView();
+        request.setAttribute("nextURL", nextURL);
+        request.setAttribute("intermediateTimer", 1);
+        request.setAttribute("message", message);
+        mv.addObject("request",request);
+        mv.addObject("response",response);
+        mv.setViewName("General/intermediatePage");
+        return mv;
+    }
 }

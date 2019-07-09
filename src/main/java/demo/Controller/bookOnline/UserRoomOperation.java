@@ -40,30 +40,44 @@ public class UserRoomOperation extends BaseController {
 
         }
 
-        ////从房间表获得原有的各类型的房间数量
+        //从房间表获得原有的各类型的房间数量
         HashMap<String, Integer> originalNumberOfType = roomService.getAllroomType();
 
         //因为顾客与在住房间一一对应,故通过客户表获得在住的不可用的各类型的房间数量
         HashMap<String, Integer> unavailableNumberofType = customerService.getUnavailableRoom(startTime, endTime);
+        System.out.println("房间结果集大小："+unavailableNumberofType.size());
         System.out.println("Unuseable：");
         for (Map.Entry<String, Integer> entry : unavailableNumberofType.entrySet()) {
             String type = entry.getKey();
-            Integer num = entry.getValue();
+            System.out.println(type);
+            Number number = entry.getValue();
+            Integer num = number.intValue();
             System.out.println("type:" + type + "  num:" + num);
         }
 
         //用各类型的总房间数减去该时间段各类型不可用的房间数,即可求出该时间段各类型可用的房间数
         for (Map.Entry<String, Integer> entry : unavailableNumberofType.entrySet()) {
             String type = entry.getKey();
-            Integer num = entry.getValue();
+            Number number = entry.getValue();
+            Integer num = number.intValue();
             if (originalNumberOfType.containsKey(type)) {
-                originalNumberOfType.put(type, originalNumberOfType.get(type) - num);
+                number = originalNumberOfType.get(type);
+                Integer num2 = number.intValue();
+                originalNumberOfType.put(type, num2 - num);
             }
         }
         session.setAttribute("AvailableQueryResult", originalNumberOfType);
         mv.addObject("request", request);
         mv.addObject("response", response);
         mv.setViewName("bookOnline/RoomQueryResult");
+        return mv;
+    }
+
+    //预定
+    @RequestMapping("RoomQueryResultChosen")
+    public ModelAndView fun2(HttpServletRequest request, HttpServletResponse response,
+                             @RequestParam("booked")String choosedRoomType){
+
         return mv;
     }
 

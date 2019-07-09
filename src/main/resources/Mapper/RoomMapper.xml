@@ -28,8 +28,8 @@
         select count(room_type), room_type from room group by room_type;
     </select>
 
-    <select id="getAllRoomTypeWithNumber" resultType="java.util.HashMap">
-        select room_type,count(room_number)
+    <select id="getAllRoomTypeWithNumber" resultType="hashmap">
+        select room_type,count(room_number)as number
         from room group by room_type order by room_type;
     </select>
 
