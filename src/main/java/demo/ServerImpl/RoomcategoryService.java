@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 @Service("RoomcategoryService")
@@ -54,6 +55,17 @@ public class RoomcategoryService extends BaseService {
             e.printStackTrace();
         }
         return arrayList;
+    }
+
+    //获取房间种类和价格
+    public HashMap<String, Double> getTypeAndPrice() {
+        HashMap<String ,Double> hashMap = null;
+        try {
+            hashMap = roomcategoryMapper.getTypeAndPrice();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return hashMap;
     }
 
     //改

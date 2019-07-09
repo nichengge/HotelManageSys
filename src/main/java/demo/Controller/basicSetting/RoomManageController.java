@@ -101,7 +101,7 @@ public class RoomManageController extends BaseController {
         //获取全部房间类型属性
         ArrayList<String> allRoomType = roomcategoryService.getAllCategory();
         request.setAttribute("allRoomType", allRoomType);
-        return dispatcher.goPage2(mv,request,response,"basicSetting/RoomInformationSetting");
+        return dispatcher.goPage2(mv, request, response, "basicSetting/RoomInformationSetting");
     }
 
 

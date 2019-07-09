@@ -1,9 +1,11 @@
 package demo.ServerImpl;
 
 import demo.Model.Customer;
+import demo.Model.TempModel.CustomerReport;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -63,13 +65,13 @@ public class CustomerService extends BaseService {
     }
 
     //根据用户名查找用户
-    public Customer getCustomerByUsernamePassword(String username,String password) {
+    public Customer getCustomerByUsernamePassword(String username, String password) {
         Customer customer = null;
         try {
-            customer = customerMapper.queryByUsernamePassword(username,password);
-            if(customer!=null)
+            customer = customerMapper.queryByUsernamePassword(username, password);
+            if (customer != null)
                 System.out.println("用户获取成功");
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return customer;
@@ -112,14 +114,45 @@ public class CustomerService extends BaseService {
 
     }
 
-    public HashMap<String, Integer> getUnavailableRoom(Date startTime, Date endTime) {
-        HashMap<String ,Integer> hashMap = null;
+    //获取用户报告
+    public ArrayList<CustomerReport> getCustomerReport() {
+        ArrayList<CustomerReport> arrayList = new ArrayList<>();
         try {
-            hashMap = customerMapper.getUnavailableRoomTypeWithNumber(startTime,endTime);
-        }catch (Exception e){
+            ResultSet r = customerMapper.queryCustomersLiving();
+
+            while (r.next()) {
+                String userID = r.getString("customer_id");
+                String IDNumber = r.getString("id_card");
+                String customerName = r.getString("realname");
+                String roomID = r.getString("roomn_umber");
+                String dateBegin = r.getString("start_time");
+                String dateEnd = r.getString("end_time");
+
+                CustomerReport customerReport =
+                        new CustomerReport.
+                                Builder(Integer.valueOf(userID)).
+                                IDNumber(IDNumber).
+                                customerName(customerName).
+                                roomID(Integer.valueOf(roomID)).
+                                startTime(dateBegin).
+                                endTime(dateEnd).
+                                build();
+                arrayList.add(customerReport);
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        if(hashMap!=null)
+        return arrayList;
+    }
+
+    public HashMap<String, Integer> getUnavailableRoom(Date startTime, Date endTime) {
+        HashMap<String, Integer> hashMap = null;
+        try {
+            hashMap = customerMapper.getUnavailableRoomTypeWithNumber(startTime, endTime);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (hashMap != null)
             System.out.println("查询成功...from CustomerService");
         return hashMap;
     }
@@ -137,7 +170,6 @@ public class CustomerService extends BaseService {
         }
         return ans;
     }
-
 
 
 }

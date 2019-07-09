@@ -1,6 +1,8 @@
 package demo.Controller.bookOnline;
 
 import demo.Controller.BaseController;
+import demo.Model.Customer;
+import demo.Model.Orders;
 import demo.Util.DateTransform;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -90,6 +92,28 @@ public class UserRoomOperation extends BaseController {
                              @RequestParam("booked") String choosedRoomType) {
 
         return mv;
+    }
+
+
+    //提交订单
+    //bookOnline/SubmitOrder.do
+    @RequestMapping("bookOnline/SubmitOrder")
+    public ModelAndView adminSubmitOrder(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
+        ans = 0;
+        Customer customer = (Customer) session.getAttribute("LoginedCustomer");
+        Orders orders = new Orders(customer.getUsername(), customer.getReal_name(),
+                DateTransform.String2Date((String) session.getAttribute("dateBegin")),
+                DateTransform.String2Date((String) session.getAttribute("dateEnd")),
+                "预定", (String) session.getAttribute("type"));
+        ans = ordersService.addOrder(orders);
+        if (ans == 1) {
+            message = "预定成功！ 3秒后返回查询界面。";
+        } else {
+            message = "预定失败！ 请重试！ 3秒后返回查询界面。";
+        }
+        nextURL = "bookOnline/RoomQuery";
+        return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
 

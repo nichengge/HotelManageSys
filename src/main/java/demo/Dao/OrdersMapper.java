@@ -45,7 +45,7 @@ public interface OrdersMapper {
 
     Orders selectByOrderId(int orderId);
 
-    ArrayList<Orders> selectByCustomerID(int customerId);
+    ArrayList<Orders> selectByCustomerID(String customerName);
 
     ArrayList<String> getallordersid();
 

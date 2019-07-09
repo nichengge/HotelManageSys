@@ -3,6 +3,7 @@ package demo.Controller.ReceptionManagement;
 import demo.Controller.BaseController;
 import demo.Model.Employee;
 import demo.ServerImpl.Helper;
+import demo.Util.DateTransform;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,8 +16,11 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class EmployeeController extends BaseController {
 
+    //员工登录验证
     @RequestMapping("employeelogin")
-    public ModelAndView employeelogin(HttpServletRequest request, HttpServletResponse response, @RequestParam("receptionistName") String usernmae, @RequestParam("receptionistPassword") String password) {
+    public ModelAndView employeelogin(HttpServletRequest request, HttpServletResponse response,
+                                      @RequestParam("receptionistName") String usernmae,
+                                      @RequestParam("receptionistPassword") String password) {
         System.out.println("雇员正在登录");
         HttpSession session = request.getSession();
         Employee employee = new Employee(usernmae, password);
@@ -37,6 +41,55 @@ public class EmployeeController extends BaseController {
         return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
+    //房间维修成功
+    //ReceptionManagement/RoomRepairDone.do
+    @RequestMapping("ReceptionManagement/RoomRepairDone")
+    public ModelAndView employeeRoomRepairDone(HttpServletRequest request, HttpServletResponse response,
+                                               @RequestParam("roomRepairDoneOfRoomID") String roomId) {
+        ans = roomService.fixDoneByRoomID(Integer.valueOf(roomId));
+        if (ans == 1) {
+            message = "房间状态设置成功！ 所选房间已可用！ 3秒后返回维修管理界面！";
+        } else {
+            message = "房间状态设置失败！ 请重试！3秒后返回维修管理界面！";
+        }
+        nextURL = "receptionManagement/RepairManagement";
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
+
+    //房间设置维修状态
+    //ReceptionManagement/RoomRepair.do
+    @RequestMapping("ReceptionManagement/RoomRepair")
+    public ModelAndView employeeRoomRepair(HttpServletRequest request, HttpServletResponse response,
+                                           @RequestParam("roomRepairOfRoomID") String roomId) {
+        ans = roomService.fixingRoomByRoomID(Integer.valueOf(roomId));
+        if (ans == 1) {
+            message = "维修设置成功！3秒后返回维修管理界面！";
+        } else {
+            message = "维修设置失败！ 请重试！3秒后返回维修管理界面！";
+        }
+        nextURL = "receptionManagement/RepairManagement";
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
+
+    //房间续住
+    //ReceptionManagement/RoomExtend
+    @RequestMapping("ReceptionManagement/RoomExtend")
+    public ModelAndView employeeRoomExtend(HttpServletRequest request, HttpServletResponse response,
+                                           @RequestParam("orderIDExtend") String orderIDExtend,
+                                           @RequestParam("DateEndExtend") String DateEndExtend) {
+        if (DateEndExtend != null) {
+            ans = ordersService.extendCheckoutTimeByOrderID(Integer.valueOf(orderIDExtend), DateTransform.String2Date(DateEndExtend));
+            if (ans == 1) {
+                message = "续住成功! 3秒后跳转至续住管理界面";
+            } else {
+                message = "续住失败! 请重试! 3秒后跳转至续住管理界面";
+            }
+        } else {
+            message = "请选择";
+        }
+        nextURL = "receptionManagement/RoomExtend";
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
 
 
 }

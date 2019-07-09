@@ -21,6 +21,16 @@ public class OrdersService extends BaseService {
 
     //增
 
+    //增加预定订单
+    public int addOrder(Orders orders) {
+        try {
+            ans = ordersMapper.insert(orders);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
     //删
 
     //查
@@ -52,12 +62,24 @@ public class OrdersService extends BaseService {
         return ans;
     }
 
+    //获取Orders对象
+    public Orders queryByOrderId(int id) {
+        Orders orders = null;
+        try {
+            orders = ordersMapper.selectByOrderId(id);
+        } catch (Exception e) {
+            System.out.println("something went wrong...from Service");
+            e.printStackTrace();
+        }
+        return orders;
+    }
+
     //获取订单
-    public Bill getBillByRoomID(String roomId){
+    public Bill getBillByRoomID(String roomId) {
         Bill bill = null;
         try {
             bill = ordersMapper.getBillByRoomId(roomId);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -149,10 +171,23 @@ public class OrdersService extends BaseService {
     //直接根据订单对象更新信息
     public int updateOrderById(Orders orders) {
         try {
-            ans  = ordersMapper.updateOrderByID(orders);
-        }catch (Exception e){
+            ans = ordersMapper.updateOrderByID(orders);
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return ans;
     }
+
+
+    public ArrayList<Orders> queryByCustomerName(String name) {
+        ArrayList<Orders> arrayList = null;
+        try {
+            arrayList = ordersMapper.selectByCustomerID(name);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return arrayList;
+    }
+
+
 }

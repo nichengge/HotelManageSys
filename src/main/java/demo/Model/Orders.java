@@ -36,6 +36,19 @@ public class Orders {
         this.orders_type = orders_type;
     }
 
+    public Orders() {
+
+    }
+
+    public Orders(String username, String real_name, Date dateBegin, Date dateEnd, String status, String type) {
+        this.customer_id = username;
+        this.customer_name = real_name;
+        this.start_time = dateBegin;
+        this.end_time = dateEnd;
+        this.orders_status = status;
+        this.orders_type = type;
+    }
+
     public Integer getOrders_id() {
         return orders_id;
     }

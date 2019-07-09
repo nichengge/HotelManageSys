@@ -23,12 +23,12 @@
 
     <!--    查找-->
 
-    <select id="selectByCustomerID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-        select * from orders where customer_id = #{0}
+    <select id="selectByCustomerID" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from orders where customer_id = #{param1}
     </select>
 
     <select id="selectByOrderId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-        select * from orders where orders_id = #{0};
+        select * from orders where orders_id = #{param1};
     </select>
 
     <select id="getallordersid" resultType="java.lang.String">
@@ -48,7 +48,7 @@
     <!--    可能存在问题,返回类型-->
     <select id="getOrderPrice">
         select * from orders,roomcategory where orders.orders_type = roomcategory.roomcategory_name
-        and orders_id = #{0};
+        and orders_id = #{param1};
     </select>
 
 
@@ -142,36 +142,36 @@
     <!--    sql语句需要添加判断更严格的判断条件，判断新时段内房间未被占用预定-->
     <!--    新时间晚于当前时间并且早于存在的预定订单时间 可以简化-->
     <update id="updateDateEndByOrderID">
-        update orders set end_time = #{1} where orders_id = #{0}
-        and unix_timestamp(end_time) &lt; unix_timestamp(#{1})
+        update orders set end_time = #{param2} where orders_id = #{param1}
+        and unix_timestamp(end_time) &lt; unix_timestamp(#{param2})
         and (not exists (select start_time from orders where room_number = (select room_number from orders
-                where orders_id = #{0}) and start_time &lt; #{1}
-                and start_time &gt; (select end_time from orders where orders_id = #{0}))
+                where orders_id = #{param1}) and start_time &lt; #{param2}
+                and start_time &gt; (select end_time from orders where orders_id = #{param1}))
         )
     </update>
 
     <update id="updateOrderAccount">
-        update orders set orders_cost = #{1} where orders_id = #{0}
+        update orders set orders_cost = #{param2} where orders_id = #{param1}
     </update>
     <update id="updateRoomNameByOrderID">
-        update orders set room_number = #{1} where orders_id = #{0}
+        update orders set room_number = #{param2} where orders_id = #{param1}
     </update>
     <update id="updateCustomerNameByOrderID">
-        update orders set customer_name = #{1} where orders_id = #{0};
+        update orders set customer_name = #{param2} where orders_id = #{param1};
     </update>
 
     <update id="updateDateBeginByOrderID">
-        update orders set start_time = #{1} where orders_id #{0};
+        update orders set start_time = #{param2} where orders_id #{param1};
     </update>
 
     <!--    更新订单状态-->
     <update id="updateStatusByOrderID">
-        update orders set orders_status = #{1}
-        where orders_id = #{0};
+        update orders set orders_status = #{param2}
+        where orders_id = #{param1};
     </update>
 
     <update id="singleUpdate">
-        update orders set #{0} = #{1} where #{2} = #{3};
+        update orders set #{param1} = #{param2} where #{param3} = #{param4};
     </update>
 
     <update id="updateOrderByID" parameterType="demo.Model.Orders">
@@ -206,6 +206,6 @@
     <!--    删除-->
 
     <delete id="deleteOrderById" parameterType="java.lang.Integer">
-        delete from orders where orders_id = #{0}
+        delete from orders where orders_id = #{param1}
     </delete>
 </mapper>
