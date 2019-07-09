@@ -18,8 +18,32 @@ public class EmployeeService extends BaseService {
     //包含前台管理
 
     //增
+    public int addEmployee(Employee employee) {
+        try {
+            ans = employeeMapper.insert(employee);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("数据库错误...from EmployeeService");
+        }
+        if (ans == 1) {
+            System.out.println("员工帐号添加成功...from EmployeeService");
+        }
+        return ans;
+    }
 
     //删
+
+    public int delEmployeeById(int employeeId) {
+        try {
+            ans = employeeMapper.deleteEmployeeeById(employeeId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (ans == 1) {
+            System.out.println("员工账号删除成功...from EmployeeService");
+        }
+        return ans;
+    }
 
     //查
 
@@ -99,6 +123,18 @@ public class EmployeeService extends BaseService {
         } catch (Exception e) {
             System.out.println("something went wrong...from Service");
             e.printStackTrace();
+        }
+        return ans;
+    }
+
+    public int updateEmployee(Employee employee) {
+        try {
+            ans = employeeMapper.updateEmployee(employee);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (ans == 1) {
+            System.out.println("员工信息更新成功");
         }
         return ans;
     }

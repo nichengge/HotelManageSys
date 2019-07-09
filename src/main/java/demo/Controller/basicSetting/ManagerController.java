@@ -77,8 +77,8 @@ public class ManagerController extends BaseController {
     //账户修改1
     @RequestMapping("CustomerAccountModifyID")
     public ModelAndView adminUpdateCustomer(HttpServletRequest request, HttpServletResponse response,
-                                            @RequestParam("userIDModify") String customer_id) {
-        Customer customer = customerService.queryByUserID(Integer.valueOf(customer_id));
+                                            @RequestParam("userIDModify") int customer_id) {
+        Customer customer = customerService.queryByUserID(customer_id);
         if (customer != null) {
             ans = 1;
             request.setAttribute("oriCustomer", customer);
@@ -89,7 +89,7 @@ public class ManagerController extends BaseController {
             mv.setViewName("basicSetting/CustomerAccountModify");
             return mv;
         } else {
-            nextURL = "/basicSetting/CustomerAccountModifyID";
+            nextURL = "basicSetting/CustomerAccountModifyID";
             message = "无改ID的客户的相关信息，请重新查询！";
             mv.setViewName("General/intermediatePage");
             return dispatcher.goPage(request, response, mv, nextURL, message);

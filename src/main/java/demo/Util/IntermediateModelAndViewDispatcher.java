@@ -9,12 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 public class IntermediateModelAndViewDispatcher {
     public ModelAndView goPage(HttpServletRequest request, HttpServletResponse response, ModelAndView mv, String nextURL, String message) {
         request.setAttribute("nextURL", nextURL);
-        request.setAttribute("intermediateTimer", 3);
+        request.setAttribute("intermediateTimer", 1);
         request.setAttribute("message", message);
         mv.addObject("request", request);
         mv.addObject("response", response);
         mv.setViewName("General/intermediatePage");
         return mv;
     }
-
 }

@@ -12,10 +12,27 @@ public class Employee {
 
     private String employee_gender;
 
-    public Employee(String usernmae, String password) {
-        this.employee_username=usernmae;
-        this.password=password;
+    public Employee(String username, String password) {
+        this.employee_username = username;
+        this.password = password;
     }
+
+    public Employee(String username, String password, String name, String gender) {
+        this.employee_username = username;
+        this.password = password;
+        this.employee_name = name;
+        this.employee_gender = gender;
+    }
+
+    public Employee(Integer employeeId, String username, String password, String name, String gender) {
+        this.employee_id = employeeId;
+        this.employee_username = username;
+        this.employee_name = name;
+        this.password = password;
+        this.employee_gender = gender;
+
+    }
+
 
     public Integer getEmployee_id() {
         return employee_id;

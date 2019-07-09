@@ -11,7 +11,7 @@
             接待员账号修改
         </h1>
         请选择要修改的接待员账号ID:
-        <form action="" method="post">
+        <form action="adminAccountUpdateID" method="post">
             接待员账号ID:
             <select class="mdui-select" id="roomTypeSelect" name="modifyReceptionistID">
                 <c:forEach var="receptionistID" items="${sessionScope.AllReceptionistID}"
