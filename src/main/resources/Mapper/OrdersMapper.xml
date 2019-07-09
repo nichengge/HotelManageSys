@@ -177,8 +177,8 @@
     <update id="updateOrderByID" parameterType="demo.Model.Orders">
         update room
         <set>
-            <if test="room_id != null">
-                room_id = #{room_id,jdbcType=VARCHAR},
+            <if test="room_number != null">
+                room_number = #{room_number,jdbcType=INTEGER},
             </if>
             <if test="customer_id != null">
                 customer_id = #{customer_id,jdbcType=VARCHAR},
@@ -187,10 +187,10 @@
                 customer_name = #{customer_name,jdbcType=VARCHAR},
             </if>
             <if test="start_time != null">
-                start_time = #{start_time,jdbcType=INTEGER},
+                start_time = #{start_time,jdbcType=DATE},
             </if>
             <if test="end_time != null">
-                end_time = #{end_time,jdbcType=VARCHAR},
+                end_time = #{end_time,jdbcType=DATE},
             </if>
             <if test="orders_status != null">
                 orders_status = #{orders_status,jdbcType=VARCHAR},

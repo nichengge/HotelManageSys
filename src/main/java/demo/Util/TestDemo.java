@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class TestDemo extends BaseController {
 
     //用于简单功能测试,随便改
-    @RequestMapping("testdemo")
+    @RequestMapping("testDemo")
     public void scrip1(HttpServletRequest request, HttpServletResponse response) {
         System.out.println(EncodeProcess.getToday());
 
@@ -25,4 +25,13 @@ public class TestDemo extends BaseController {
 //        Employee employee = employeeService.queryById(10000);
 //        System.out.println(employee.getEmployee_username());
     }
+
+
+    //此方法会引起报错;
+//    @RequestMapping("/")
+//    public String test2(HttpServletRequest request, HttpServletRequest response) {
+//        int a = 3 / 0;//不能被0除异常
+//        request.setAttribute("message", "早上好，朋友们！");
+//        return "home";
+//    }
 }

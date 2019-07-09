@@ -88,9 +88,6 @@
             <if test="room_status != null">
                 room_status = #{room_status,jdbcType=VARCHAR},
             </if>
-            <if test="room_status != null">
-                room_status = #{room_status,jdbcType=VARCHAR},
-            </if>
         </set>
         where room_id = #{room_id,jdbcType=INTEGER}
     </update>

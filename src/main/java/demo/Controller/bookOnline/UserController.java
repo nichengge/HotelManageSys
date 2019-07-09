@@ -3,6 +3,7 @@ package demo.Controller.bookOnline;
 import demo.Controller.BaseController;
 import demo.Model.Customer;
 import demo.Model.Hotel;
+import demo.ServerImpl.Helper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,6 +28,9 @@ public class UserController extends BaseController {
             nextURL = "bookOnline/Index";
             message = "Aha O(∩_∩)O 登录成功!  欢迎您!   即将为你跳转至主页";
             Hotel hotel = hotelService.getHotel();
+            //用户计入会话域
+            Helper helper = new Helper(customerService, ordersService, roomService, employeeService, roomcategoryService);
+            helper.loginedCustomer(request,customer.getCustomer_id());
 
             //添加信息至会话作用域
             if (hotel != null) {

@@ -98,6 +98,31 @@
         update customer set username = #{1} where customer_id = #{0}
     </update>
 
+    <update id="updateUser" parameterType="demo.Model.Customer">
+        update customer
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="real_name != null">
+                real_name = #{real_name,jdbcType=VARCHAR},
+            </if>
+            <if test="customer_phone != null">
+                customer_phone = #{customer_phone,jdbcType=VARCHAR},
+            </if>
+            <if test="id_card != null">
+                id_card = #{id_card,jdbcType=VARCHAR},
+            </if>
+            <if test="customer_gender != null">
+                customer_gender = #{customer_gender,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where customer_id = #{customer_id,jdbcType=INTEGER}
+    </update>
+
 
     <!--查询-->
 

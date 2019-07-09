@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
 <!-- 首屏 2-->
-<%--<div class="mdui-container doc-container main-section mdui-color-theme" style="display: flex;flex-direction: column;">--%>
 <div class="mdui-container doc-container" style="display: flex;flex-direction: column;">
     <div class="mdui-container main-container" style="display: flex;flex-direction: column;justify-content: center;">
 

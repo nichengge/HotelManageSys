@@ -1,8 +1,6 @@
 package demo.ServerImpl;
+
 import demo.Model.Customer;
-import demo.ServerImpl.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 //@Service("Helper")
-public class Helper{
+public class Helper {
 
     private final
     CustomerService customerService;
@@ -33,10 +31,9 @@ public class Helper{
 
 
     //添加登录用户到会话域
-    public void loginedCustomer(HttpServletRequest request, String customerID) {
+    public void loginedCustomer(HttpServletRequest request, int customer_id) {
         Customer LoginedCustomer;
-        CustomerService customerService = new CustomerService();
-        LoginedCustomer = customerService.queryByUserID(customerID);
+        LoginedCustomer = customerService.queryByUserID(customer_id);
         HttpSession session = request.getSession();
         session.setAttribute("LoginedCustomer", LoginedCustomer);
     }
@@ -45,10 +42,9 @@ public class Helper{
     //用户会话初始化内容
     public void loginInitializatjion(HttpServletRequest request) {
         HttpSession session = request.getSession();
-
         //对会话信息进行初始化
         try {
-            ArrayList<String> arrayListAllCustomerID = null;
+            ArrayList<String> arrayListAllCustomerID;
             arrayListAllCustomerID = customerService.getAllCustomersID(); //获取所有用户id
             session.setAttribute("AllCustomerID", arrayListAllCustomerID);
 
@@ -66,7 +62,7 @@ public class Helper{
             //获取所有雇员信息
             ArrayList<String> allemployeeid = employeeService.getAllEmployeesId();
             session.setAttribute("AllReceptionistID", allemployeeid);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("初始化错误...from Helper.java");
         }

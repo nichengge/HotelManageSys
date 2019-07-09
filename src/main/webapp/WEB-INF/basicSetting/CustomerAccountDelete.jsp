@@ -1,13 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
-
+<html>
+<head><title></title></head>
+<body>
 <div class="mdui-container main-container mdui-text-left">
     <h1>
         请选择要删除的客户账号ID
     </h1>
-    <form action="/basicSetting/CustomerAccountDelete.do" method="post">
+    <form action="adminDelUser" method="post">
         客户ID:<select class="mdui-select" id="roomTypeSelect" name="deleteCusotmerID">
         <c:forEach var="CustomerID" items="${sessionScope.AllCustomerID}"
                    varStatus="status">
@@ -30,7 +32,8 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
+</body>
+</html>
 
 
 

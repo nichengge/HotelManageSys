@@ -2,6 +2,7 @@ package demo.Controller.ReceptionManagement;
 
 import demo.Controller.BaseController;
 import demo.Model.Employee;
+import demo.ServerImpl.Helper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +23,10 @@ public class EmployeeController extends BaseController {
         ans = employeeService.employeeconfirm(employee);
         if (ans == 1) {
             System.out.println("接待员登录成功");
+            Helper helper = new Helper(customerService, ordersService, roomService, employeeService, roomcategoryService);
+            helper.loginInitializatjion(request);
+
+
             message = "AHa 欢迎您! 接待员账号登录成功(●'◡'●)! 即将为您跳转至接待员管理界面.";
             nextURL = "receptionManagement/Index";
         } else {

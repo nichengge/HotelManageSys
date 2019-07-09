@@ -1,6 +1,5 @@
 package demo.ServerImpl;
 
-import demo.Dao.CustomerMapper;
 import demo.Model.Customer;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,15 +32,21 @@ public class CustomerService extends BaseService {
 
     //删
 
+    public int delUserById(int customerId) {
+        try {
+            ans = customerMapper.deleteByUserId(customerId);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
     //查
 
     //用户验证
     public int customerconfirm(Customer customer) {
         Customer customer1 = null;
         try {
-
-            CustomerMapper customerMapper1 = customerMapper;
-
             customer1 = customerMapper.customerconfirm(customer);
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,10 +61,10 @@ public class CustomerService extends BaseService {
     }
 
     //根据用户ID查找
-    public Customer queryByUserID(String customerid) {
+    public Customer queryByUserID(int customerid) {
         Customer customer = null;
         try {
-            customer = customerMapper.selectByid(customerid);
+            customer = customerMapper.queryByUserId(customerid);
             if (customer != null) {
                 System.out.println("查询成功...from CustomerService");
             } else {
@@ -93,7 +98,18 @@ public class CustomerService extends BaseService {
     }
 
 
+
+
     //改
+
+    public int updateUser(Customer customer) {
+        try {
+            ans = customerMapper.updateUser(customer);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ans;
+    }
 
 
 }

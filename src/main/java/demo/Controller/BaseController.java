@@ -10,7 +10,7 @@ public class BaseController {
     //标记状态
     protected int ans = 0;
     //跳转使用
-    protected String message, nextURL;
+    protected String message = "", nextURL = "";
     protected ModelAndView mv = new ModelAndView();
     @Autowired
     protected AdministratorService administratorService;
@@ -30,6 +30,5 @@ public class BaseController {
     protected RoomcategoryService roomcategoryService;
     @Autowired
     protected RoomService roomService;
-
     protected IntermediateModelAndViewDispatcher dispatcher = new IntermediateModelAndViewDispatcher();
 }

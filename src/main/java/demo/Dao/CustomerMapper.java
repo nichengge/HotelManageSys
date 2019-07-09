@@ -44,6 +44,8 @@ public interface CustomerMapper {
     //更新身份证号
     int updateIdcard(int customerid, String idcard);
 
+    int updateUser(Customer customer);
+
 
 
 
@@ -60,8 +62,6 @@ public interface CustomerMapper {
 
     Customer customerconfirm(Customer customer);
 
-    Customer selectByid(String username);
-
     ArrayList<Orders> selectAllOrders(int userId);
 
     //获取所有客户id
@@ -75,5 +75,6 @@ public interface CustomerMapper {
 
     //显示不可用房间类型号
     HashMap<String, Integer> getUnavailableRoomTypeWithNumber(Date starttime, Date endtime);
+
 
 }

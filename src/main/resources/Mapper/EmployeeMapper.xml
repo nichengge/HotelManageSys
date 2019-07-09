@@ -96,7 +96,7 @@
                 employee_name = #{employee_name,jdbcType=VARCHAR},
             </if>
             <if test="employee_gender != null">
-                employee_gender = #{employee_gender,jdbcType=INTEGER},
+                employee_gender = #{employee_gender,jdbcType=VARCHAR},
             </if>
         </set>
         where employee_id = #{employee_id,jdbcType=INTEGER}

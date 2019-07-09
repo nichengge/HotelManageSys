@@ -20,6 +20,15 @@ public class Customer {
         this.id_card = idcard;
     }
 
+    public Customer(int customerid, String username, String password, String phone, String idcard, String realname) {
+        this.customer_id = customerid;
+        this.username = username;
+        this.password = password;
+        this.real_name = realname;
+        this.customer_phone = phone;
+        this.id_card = idcard;
+    }
+
     public Customer(String username){
         this.username=username;
     }
