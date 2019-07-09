@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 @Service("RoomService")
@@ -42,6 +43,21 @@ public class RoomService extends BaseService {
         return allroomid;
     }
 
+    //获取所有房间类型
+    public HashMap<String, Integer> getAllroomType() {
+        HashMap<String, Integer> hashMap = null;
+        ;
+        try {
+            hashMap = roomMapper.getAllRoomTypeWithNumber();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("查询失败，数据库错误...from RoomService");
+        }
+        if (hashMap != null) {
+            System.out.println("查询房间信息成功");
+        }
+        return hashMap;
+    }
 
     //改****************************************************************
 

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 
 @Service("CustomerService")
 @Transactional
@@ -60,6 +62,19 @@ public class CustomerService extends BaseService {
         return ans;
     }
 
+    //根据用户名查找用户
+    public Customer getCustomerByUsernamePassword(String username,String password) {
+        Customer customer = null;
+        try {
+            customer = customerMapper.queryByUsernamePassword(username,password);
+            if(customer!=null)
+                System.out.println("用户获取成功");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return customer;
+    }
+
     //根据用户ID查找
     public Customer queryByUserID(int customerid) {
         Customer customer = null;
@@ -97,6 +112,18 @@ public class CustomerService extends BaseService {
 
     }
 
+    public HashMap<String, Integer> getUnavailableRoom(Date startTime, Date endTime) {
+        HashMap<String ,Integer> hashMap = null;
+        try {
+            hashMap = customerMapper.getUnavailableRoomTypeWithNumber(startTime,endTime);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        if(hashMap!=null)
+            System.out.println("查询成功...from CustomerService");
+        return hashMap;
+    }
+
 
     //改
 
@@ -110,6 +137,7 @@ public class CustomerService extends BaseService {
         }
         return ans;
     }
+
 
 
 }

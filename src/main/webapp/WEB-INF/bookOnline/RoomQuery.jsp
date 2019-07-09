@@ -3,7 +3,7 @@
 
 <div class="mdui-container doc-container" style="display: flex;flex-direction: column;">
     <div class="mdui-container main-container" style="display: flex;flex-direction: column;justify-content: center;">
-        <form action="/bookOnline/RoomQuery.do" method="post">
+        <form action="customerRoomQuery" method="post">
             <h1>请输入起始时间</h1>
             <br>
             入住日期：<input type="date" value="datetime-local" id="dateBeginID" name="dateBegin" min="today"/>

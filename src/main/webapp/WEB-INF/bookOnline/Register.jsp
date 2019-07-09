@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
@@ -20,31 +19,11 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-<%--    检查手机号--%>
-    <script>
-        var TEL_REGEXP = /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/;
-
-        function validateTel (customerPhone){
-            if(TEL_REGEXP.test(tel)){
-                return true;
-            }
-            return false;
-        }
-    </script>
-
 
     <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
-    .en-markup-crop-options {
-        top: 18px !important;
-        left: 50% !important;
-        margin-left: -100px !important;
-        width: 200px !important;
-        border: 2px rgba(255, 255, 255, .38) solid !important;
-        border-radius: 4px !important;
-    }
 
     .en-markup-crop-options div div:first-of-type {
-        margin-left: 0px !important;
+        margin-left: 0 !important;
     }
     </style>
 </head>
@@ -59,41 +38,48 @@
         </h2>
         <div class="mdui-center" style="width: 500px;">
             <table style="justify-content: center;margin-left: auto;margin-right: auto;">
-                <form action="/userRegister" method="post">
+                <form action="userRegister" method="post">
                     <div class="mdui-textfield">
-                        用户名<input type="text" pattern="^[a-zA-Z][a-zA-Z0-9]{3,15}$" class="mdui-textfield-input" name="username" placeholder="用户名由英文字母和数字组成的4-16位字符，以字母开头" required />
+                        用户名<input type="text" pattern="^[a-zA-Z][a-zA-Z0-9]{3,15}$" class="mdui-textfield-input"
+                                  name="username" placeholder="用户名由英文字母和数字组成的4-16位字符，以字母开头" required/>
                         <div class="mdui-textfield-error">用户名格式错误</div>
                     </div>
                     <div class="mdui-textfield">
-                        密码<input type="password" pattern="^[a-zA-Z0-9]{4,10}$" class="mdui-textfield-input" name="password" placeholder="密码由英文字母和数字组成的4-10位字符" required />
+                        密码<input type="password" pattern="^[a-zA-Z0-9]{4,10}$" class="mdui-textfield-input"
+                                 name="password" placeholder="密码由英文字母和数字组成的4-10位字符" required/>
                         <div class="mdui-textfield-error">密码格式错误</div>
                     </div>
 
                     <tr>
                         <div class="mdui-textfield">
-                            姓名<textarea class="mdui-textfield-input" name="realname" placeholder="姓名" required></textarea>
+                            姓名<textarea class="mdui-textfield-input" name="realname" placeholder="姓名"
+                                        required></textarea>
                         </div>
 
                     <tr>
                     <tr>
                         <div class="mdui-textfield">
-                            手机号码<input  class="mdui-textfield-input" name="phone" type="text" pattern="^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$" placeholder="电话号码" required />
+                            手机号码<input class="mdui-textfield-input" name="phone" type="text"
+                                       pattern="^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$"
+                                       placeholder="电话号码" required/>
                             <div class="mdui-textfield-error">手机号格式不正确</div>
                         </div>
 
                     <tr>
                         <div class="mdui-textfield">
                             性别
-                            <label class="mdui-radio" selected="male">
-                                <input type="radio" name="gender" value="male"/>
-                                <i class="mdui-radio-icon"></i>
-                                男
-                            </label>
-                            <label class="mdui-radio">
-                                <input type="radio" name="customerGender" value="female"/>
-                                <i class="mdui-radio-icon"></i>
-                                女
-                            </label>
+                            <div class="mdui-radio">
+                                <label class="mdui-radio">
+                                    <input type="radio" name="gender" value="male"/>
+                                    <i class="mdui-radio-icon"></i>
+                                    男
+                                </label>
+                                <label class="mdui-radio">
+                                    <input type="radio" name="gender" value="female"/>
+                                    <i class="mdui-radio-icon"></i>
+                                    女
+                                </label>
+                            </div>
                         </div>
                     </tr>
                     <div class="mdui-textfield">

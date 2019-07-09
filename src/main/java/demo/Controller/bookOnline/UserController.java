@@ -30,7 +30,7 @@ public class UserController extends BaseController {
             Hotel hotel = hotelService.getHotel();
             //用户计入会话域
             Helper helper = new Helper(customerService, ordersService, roomService, employeeService, roomcategoryService);
-            helper.loginedCustomer(request,customer.getCustomer_id());
+            helper.loginedCustomer(request, customerService.getCustomerByUsernamePassword(usernmae,password).getCustomer_id());
 
             //添加信息至会话作用域
             if (hotel != null) {
@@ -50,7 +50,7 @@ public class UserController extends BaseController {
 
 
     //用户注册
-    @RequestMapping("/userRegister")
+    @RequestMapping("userRegister")
     public ModelAndView newuser(HttpServletRequest request, HttpServletResponse response,
                                 @RequestParam("username") String username, @RequestParam("password") String password,
                                 @RequestParam("idcard") String idcard, @RequestParam("realname") String realname, @RequestParam("phone") String phone, @RequestParam("gender") String gender) {

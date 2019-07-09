@@ -58,6 +58,8 @@ public interface CustomerMapper {
     //获取所有客户对象
     ArrayList<Customer> getAllCustomers();
 
+    Customer queryByUsernamePassword(String username, String password);
+
     Customer queryByUserId(int userId);
 
     Customer customerconfirm(Customer customer);
@@ -75,6 +77,7 @@ public interface CustomerMapper {
 
     //显示不可用房间类型号
     HashMap<String, Integer> getUnavailableRoomTypeWithNumber(Date starttime, Date endtime);
+
 
 
 }

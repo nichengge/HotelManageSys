@@ -19,7 +19,7 @@
     </select>
 
     <!--    按照Id查找员工-->
-    <select id="selectById" parameterType="demo.Model.Employee" resultMap="BaseResultMap">
+    <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from employee

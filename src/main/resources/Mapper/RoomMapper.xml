@@ -30,7 +30,7 @@
 
     <select id="getAllRoomTypeWithNumber" resultType="java.util.HashMap">
         select room_type,count(room_number)
-        from room group by room_type order by room_type
+        from room group by room_type order by room_type;
     </select>
 
     <!--    通过房间类型获取房间-->

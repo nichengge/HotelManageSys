@@ -4,28 +4,36 @@
 
 <div class="mdui-container doc-container" style="display: flex;flex-direction: column;">
     <h1>
-        个人信息
+        您的帐号信息
     </h1>
     <div class="mdui-table-fluid">
         <table class="mdui-table mdui-table-hoverable">
             <thead>
             <tr>
-                <th>ID</th>
+                <th>用户名</th>
+                <th>密码</th>
                 <th>姓名</th>
+                <th>电话号码</th>
                 <th>身份证号</th>
             </tr>
             </thead>
             <tbody>
-            <jsp:useBean id="LoginedCustomer" scope="session" type="entity.Customer"></jsp:useBean>
+            <jsp:useBean id="LoginedCustomer" scope="session" type="demo.Model.Customer"></jsp:useBean>
             <tr>
                 <td>
-                    <jsp:getProperty name="LoginedCustomer" property="userID"></jsp:getProperty>
+                    <jsp:getProperty name="LoginedCustomer" property="username"></jsp:getProperty>
                 </td>
                 <td>
-                    <jsp:getProperty name="LoginedCustomer" property="customerName"></jsp:getProperty>
+                    <jsp:getProperty name="LoginedCustomer" property="password"></jsp:getProperty>
                 </td>
                 <td>
-                    <jsp:getProperty name="LoginedCustomer" property="IDNumber"></jsp:getProperty>
+                    <jsp:getProperty name="LoginedCustomer" property="real_name"></jsp:getProperty>
+                </td>
+                <td>
+                    <jsp:getProperty name="LoginedCustomer" property="customer_phone"></jsp:getProperty>
+                </td>
+                <td>
+                    <jsp:getProperty name="LoginedCustomer" property="id_card"></jsp:getProperty>
                 </td>
             </tr>
             </tbody>

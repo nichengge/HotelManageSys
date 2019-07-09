@@ -128,10 +128,11 @@
 
     <!--    根据用户名查找-->
     <select id="queryByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from customer
-        where usernmae = #{username,jdbcType=VARCHAR}
+        select <include refid="Base_Column_List"/> from customer where username = #{username,jdbcType=VARCHAR}
+    </select>
+
+    <select id="queryByUsernamePassword" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/> from customer where username = #{param1} and password = #{param2};
     </select>
 
     <!--    根据用户Id查找-->
@@ -196,15 +197,15 @@
     </select>
 
     <!--    查询不可达房间类型和房间号  &lt;= 小于等于  &gt;=  大于等于-->
-    <select id="getUnavailableRoomTypeWithNumber" resultType="java.util.HashMap">>
+    <select id="getUnavailableRoomTypeWithNumber" resultType="java.util.HashMap">
         select
         orders_type,count(orders_id)as number
         from customer
-        left join orders on customer.customer_id = orders.customer_id
-        where (orders.orders_status = '在住' or orders.status = '预定') and
-        ((start_time &lt;= #{0} and end_time &gt;= #{0}) or (start_time &lt;= #{1} AND end_time &gt;= #{1}) OR
-         (start_time &lt;= #{0} AND end_time &gt;= #{1}) OR
-          (start_time &lt;= #{1} AND end_time &gt;= #{0}))
+        left join orders on customer.username = orders.customer_id
+        where (orders.orders_status = '在住' or orders.orders_status = '预定') and
+        ((start_time &lt;= #{param1} and end_time &gt;= #{param1}) or (start_time &lt;= #{param2} AND end_time &gt;= #{param2}) OR
+         (start_time &lt;= #{param1} AND end_time &gt;= #{param2}) OR
+          (start_time &lt;= #{param2} AND end_time &gt;= #{param1}))
         order by orders_type
     </select>
 
