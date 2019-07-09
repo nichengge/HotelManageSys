@@ -3,6 +3,9 @@
 
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
+<html>
+<head><title></title></head>
+<body>
 <div class="mdui-container main-container mdui-text-left">
     <h1>
         请选择要设置的客户账号ID
@@ -33,7 +36,8 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
+</body>
+</html>
 
 
 

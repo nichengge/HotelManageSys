@@ -100,15 +100,14 @@ public class ManagerController extends BaseController {
     //账户修改2
     @PostMapping("adminUpdateUser")
     public ModelAndView UpdateUser(HttpServletRequest request, HttpServletResponse response,
-                                   @RequestParam("userId")Integer customerId,
-                                   @RequestParam("userName") String username,
+                                   @RequestParam("userId") Integer customerId,
+                                   @RequestParam("Username") String username,
                                    @RequestParam("Password") String password,
                                    @RequestParam("Idcard") String idcard,
                                    @RequestParam("RealName") String realname,
                                    @RequestParam("UserPhone") String phone) {
         Customer customer = new Customer(customerId, username, password, phone, idcard, realname);
         ans = customerService.updateUser(customer);
-        System.out.println("正在修改用户信息...from ManagerController");
         if (ans == 1) {
             message = "修改操作成功!3秒后返回客户账号管理界面。";
             nextURL = "basicSetting/CustomerSetting";

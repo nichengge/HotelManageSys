@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
@@ -13,7 +13,7 @@
     <form action="adminUpdateUser" method="post">
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">客户ID</label>
-            <input type="text" class="mdui-textfield-input" disabled size="10" name="userId"
+            <input type="text" class="mdui-textfield-input" readonly size="10" name="userId"
                    value=
                    <jsp:getProperty name="oriCustomer" property="customer_id"></jsp:getProperty>
             />
@@ -67,4 +67,5 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
+</body>
+</html>

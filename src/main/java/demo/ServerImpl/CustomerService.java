@@ -35,7 +35,7 @@ public class CustomerService extends BaseService {
     public int delUserById(int customerId) {
         try {
             ans = customerMapper.deleteByUserId(customerId);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return ans;
@@ -98,15 +98,15 @@ public class CustomerService extends BaseService {
     }
 
 
-
-
     //改
 
     public int updateUser(Customer customer) {
         try {
             ans = customerMapper.updateUser(customer);
-        }catch (Exception e){
+            System.out.println("修改用户信息成功...from CustomerService");
+        } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("修改用户信息失败...from CustomerService");
         }
         return ans;
     }
