@@ -18,7 +18,9 @@ import javax.servlet.http.HttpSession;
 public class UserController extends BaseController {
 
     @RequestMapping("nameCustomerLogin")
-    public ModelAndView userlogin(HttpServletRequest request, HttpServletResponse response, @RequestParam("nameCustomerLogin") String usernmae, @RequestParam("passwordCustomerLogin") String password) {
+    public ModelAndView userlogin(HttpServletRequest request, HttpServletResponse response,
+                                  @RequestParam("nameCustomerLogin") String usernmae,
+                                  @RequestParam("passwordCustomerLogin") String password) {
         System.out.println("用户正在登录");
         HttpSession session = request.getSession();
         Customer customer = new Customer(usernmae, password);
@@ -29,7 +31,7 @@ public class UserController extends BaseController {
             message = "Aha O(∩_∩)O 登录成功!  欢迎您!   即将为你跳转至主页";
             Hotel hotel = hotelService.getHotel();
             //用户计入会话域
-            Helper helper = new Helper(customerService, ordersService, roomService, employeeService, roomcategoryService);
+            Helper helper = new Helper(customerService, ordersService, roomService, employeeService, roomcategoryService,hotelService);
             helper.loginedCustomer(request, customerService.getCustomerByUsernamePassword(usernmae,password).getCustomer_id());
 
             //添加信息至会话作用域
@@ -46,6 +48,35 @@ public class UserController extends BaseController {
             message = "Oops (T_T) 登录失败!   账号或密码错误!   3秒后跳转回登录界面";
         }
         return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
+
+    //用户退出账号
+    @RequestMapping("Userlogout")
+    public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
+        request.getSession().removeAttribute("LoginedCustomer");
+        System.out.println("用户已经退出");
+        mv.setViewName("index");
+        return mv;
+    }
+
+    //用户修改密码
+    @RequestMapping("UserChangePassword")
+    public ModelAndView changePw(HttpServletRequest request, HttpServletResponse response,
+                                 @RequestParam("Password") String pw){
+        Customer customer = (Customer) request.getSession().getAttribute("LoginedCustomer");
+        customer.setPassword(pw);
+        ans = customerService.updateUser(customer);
+        if(ans==1){
+            message="密码修改成功！返回主页";
+            nextURL="bookOnline/Index";
+            //会话修改内容
+            request.getSession().removeAttribute("LoginedCustomer");
+            request.getSession().setAttribute("LoginedCustomer",customer);
+        }else {
+            message="密码修改失败，返回修改页面";
+            nextURL="bookOnline/ChangePassword";
+        }
+        return dispatcher.goPage(request,response,mv,nextURL,message);
     }
 
 

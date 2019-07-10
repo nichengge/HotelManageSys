@@ -38,7 +38,7 @@
             />
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
-            <label class="mdui-textfield-label">客户姓名</label>
+            <label class="mdui-textfield-label">电话号码</label>
             <input type="text" class="mdui-textfield-input" size="10" name="UserPhone"
                    value=
                    <jsp:getProperty name="oriCustomer" property="customer_phone"></jsp:getProperty>

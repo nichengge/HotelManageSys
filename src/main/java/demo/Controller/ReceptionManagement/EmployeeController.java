@@ -21,18 +21,17 @@ public class EmployeeController extends BaseController {
     //员工登录验证
     @RequestMapping("employeelogin")
     public ModelAndView employeelogin(HttpServletRequest request, HttpServletResponse response,
-                                      @RequestParam("receptionistName") String usernmae,
+                                      @RequestParam("receptionistName") String username,
                                       @RequestParam("receptionistPassword") String password) {
         System.out.println("雇员正在登录");
-        HttpSession session = request.getSession();
-        Employee employee = new Employee(usernmae, password);
+        Employee employee = new Employee(username, password);
         ans = employeeService.employeeconfirm(employee);
         if (ans == 1) {
             System.out.println("接待员登录成功");
-            Helper helper = new Helper(customerService, ordersService, roomService, employeeService, roomcategoryService);
+            Helper helper = new Helper(customerService, ordersService, roomService, employeeService, roomcategoryService,hotelService);
             helper.loginInitializatjion(request);
-
-
+            employee = employeeService.getEmployeeByUsername(username);
+            request.getSession().setAttribute("LoginedEmployee",employee);
             message = "AHa 欢迎您! 接待员账号登录成功(●'◡'●)! 即将为您跳转至接待员管理界面.";
             nextURL = "receptionManagement/Index";
         } else {
@@ -43,9 +42,37 @@ public class EmployeeController extends BaseController {
         return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
+    //员工退出帐号
+    @RequestMapping("EmployeeLogout")
+    public ModelAndView AdminLogout(HttpServletRequest request) {
+        request.getSession().removeAttribute("LoginedEmployee");
+        System.out.println("员工成功退出");
+        mv.setViewName("index");
+        return mv;
+    }
+
+    //员工修改密码
+    @RequestMapping("employeeUpPw")
+    public ModelAndView emUpPw(HttpServletRequest request, HttpServletResponse response,
+                               @RequestParam("Password") String Password){
+        Employee employee = (Employee) request.getSession().getAttribute("LoginedEmployee");
+        employee.setPassword(Password);
+        ans = employeeService.updateEmployee(employee);
+        if (ans == 1) {
+            message = "密码修改成功！返回主页";
+            nextURL = "receptionManagement/Index";
+            request.getSession().removeAttribute("LoginedEmployee");
+            request.getSession().setAttribute("LoginedEmployee", employee);
+        } else {
+            message = "密码修改失败，返回修改页面";
+            nextURL = "receptionManagement/ChangePassword";
+        }
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
+
+
     //房间维修成功
-    //ReceptionManagement/RoomRepairDone.do
-    @RequestMapping("ReceptionManagement/RoomRepairDone")
+    @RequestMapping("employeeRoomRepairDone")
     public ModelAndView employeeRoomRepairDone(HttpServletRequest request, HttpServletResponse response,
                                                @RequestParam("roomRepairDoneOfRoomID") String roomId) {
         ans = roomService.fixDoneByRoomID(Integer.valueOf(roomId));
@@ -59,8 +86,7 @@ public class EmployeeController extends BaseController {
     }
 
     //房间设置维修状态
-    //ReceptionManagement/RoomRepair.do
-    @RequestMapping("ReceptionManagement/RoomRepair")
+    @RequestMapping("employeeRoomRepair")
     public ModelAndView employeeRoomRepair(HttpServletRequest request, HttpServletResponse response,
                                            @RequestParam("roomRepairOfRoomID") String roomId) {
         ans = roomService.fixingRoomByRoomID(Integer.valueOf(roomId));

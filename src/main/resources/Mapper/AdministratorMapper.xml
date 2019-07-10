@@ -13,8 +13,8 @@
     admin_id,username,password,admin_name,admin_gender,admin_type
   </sql>
 
-<!--    增加-->
-<!--    插入新管理员-->
+    <!--    增加-->
+    <!--    插入新管理员-->
     <insert id="insert" parameterType="demo.Model.Administrator">
     insert into administrator (admin_id, username, password, 
       admin_name, admin_gender, admin_type
@@ -68,14 +68,42 @@
     </insert>
 
 
-<!--    查找-->
+    <!--    查找-->
 
-<!--    管理员验证-->
-    <select id="adminconfirm" parameterType="demo.Model.Administrator" resultMap="BaseResultMap">
+    <!--    管理员验证-->
+    <select id="adminconfirm" parameterType="demo.Model.Administrator" resultMap="BaseResultMap" >
         select
         <include refid="Base_Column_List"/>
         from administrator
         where username = #{username,jdbcType=VARCHAR}
         and password = #{password,jdbcType=VARCHAR}
     </select>
+
+
+    <!--    更新-->
+    <update id="updateAdmin"  parameterType="demo.Model.Administrator" >
+        update administrator
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="admin_name != null">
+                admin_name = #{admin_name,jdbcType=VARCHAR},
+            </if>
+            <if test="admin_gender != null">
+                admin_gender = #{admin_gender,jdbcType=VARCHAR},
+            </if>
+            <if test="admin_type != null">
+                admin_type = #{admin_type,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where admin_id = #{admin_id,jdbcType=INTEGER}
+    </update>
+
+
+
+
 </mapper>

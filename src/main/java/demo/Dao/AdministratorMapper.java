@@ -16,9 +16,11 @@ public interface AdministratorMapper {
     //删
 
     //改
+    int updateAdmin(Administrator administrator);
 
     //查
     Administrator adminconfirm(Administrator record);
+
 
 
 }

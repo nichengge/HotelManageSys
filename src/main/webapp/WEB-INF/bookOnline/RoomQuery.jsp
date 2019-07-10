@@ -38,5 +38,3 @@
     c.setAttribute('class', active);
 </script>
 <script src="../../static/MDUI_files/mdui.min.js"></script>
-</body></html>
-

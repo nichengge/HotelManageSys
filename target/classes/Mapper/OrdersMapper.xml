@@ -31,18 +31,22 @@
         select * from orders where orders_id = #{param1};
     </select>
 
+    <select id="selectByRoomNum" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+         from hotelmanagementsystem.orders where room_number = #{param1};
+    </select>
+
     <select id="getallordersid" resultType="java.lang.String">
         select orders_id from orders order by customer_id
     </select>
 
     <!--    查找收入-->
-    <select id="getBillByRoomId" parameterType="java.lang.Integer" resultType="demo.Model.TempModel.Bill">
+    <select id="getBillByRoomNum" parameterType="java.lang.String" resultType="java.sql.ResultSet">
         select orders.customer_id,orders.customer_name,orders_id,room.room_id,room.room_number,
                 room.room_type,room.room_floor,orders.start_time,orders.end_time
         from orders
         left join room
-        on orders_status = '在住' and and room_id = #{param1}
-
+        on orders_status = '在住' and room.room_number = #{param1}
     </select>
 
     <!--    可能存在问题,返回类型-->
@@ -139,22 +143,16 @@
 
 
     <!--    更新-->
-    <!--    sql语句需要添加判断更严格的判断条件，判断新时段内房间未被占用预定-->
-    <!--    新时间晚于当前时间并且早于存在的预定订单时间 可以简化-->
     <update id="updateDateEndByOrderID">
-        update orders set end_time = #{param2} where orders_id = #{param1}
-        and unix_timestamp(end_time) &lt; unix_timestamp(#{param2})
-        and (not exists (select start_time from orders where room_number = (select room_number from orders
-                where orders_id = #{param1}) and start_time &lt; #{param2}
-                and start_time &gt; (select end_time from orders where orders_id = #{param1}))
-        )
+        update hotelmanagementsystem.orders set end_time = #{param2}
+        where orders_id = #{param1}
     </update>
 
     <update id="updateOrderAccount">
         update orders set orders_cost = #{param2} where orders_id = #{param1}
     </update>
     <update id="updateRoomNameByOrderID">
-        update orders set room_number = #{param2} where orders_id = #{param1}
+        update hotelmanagementsystem.orders set room_number = #{param2} where orders_id = #{param1}
     </update>
     <update id="updateCustomerNameByOrderID">
         update orders set customer_name = #{param2} where orders_id = #{param1};
@@ -173,6 +171,7 @@
     <update id="singleUpdate">
         update orders set #{param1} = #{param2} where #{param3} = #{param4};
     </update>
+
 
     <update id="updateOrderByID" parameterType="demo.Model.Orders">
         update hotelmanagementsystem.orders

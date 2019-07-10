@@ -30,7 +30,17 @@ public class HotelService extends BaseService {
         return hotel;
     }
 
-    //改
 
+
+    //改
+    public int updateHotel(Hotel hotel) {
+        try {
+            ans = hotelMapper.changeinfo(hotel);
+        }catch (Exception e){
+            System.out.println("something went wrong...from Service");
+            e.printStackTrace();
+        }
+        return ans;
+    }
 
 }

@@ -6,7 +6,7 @@
     <h1>
         请选择要维修的房间ID号码
     </h1>
-    <form action="ReceptionManagement/RoomRepair" method="post">
+    <form action="employeeRoomRepair" method="post">
         房间ID:
         <select class="mdui-select" name="roomRepairOfRoomID">
             <c:forEach var="roomID" items="${sessionScope.AllRoomID}"
@@ -20,7 +20,7 @@
     <h1>
         请选择维修完成的房间ID号码
     </h1>
-    <form action="ReceptionManagement/RoomRepairDone" method="post">
+    <form action="employeeRoomRepairDone" method="post">
         房间ID:
         <select class="mdui-select" name="roomRepairDoneOfRoomID">
             <c:forEach var="roomID" items="${sessionScope.AllRoomID}"

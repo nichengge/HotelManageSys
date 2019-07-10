@@ -11,7 +11,6 @@
             <thead>
             <tr>
                 <th>用户名</th>
-                <th>密码</th>
                 <th>姓名</th>
                 <th>电话号码</th>
                 <th>身份证号</th>
@@ -22,9 +21,6 @@
             <tr>
                 <td>
                     <jsp:getProperty name="LoginedCustomer" property="username"></jsp:getProperty>
-                </td>
-                <td>
-                    <jsp:getProperty name="LoginedCustomer" property="password"></jsp:getProperty>
                 </td>
                 <td>
                     <jsp:getProperty name="LoginedCustomer" property="real_name"></jsp:getProperty>
@@ -52,5 +48,3 @@
     c.setAttribute('class', active);
 </script>
 <script src="../../static/MDUI_files/mdui.min.js"></script>
-</body></html>
-

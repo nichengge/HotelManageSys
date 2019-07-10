@@ -18,7 +18,13 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-    <style></style>
+    <script>
+        function logout() {
+            var form1 = document.getElementById("form1");
+            form1.action = "EmployeeLogout";
+            form1.submit();
+        }
+    </script>
     <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
 
     .en-markup-crop-options div div:first-of-type {
@@ -65,7 +71,21 @@
                    id="AvaliableRoomQuery">可用房查询</a>
                 <a href="go?url=receptionManagement/RepairManagement" class="mdui-list-item mdui-ripple "
                    id="RepairManagement">维修管理</a>
+            </div>
+        </div>
 
+        <div class="mdui-collapse-item mdui-collapse-item-close " id="PersonalSetting">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-content">关于账号</div>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list">
+                <a href="go?url=receptionManagement/ChangePassword" class="mdui-list-item mdui-ripple "
+                   id="ChangePassword">修改密码</a>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list">
+                <form id="form1">
+                    <a class="mdui-list-item mdui-ripple " onclick="logout()">退出</a>
+                </form>
             </div>
         </div>
 

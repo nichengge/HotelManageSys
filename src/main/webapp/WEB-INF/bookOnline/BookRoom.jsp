@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="DrawerBar.html" %>
 
-<form action="/bookOnline/SubmitOrder.do" method="get">
+<form action="UserSubmitOrder" method="get">
     <div class="mdui-container doc-container">
         <div class="mdui-container main-container">
             <h1>
@@ -41,5 +41,3 @@
     c.setAttribute('class', active);
 </script>
 <script src="../../static/MDUI_files/mdui.min.js"></script>
-</body></html>
-

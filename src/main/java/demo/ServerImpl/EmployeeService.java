@@ -90,6 +90,16 @@ public class EmployeeService extends BaseService {
         return employee;
     }
 
+    public Employee getEmployeeByUsername(String username) {
+        Employee employee = null;
+        try {
+            employee = employeeMapper.getEmployeeByUsername(username);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return employee;
+    }
+
     //预定签入查询
     public ArrayList<Room> preservationCheckinRoomQuery(int orderId) {
         ArrayList<Room> arrayList = null;
@@ -126,5 +136,6 @@ public class EmployeeService extends BaseService {
         }
         return ans;
     }
+
 
 }

@@ -86,18 +86,8 @@ public class UserRoomOperation extends BaseController {
         return mv;
     }
 
-    //预定
-    @RequestMapping("RoomQueryResultChosen")
-    public ModelAndView fun2(HttpServletRequest request, HttpServletResponse response,
-                             @RequestParam("booked") String choosedRoomType) {
-
-        return mv;
-    }
-
-
     //提交订单
-    //bookOnline/SubmitOrder.do
-    @RequestMapping("bookOnline/SubmitOrder")
+    @RequestMapping("UserSubmitOrder")
     public ModelAndView adminSubmitOrder(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         ans = 0;

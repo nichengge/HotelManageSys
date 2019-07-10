@@ -32,5 +32,5 @@ public interface EmployeeMapper {
     Employee selectById(int i);
 
 
-
+    Employee getEmployeeByUsername(String username);
 }

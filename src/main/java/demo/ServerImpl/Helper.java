@@ -1,6 +1,7 @@
 package demo.ServerImpl;
 
 import demo.Model.Customer;
+import demo.Model.Hotel;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,13 +21,16 @@ public class Helper {
     EmployeeService employeeService;
     private final
     RoomcategoryService roomcategoryService;
+    private final
+    HotelService hotelService;
 
-    public Helper(CustomerService customerService, OrdersService ordersService, RoomService roomService, EmployeeService employeeService, RoomcategoryService roomcategoryService) {
+    public Helper(CustomerService customerService, OrdersService ordersService, RoomService roomService, EmployeeService employeeService, RoomcategoryService roomcategoryService,HotelService hotelService) {
         this.customerService = customerService;
         this.ordersService = ordersService;
         this.roomService = roomService;
         this.employeeService = employeeService;
         this.roomcategoryService = roomcategoryService;
+        this.hotelService = hotelService;
     }
 
 
@@ -66,6 +70,11 @@ public class Helper {
             //获取所有雇员信息
             ArrayList<String> allemployeeid = employeeService.getAllEmployeesId();
             session.setAttribute("AllReceptionistID", allemployeeid);
+
+            //获取酒店信息
+            Hotel hotel = hotelService.getHotel();
+            session.setAttribute("Hotel",hotel);
+
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("初始化错误...from Helper.java");

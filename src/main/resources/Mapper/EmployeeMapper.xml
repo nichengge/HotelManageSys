@@ -18,6 +18,11 @@
         select employee_id from employee order by employee_id
     </select>
 
+    <select id="getEmployeeByUsername" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/> from hotelmanagementsystem.employee
+        where employee_username = #{employee_username,jdbcType=VARCHAR};
+    </select>
+
     <!--    按照Id查找员工-->
     <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select

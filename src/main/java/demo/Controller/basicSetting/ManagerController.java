@@ -3,6 +3,7 @@ package demo.Controller.basicSetting;
 import demo.Controller.BaseController;
 import demo.Model.Administrator;
 import demo.Model.Customer;
+import demo.Model.Hotel;
 import demo.ServerImpl.Helper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,20 +16,21 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class ManagerController extends BaseController {
-    //用户认证登录
+    //认证登录
     @RequestMapping("adminlogin")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response,
                               @RequestParam("username") String username,
                               @RequestParam("password") String password) {
         Administrator administrator = new Administrator(username, password);
         System.out.println("经理登录验证中");
-        ans = administratorService.adminlogin(administrator);
-        if (ans == 1) {
+        administrator = administratorService.adminlogin(administrator);
+        if (administrator != null) {
             message = "Aha O(∩_∩)O  经理账号登录成功！ 即将为您跳转至经理管理界面！";
             nextURL = "basicSetting/Index";
             //对一些会话期间的参数进行初始化
-            Helper helper = new Helper(customerService, ordersService, roomService, employeeService, roomcategoryService);
+            Helper helper = new Helper(customerService, ordersService, roomService, employeeService, roomcategoryService,hotelService);
             helper.loginInitializatjion(request);
+            request.getSession().setAttribute("LoginedAdmin", administrator);
         } else {
             message = "Oops (T_T)  经理账号登录失败！ 即将为您跳转回登录界面！";
             nextURL = "/ManagerLogin";
@@ -36,7 +38,61 @@ public class ManagerController extends BaseController {
         return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
+    //管理员退出系统
+    @RequestMapping("AdminLogout")
+    public ModelAndView AdminLogout(HttpServletRequest request) {
+        request.getSession().removeAttribute("LoginedAdmin");
+        System.out.println("管理员成功退出");
+        mv.setViewName("index");
+        return mv;
+    }
+
+    //管理员修改密码
+    @RequestMapping("AdminUpPw")
+    public ModelAndView AdminUpPw(HttpServletRequest request, HttpServletResponse response,
+                                  @RequestParam("Password") String pw) {
+        Administrator administrator = (Administrator) request.getSession().getAttribute("LoginedAdmin");
+        administrator.setPassword(pw);
+        ans = administratorService.updateAdmin(administrator);
+        if (ans == 1) {
+            message = "密码修改成功！返回主页";
+            nextURL = "basicSetting/Index";
+            request.getSession().removeAttribute("LoginedAdmin");
+            request.getSession().setAttribute("LoginedAdmin", administrator);
+        } else {
+            message = "密码修改失败，返回修改页面";
+            nextURL = "basicSetting/ChangePassword";
+        }
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
+
+    //酒店信息更新
+    @RequestMapping("hotelUpdate")
+    public ModelAndView hotelUpdate(HttpServletRequest request, HttpServletResponse response,
+                                    @RequestParam("name") String HotelName,
+                                    @RequestParam("introduction") String Introduction,
+                                    @RequestParam("location") String LocationInfo,
+                                    @RequestParam("traffic") String TrafficInfo) {
+        Hotel hotel = (Hotel) request.getSession().getAttribute("Hotel");
+        hotel.setHotel_name(HotelName);
+        hotel.setIntroduction(Introduction);
+        hotel.setLocation_info(LocationInfo);
+        hotel.setTraffic_Info(TrafficInfo);
+        ans = hotelService.updateHotel(hotel);
+        if(ans==1){
+            message = "酒店信息修改成功！返回主页";
+            nextURL = "basicSetting/Index";
+            request.getSession().removeAttribute("Hotel");
+            request.getSession().setAttribute("Hotel", hotel);
+        }else {
+            message = "酒店信息修改失败，返回修改页面";
+            nextURL = "basicSetting/HotelUpdate";
+        }
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
+
     //客户管理
+
     //增加客户
     @RequestMapping("adminAddUser")
     public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,

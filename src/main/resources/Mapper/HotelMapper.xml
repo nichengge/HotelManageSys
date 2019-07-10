@@ -14,17 +14,14 @@
     <!--  查询-->
 
 
-<!--    获取酒店对象-->
+    <!--    获取酒店对象-->
     <select id="getHotelinfo" resultMap="BaseResultMap">
         select *
         from hotel
     </select>
 
 
-
-
-
-<!--    插入-->
+    <!--    插入-->
     <insert id="insert" parameterType="demo.Model.Hotel">
     insert into hotel (location_info, traffic_Info, hotel_name, 
       introduction)
@@ -62,4 +59,23 @@
             </if>
         </trim>
     </insert>
+
+    <!--    修改-->
+    <update id="changeinfo" parameterType="demo.Model.Hotel">
+        update hotelmanagementsystem.hotel
+        <set>
+            <if test="hotel_name != null">
+                hotel_name = #{hotel_name,jdbcType=VARCHAR},
+            </if>
+            <if test="location_info != null">
+                location_info = #{location_info,jdbcType=VARCHAR},
+            </if>
+            <if test="traffic_Info != null">
+                traffic_Info = #{traffic_Info,jdbcType=VARCHAR},
+            </if>
+            <if test="introduction != null">
+                introduction = #{introduction,jdbcType=VARCHAR},
+            </if>
+        </set>
+    </update>
 </mapper>

@@ -33,7 +33,7 @@ public class CustomerOrderController extends BaseController {
                                                   @RequestParam("roomType") String roomType,
                                                   @RequestParam("orderStatus") String orderStatus) {
         ans = 0;
-        System.out.println("orderId:"+orderId);
+        System.out.println("orderId:" + orderId);
         Orders orders = new Orders(orderId, roomNum, customerID
                 , customerName, DateTransform.String2Date(dateBegin), DateTransform.String2Date(dateEnd), roomType, orderStatus);
         ans = ordersService.updateOrderById(orders);
@@ -90,9 +90,8 @@ public class CustomerOrderController extends BaseController {
         return dispatcher.goPage2(mv, request, response, "basicSetting/ReportOfLivingCustomer");
     }
 
-
-    //bookOnline/RoomQueryResultChosen.do
-    @RequestMapping("bookOnline/RoomQueryResultChosen")
+    //预定
+    @RequestMapping("RoomQueryResultChosen")
     public ModelAndView RoomQueryResultChosen(HttpServletRequest request, HttpServletResponse response,
                                               @RequestParam("booked") String chosedRoomType) {
         HttpSession session = request.getSession();
