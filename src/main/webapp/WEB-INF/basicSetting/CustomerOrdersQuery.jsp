@@ -9,7 +9,7 @@
         请选择要查询的客户ID号
     </h1>
 
-    <form action="/basicSetting/CustomerOrdersQuery.do" method="post">
+    <form action="AdminCustomerOrdersQuery" method="post">
         客户账户ID:
         <select class="mdui-select" id="roomTypeSelect" name="IDOfCustomerRoomQuery">
             <c:forEach var="CustomerID" items="${sessionScope.AllCustomerID}"
@@ -33,5 +33,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
-

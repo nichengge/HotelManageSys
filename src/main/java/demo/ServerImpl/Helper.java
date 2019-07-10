@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Random;
 
-//@Service("Helper")
+//辅助类
 public class Helper {
 
     private final

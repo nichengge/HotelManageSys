@@ -3,6 +3,10 @@
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
 
+<div>
+    <p>后续功能，敬请期待</p>
+</div>
+
 <script src="../../static/MDUI_files/mdui.min.js"></script>
 <script type="text/javascript">
     //p for parent bar
@@ -26,5 +30,3 @@
         });
     });
 </script>
-</body></html>
-

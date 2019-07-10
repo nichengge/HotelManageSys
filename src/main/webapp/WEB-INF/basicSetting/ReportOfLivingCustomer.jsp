@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
-
-
+<html>
+<head><title></title></head>
+<body>
 <div class="mdui-container main-container mdui-text-left">
     <h1>
         在住客人情况报表
@@ -54,5 +54,6 @@
     c.setAttribute('class', active);
 </script>
 
-</body></html>
+</body>
+</html>
 

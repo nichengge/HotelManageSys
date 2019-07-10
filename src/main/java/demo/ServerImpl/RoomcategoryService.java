@@ -26,7 +26,7 @@ public class RoomcategoryService extends BaseService {
         }
         if (ans == 1) {
             System.out.println("房间类型添加成功");
-        }else {
+        } else {
             System.out.println("房间类型添加失败");
         }
         return ans;
@@ -34,12 +34,11 @@ public class RoomcategoryService extends BaseService {
 
     //删
 
-    //查
+    //查，可选择传参，返回房间类型Id或者类型名
     public ArrayList<String> getAllCategory() {
         ArrayList<String> allcategory = null;
         try {
-            if (null != roomcategoryMapper.getallcategoryid())
-                allcategory = roomcategoryMapper.getallcategoryid();
+            allcategory = roomcategoryMapper.getAllCategoryName();
             if (allcategory == null) {
                 System.out.println("查询失败...from RoomcategoryService");
             } else {
@@ -73,7 +72,17 @@ public class RoomcategoryService extends BaseService {
         return hashMap;
     }
 
+
     //改
+
+    //更新房间类型信息
+    public void updateRoomcategory(Roomcategory roomcategory) {
+        try {
+            roomcategoryMapper.updateRoomcategory(roomcategory);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

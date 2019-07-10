@@ -22,14 +22,19 @@ public interface RoomcategoryMapper {
 
     //改
 
+    void updateRoomcategory(Roomcategory roomcategory);
+
     //查
     //获取房间预留初始化
     ArrayList<Roomcategory> getRoomPreservationInitialize();
 
-    HashMap<String,Double> getTypeAndPrice();
+    HashMap<String, Double> getTypeAndPrice();
 
+    //获取所有房间类型的Id
     ArrayList<String> getallcategoryid();
 
-    ArrayList<String> getAllCategory();
+    //获取所有房间类型的名字
+    ArrayList<String> getAllCategoryName();
+
 
 }

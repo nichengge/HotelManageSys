@@ -1,9 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
-<%@ taglib prefix="c"
-           uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <%--Context--%>
 <div class="mdui-container main-container mdui-text-left">
@@ -31,20 +32,18 @@
             <c:forEach var="orders" items="${requestScope.CustomerOrdersQueryResult}"
                        varStatus="status">
                 <tr>
-                    <td>${orders.orderID}</td>
-                    <td>${orders.roomID}</td>
-                    <td>${orders.customerID}</td>
-                    <td>${orders.customerName}</td>
-                    <td>${orders.dateBegin}</td>
-                    <td>${orders.dateEnd}</td>
-                    <td>${orders.status}</td>
+                    <td>${orders.orders_id}</td>
+                    <td>${orders.room_number}</td>
+                    <td>${orders.customer_id}</td>
+                    <td>${orders.customer_name}</td>
+                    <td><fmt:formatDate value="${orders.start_time}" pattern="yyyy年M月d日" /></td>
+                    <td><fmt:formatDate value="${orders.end_time}" pattern="yyyy年M月d日" /></td>
+                    <td>${orders.orders_status}</td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </div>
-</div>
-
 </div>
 
 <script src="../../static/MDUI_files/mdui.min.js"></script>
@@ -58,6 +57,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-
-</body></html>
-

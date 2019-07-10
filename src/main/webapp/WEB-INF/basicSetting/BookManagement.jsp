@@ -1,9 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
-
-
 <div class="mdui-container doc-container main-section" style="display: flex;flex-direction: column;">
     <div class="mdui-container main-container" style="display: flex;flex-direction: column;justify-content: center;">
         <div class="mdui-list" style="size: 100px">
@@ -24,5 +21,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
-

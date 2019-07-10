@@ -17,7 +17,6 @@ import java.util.ArrayList;
 public class RoomManageController extends BaseController {
 
     //设置新的房间类型
-    //RoomTypeSetting.do
     @RequestMapping("RoomTypeSetting")
     public ModelAndView RoomTypeSetting(HttpServletRequest request, HttpServletResponse response,
                                         @RequestParam("NameOfCategory") String NameOfCategory,
@@ -35,12 +34,11 @@ public class RoomManageController extends BaseController {
 
 
     //房态统计，按照房间类型分类
-    //RoomReportQueryByType.do
     @RequestMapping("RoomReportQueryByType")
     public ModelAndView RoomReportQueryByType(HttpServletRequest request, HttpServletResponse response,
-                                              @RequestParam("roomTypeOfQuerying") String roomTypeOfQuerying) {
+                                              @RequestParam("roomType") String roomType) {
         HttpSession session = request.getSession();
-        ArrayList<Room> roomQueryResultByType = roomService.getAllRoomByType(roomTypeOfQuerying);
+        ArrayList<Room> roomQueryResultByType = roomService.getAllRoomByType(roomType);
         if (roomQueryResultByType != null && roomQueryResultByType.size() > 0) {
             ans = 1;
             session.setAttribute("roomQueryResultByType", roomQueryResultByType);
@@ -48,10 +46,10 @@ public class RoomManageController extends BaseController {
         } else {
             ans = 0;
             if (roomQueryResultByType == null) {
-                message = "操作失败！请重试。3秒后返回房态统计界面。";
+                message = "操作失败！请重试   3秒后返回房态统计界面 ";
             }
             if (roomQueryResultByType.size() == 0) {
-                message = "查询结果为空。3秒后返回房态统计界面。";
+                message = "查询结果为空   3秒后返回房态统计界面 ";
             }
         }
         if (ans == 1) {
@@ -64,7 +62,7 @@ public class RoomManageController extends BaseController {
         return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
-    //RoomPreservationInitialize.do
+    //房控功能
     @RequestMapping("RoomPreservationInitialize")
     public ModelAndView RoomPreservationInitialize(HttpServletRequest request, HttpServletResponse response) {
         ArrayList<Roomcategory> roomCategoryArrayList = roomcategoryService.getRoomPreservationInitialize();
@@ -73,16 +71,19 @@ public class RoomManageController extends BaseController {
         return dispatcher.goPage2(mv, request, response, nextURL);
     }
 
-    //暂未实现
-    //RoomPreservationAdd.do
+    //RoomPreservationAdd
     @RequestMapping("RoomPreservationAdd")
     public ModelAndView RoomPreservationAdd(HttpServletRequest request, HttpServletResponse response,
-                                            @RequestParam("addLockedNumber") String[] typeName) {
+                                            @RequestParam("addLockedNumber") Integer[] typeName) {
         ArrayList<Roomcategory> roomCategoryArrayList = new ArrayList<>();
-        for (String s : typeName) {
-            System.out.println(s);
-        }
+        int i = 0;
         roomCategoryArrayList = roomcategoryService.getRoomPreservationInitialize();
+        for (Roomcategory roomcategory : roomCategoryArrayList) {
+            //if(typeName[i]!=0)
+            roomcategory.setLocked_number(typeName[i]);
+            roomcategoryService.updateRoomcategory(roomcategory);
+            i++;
+        }
         request.setAttribute("roomCategoryArrayList", roomCategoryArrayList);
         mv.addObject("request", request);
         mv.addObject("response", response);

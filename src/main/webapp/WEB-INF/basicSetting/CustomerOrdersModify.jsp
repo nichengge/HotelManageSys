@@ -1,15 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
-<jsp:include page="DrawerBar.html"></jsp:include>
-
+<%@include file="DrawerBar.html" %>
 <div class="mdui-container main-container mdui-text-left">
-    <h1>
-        请选择要修改的订单ID号
-    </h1>
-    <form action="/basicSetting/CustomerOrdersModifyID.do" method="post">
+    <h1>请选择要修改的订单ID号</h1>
+    <form action="adminCustomerOrdersModifyID" method="post">
         订单ID：
         <select class="mdui-select" id="roomTypeSelect" name="IDOfOrderRoomModify">
             <c:forEach var="ordersID" items="${sessionScope.AllOrdersID}"

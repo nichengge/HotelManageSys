@@ -1,6 +1,7 @@
 package demo.Controller.basicSetting;
 
 import demo.Controller.BaseController;
+import demo.Model.Customer;
 import demo.Model.Orders;
 import demo.Model.TempModel.CustomerReport;
 import demo.Util.DateTransform;
@@ -20,11 +21,11 @@ import java.util.Map;
 public class CustomerOrderController extends BaseController {
 
 
-    //basicSetting/CustomerOrdersModify.do
-    @RequestMapping("basicSetting/CustomerOrdersModify")
+    //用户订单修改
+    @RequestMapping("adminCustomerOrdersModify")
     public ModelAndView adminCustomerOrdersModify(HttpServletRequest request, HttpServletResponse response,
-                                                  @RequestParam("orderID") String orderId,
-                                                  @RequestParam("roomID") String roomID,
+                                                  @RequestParam("orderID") Integer orderId,
+                                                  @RequestParam("roomID") String roomNum,
                                                   @RequestParam("customerID") String customerID,
                                                   @RequestParam("customerName") String customerName,
                                                   @RequestParam("dateBegin") String dateBegin,
@@ -32,11 +33,12 @@ public class CustomerOrderController extends BaseController {
                                                   @RequestParam("roomType") String roomType,
                                                   @RequestParam("orderStatus") String orderStatus) {
         ans = 0;
-        Orders orders = new Orders(Integer.valueOf(orderId), roomID, customerID
-                , customerName, DateTransform.String2Date(dateBegin),
-                DateTransform.String2Date(dateEnd), roomType, orderStatus);
+        System.out.println("orderId:"+orderId);
+        Orders orders = new Orders(orderId, roomNum, customerID
+                , customerName, DateTransform.String2Date(dateBegin), DateTransform.String2Date(dateEnd), roomType, orderStatus);
         ans = ordersService.updateOrderById(orders);
         if (ans == 1) {
+
             message = "订单信息修改成功！ 3秒后重新返回订单管理界面。";
             nextURL = "basicSetting/BookManagement";
         } else {
@@ -46,23 +48,24 @@ public class CustomerOrderController extends BaseController {
         return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
-    //basicSetting/CustomerOrdersModifyID.do
-    @RequestMapping("basicSetting/CustomerOrdersModifyID")
+    //查询目标订单信息
+    @RequestMapping("adminCustomerOrdersModifyID")
     public ModelAndView adminCustomerOrdersModifyID(HttpServletRequest request, HttpServletResponse response,
-                                                    @RequestParam("IDOfOrderRoomModify") String id) {
-        Orders queryOrder = ordersService.queryByOrderId(Integer.valueOf(id));
+                                                    @RequestParam("IDOfOrderRoomModify") Integer id) {
+        Orders queryOrder = ordersService.queryByOrderId(id);
         request.setAttribute("queryOrder", queryOrder);
         return dispatcher.goPage2(mv, request, response, "basicSetting/CustomerOrdersModifyResult");
     }
 
-    //客户订单查询
-    //basicSetting/CustomerOrdersQuery.do
-    @RequestMapping("basicSetting/CustomerOrdersQuery")
+    //根据用户Id查询用户订单
+    @RequestMapping("AdminCustomerOrdersQuery")
     public ModelAndView adminCustomerOrdersQuery(HttpServletRequest request, HttpServletResponse response,
-                                                 @RequestParam("IDOfCustomerRoomQuery") String id) {
+                                                 @RequestParam("IDOfCustomerRoomQuery") Integer id) {
         HttpSession session = request.getSession();
         ans = 0;
-        ArrayList<Orders> ordersArrayList = ordersService.queryByCustomerName(id); //存储的是用户名而非id
+        Customer customer = customerService.queryByUserID(id);
+        String username = customer.getUsername();
+        ArrayList<Orders> ordersArrayList = ordersService.queryByCustomerName(username);
         if (ordersArrayList != null) {
             System.out.println("orderArryList is not null");
             ans = 1;
@@ -78,8 +81,9 @@ public class CustomerOrderController extends BaseController {
         }
     }
 
-    //basicSetting/ReportOfLivingCustomer.do
-    @RequestMapping("basicSetting/ReportOfLivingCustomer")
+
+    //在住客人报表
+    @RequestMapping("adminReportOfLivingCustomer")
     public ModelAndView ReportOfLivingCustomer(HttpServletRequest request, HttpServletResponse response) {
         ArrayList<CustomerReport> customerReportArrayList = customerService.getCustomerReport();
         request.setAttribute("customerReportArrayList", customerReportArrayList);

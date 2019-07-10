@@ -175,6 +175,9 @@ public class OrdersService extends BaseService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        if (ans == 1) {
+            System.out.println("订单信息修改成功！");
+        }
         return ans;
     }
 

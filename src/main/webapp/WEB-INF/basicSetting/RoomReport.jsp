@@ -3,13 +3,16 @@
 
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
+<html>
+<head><title>房态统计</title></head>
+<body>
 <div class="mdui-container main-container mdui-text-left">
     <h1>
         查询
     </h1>
-    <form action="/basicSetting/RoomReportQueryByType.do" method="post">
+    <form action="RoomReportQueryByType" method="post">
         查询类型:
-        <select class="mdui-select" id="roomTypeSelect" name="roomTypeOfQuerying">
+        <select class="mdui-select" id="roomTypeSelect" name="roomType">
             <c:forEach var="RoomType" items="${sessionScope.AllRoomType}"
                        varStatus="status">
                 <option>${RoomType}</option>
@@ -37,5 +40,6 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
+</body>
+</html>
 

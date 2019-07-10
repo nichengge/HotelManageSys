@@ -1,8 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="demo.Model.Orders" %>
+<%@ page import="demo.Util.DateTransform" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
-
 
 <div class="mdui-container main-container mdui-text-left">
     <h1>
@@ -10,54 +12,60 @@
     </h1>
     <div class="mdui-table-fluid">
         <table class="mdui-table mdui-table-hoverable">
-            <jsp:useBean id="queryOrder" type="entity.Orders" scope="request"></jsp:useBean>
+            <jsp:useBean id="queryOrder" type="demo.Model.Orders" scope="request"></jsp:useBean>
             <tbody>
             <tr>
                 <th>订单ID</th>
                 <th>
-                    <jsp:getProperty name="queryOrder" property="orderID"></jsp:getProperty>
+                    <jsp:getProperty name="queryOrder" property="orders_id"></jsp:getProperty>
                 </th>
             </tr>
             <tr>
-                <th>房间ID</th>
+                <th>房间号</th>
                 <th>
-                    <jsp:getProperty name="queryOrder" property="roomID"></jsp:getProperty>
+                    <jsp:getProperty name="queryOrder" property="room_number"></jsp:getProperty>
                 </th>
             </tr>
             <tr>
-                <th>客户ID</th>
+                <th>客户名</th>
                 <th>
-                    <jsp:getProperty name="queryOrder" property="customerID"></jsp:getProperty>
+                    <jsp:getProperty name="queryOrder" property="customer_id"></jsp:getProperty>
                 </th>
             </tr>
             <tr>
                 <th>客户姓名</th>
                 <th>
-                    <jsp:getProperty name="queryOrder" property="customerName"></jsp:getProperty>
+                    <jsp:getProperty name="queryOrder" property="customer_name"></jsp:getProperty>
+                </th>
+            </tr>
+            <tr>
+                <th>客户身份证号</th>
+                <th>
+                    <jsp:getProperty name="queryOrder" property="customer_idcard"></jsp:getProperty>
                 </th>
             </tr>
             <tr>
                 <th>入住日期</th>
                 <th>
-                    <jsp:getProperty name="queryOrder" property="dateBegin"></jsp:getProperty>
+                    <%= DateTransform.Date2String(((Orders)request.getAttribute("queryOrder")).getStart_time()) %>
                 </th>
             </tr>
             <tr>
                 <th>结束日期</th>
                 <th>
-                    <jsp:getProperty name="queryOrder" property="dateEnd"></jsp:getProperty>
+                    <%= DateTransform.Date2String(((Orders)request.getAttribute("queryOrder")).getEnd_time()) %>
                 </th>
             </tr>
             <tr>
                 <th>房间类型</th>
                 <th>
-                    <jsp:getProperty name="queryOrder" property="type"></jsp:getProperty>
+                    <jsp:getProperty name="queryOrder" property="orders_type"></jsp:getProperty>
                 </th>
             </tr>
             <tr>
                 <th>订单状态</th>
                 <th>
-                    <jsp:getProperty name="queryOrder" property="status"></jsp:getProperty>
+                    <jsp:getProperty name="queryOrder" property="orders_status"></jsp:getProperty>
                 </th>
             </tr>
             </tbody>
@@ -65,57 +73,53 @@
     </div>
     <br>
     <h1>
-        将房间信息修改为如下
+        将订单信息修改为如下
     </h1>
-    <form action="/basicSetting/CustomerOrdersModify.do" method="post">
+    <form action="adminCustomerOrdersModify" method="post">
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">订单ID</label>
-            <input class="mdui-textfield-input" type="text" name="orderID"
-                   value=<jsp:getProperty name="queryOrder" property="orderID"></jsp:getProperty>>
+            <input class="mdui-textfield-input" type="text" name="orderID" readonly
+                   value=<jsp:getProperty name="queryOrder" property="orders_id"></jsp:getProperty>>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
-            <label class="mdui-textfield-label">房间ID</label>
+            <label class="mdui-textfield-label">房间号</label>
             <input class="mdui-textfield-input" type="text" name="roomID"
-                   value=<jsp:getProperty name="queryOrder" property="roomID"></jsp:getProperty>>
+                   value=<jsp:getProperty name="queryOrder" property="room_number"></jsp:getProperty>>
         </div>
 
         <div class="mdui-textfield mdui-textfield-floating-label">
-            <label class="mdui-textfield-label">客户ID</label>
+            <label class="mdui-textfield-label">客户用户名</label>
             <input class="mdui-textfield-input" type="text" name="customerID"
-                   value=<jsp:getProperty name="queryOrder" property="customerID"></jsp:getProperty>>
+                   value=<jsp:getProperty name="queryOrder" property="customer_id"></jsp:getProperty>>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">客户姓名</label>
             <input class="mdui-textfield-input" type="text" name="customerName"
-                   value=<jsp:getProperty name="queryOrder" property="customerName"></jsp:getProperty>>
+                   value=<jsp:getProperty name="queryOrder" property="customer_name"></jsp:getProperty>>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">入住日期</label>
-            <input class="mdui-textfield-input" type="text" name="dateBegin"
-                   value=<jsp:getProperty name="queryOrder" property="dateBegin"></jsp:getProperty>>
+            <input class="mdui-textfield-input" type="date" name="dateBegin"
+                   value=<jsp:getProperty name="queryOrder" property="start_time"></jsp:getProperty>>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">结束日期</label>
-            <input class="mdui-textfield-input" type="text" name="dateEnd"
-                   value=<jsp:getProperty name="queryOrder" property="dateEnd"></jsp:getProperty>>
+            <input class="mdui-textfield-input" type="date" name="dateEnd"
+                   value=<jsp:getProperty name="queryOrder" property="end_time"></jsp:getProperty>>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">房间类型</label>
             <input class="mdui-textfield-input" type="text" name="roomType"
-                   value=<jsp:getProperty name="queryOrder" property="type"></jsp:getProperty>>
+                   value=<jsp:getProperty name="queryOrder" property="orders_type"></jsp:getProperty>>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">订单状态</label>
             <input class="mdui-textfield-input" type="text" name="orderStatus"
-                   value=<jsp:getProperty name="queryOrder" property="status"></jsp:getProperty>>
+                   value=<jsp:getProperty name="queryOrder" property="orders_status"></jsp:getProperty>>
         </div>
         <br>
         <button type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">修改信息</button>
     </form>
-
-    <br>
-    <br>
-    <br>
 </div>
 
 
@@ -130,5 +134,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
-

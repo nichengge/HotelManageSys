@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
@@ -10,7 +10,7 @@
     <h1>
         当前控房情况
     </h1>
-    <form action="/basicSetting/RoomPreservationAdd.do" method="post">
+    <form action="RoomPreservationAdd" method="post">
         <div class="mdui-table-fluid">
             <table class="mdui-table mdui-table-hoverable">
                 <thead>
@@ -25,11 +25,11 @@
                 <c:forEach var="roomCategory" items="${requestScope.roomCategoryArrayList}"
                            varStatus="status">
                     <tr>
-                        <td name="typeName">${roomCategory.name}</td>
-                        <td id="totalNumber">${roomCategory.totalNumber}</td>
-                        <td id="LockedNumber">${roomCategory.lockedNumber}</td>
+                        <td id="typeName">${roomCategory.roomcategory_name}</td>
+                        <td id="totalNumber">${roomCategory.total_number}</td>
+                        <td id="LockedNumber">${roomCategory.locked_number}</td>
                         <td id="addLockedNumber"><input type="number" name="addLockedNumber" min="0" value="0" size="5"
-                                                        max="${roomCategory.totalNumber - roomCategory.lockedNumber}">
+                                                        max="${roomCategory.total_number - roomCategory.locked_number}">
                         </td>
                     </tr>
                 </c:forEach>
@@ -55,5 +55,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
-

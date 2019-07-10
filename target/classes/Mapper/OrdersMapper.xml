@@ -175,10 +175,10 @@
     </update>
 
     <update id="updateOrderByID" parameterType="demo.Model.Orders">
-        update room
+        update hotelmanagementsystem.orders
         <set>
             <if test="room_number != null">
-                room_number = #{room_number,jdbcType=INTEGER},
+                room_number = #{room_number,jdbcType=VARCHAR},
             </if>
             <if test="customer_id != null">
                 customer_id = #{customer_id,jdbcType=VARCHAR},

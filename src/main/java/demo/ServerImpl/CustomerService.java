@@ -119,26 +119,26 @@ public class CustomerService extends BaseService {
         ArrayList<CustomerReport> arrayList = new ArrayList<>();
         try {
             ResultSet r = customerMapper.queryCustomersLiving();
+            if (r != null)
+                while (r.next()) {
+                    String userID = r.getString("customer_id");
+                    String IDNumber = r.getString("id_card");
+                    String customerName = r.getString("realname");
+                    String roomID = r.getString("roomn_umber");
+                    String dateBegin = r.getString("start_time");
+                    String dateEnd = r.getString("end_time");
 
-            while (r.next()) {
-                String userID = r.getString("customer_id");
-                String IDNumber = r.getString("id_card");
-                String customerName = r.getString("realname");
-                String roomID = r.getString("roomn_umber");
-                String dateBegin = r.getString("start_time");
-                String dateEnd = r.getString("end_time");
-
-                CustomerReport customerReport =
-                        new CustomerReport.
-                                Builder(Integer.valueOf(userID)).
-                                IDNumber(IDNumber).
-                                customerName(customerName).
-                                roomID(Integer.valueOf(roomID)).
-                                startTime(dateBegin).
-                                endTime(dateEnd).
-                                build();
-                arrayList.add(customerReport);
-            }
+                    CustomerReport customerReport =
+                            new CustomerReport.
+                                    Builder(Integer.valueOf(userID)).
+                                    IDNumber(IDNumber).
+                                    customerName(customerName).
+                                    roomID(Integer.valueOf(roomID)).
+                                    startTime(dateBegin).
+                                    endTime(dateEnd).
+                                    build();
+                    arrayList.add(customerReport);
+                }
         } catch (Exception e) {
             e.printStackTrace();
         }

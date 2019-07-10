@@ -1,8 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
+<html>
 <%@include file="DrawerBar.html" %>
-
+<head><title></title>
+    <p>后续功能，敬请期待</p>
+</head>
+<body>
 <script src="../../static/MDUI_files/mdui.min.js"></script>
 <script type="text/javascript">
     //p for parent bar
@@ -26,5 +30,5 @@
         });
     });
 </script>
-</body></html>
-
+</body>
+</html>

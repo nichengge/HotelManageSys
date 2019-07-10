@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 public class EmployeeManageController extends BaseController {
-
     @RequestMapping("employeeAccountModify")
     public ModelAndView employeeAccountModify(HttpServletRequest request, HttpServletResponse response) {
         return dispatcher.goPage(request, response, mv, nextURL, message);

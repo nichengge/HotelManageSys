@@ -23,14 +23,14 @@
     </select>
 
     <select id="getRoomPreservationInitialize" resultMap="BaseResultMap">
-        select roomcategory_name,total_number,locked_number from roomcategory order by roomcategory_name;
+        select * from roomcategory order by roomcategory_name;
     </select>
 
     <select id="getTypeAndPrice" resultType="java.util.HashMap">
         select roomcategory_name,roomcategory_price from roomcategory ;
     </select>
-    <select id="getAllCategory" resultType="java.lang.String">
-        select roomcategory_name from roomcategory;
+    <select id="getAllCategoryName" resultType="java.lang.String">
+        select roomcategory_name from hotelmanagementsystem.roomcategory group by roomcategory_name;
     </select>
 
 
@@ -92,4 +92,34 @@
             </if>
         </trim>
     </insert>
+
+
+
+<!--    修改-->
+    <update id="updateRoomcategory" parameterType="demo.Model.Roomcategory">
+        update hotelmanagementsystem.roomcategory
+        <set>
+            <if test="roomcategory_name != null">
+                roomcategory_name = #{roomcategory_name,jdbcType=VARCHAR},
+            </if>
+            <if test="roomcategory_price != null">
+                roomcategory_price = #{roomcategory_price,jdbcType=DOUBLE},
+            </if>
+            <if test="total_number != null">
+                total_number = #{total_number,jdbcType=INTEGER},
+            </if>
+            <if test="roomcategory_score != null">
+                roomcategory_score = #{roomcategory_score,jdbcType=DOUBLE},
+            </if>
+            <if test="locked_number != null">
+                locked_number = #{locked_number,jdbcType=INTEGER},
+            </if>
+            <if test="inuse_roomnumber != null">
+                inuse_roomnumber = #{inuse_roomnumber,jdbcType=INTEGER},
+            </if>
+        </set>
+        where roomcategory_id = #{roomcategory_id,jdbcType=INTEGER}
+    </update>
+
+
 </mapper>

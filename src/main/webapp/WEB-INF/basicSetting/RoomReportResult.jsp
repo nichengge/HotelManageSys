@@ -3,6 +3,9 @@
 
 <!DOCTYPE html>
 <%@include file="DrawerBar.html" %>
+<html>
+<head><title>房态统计查询结果</title></head>
+<body>
 <div class="mdui-container main-container mdui-text-left">
     <h1>
         房间信息如下
@@ -17,20 +20,26 @@
                 <th>房间楼层</th>
                 <th>房间方位</th>
                 <th>房间描述</th>
+                <th>房间大小(平方米)</th>
                 <th>房间状态</th>
+                <th>床位数</th>
+                <th>是否可加床</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach var="room" items="${sessionScope.roomQueryResultByType}"
                        varStatus="status">
                 <tr>
-                    <td>${room.ID}</td>
-                    <td>${room.number}</td>
-                    <td>${room.type}</td>
-                    <td>${room.floor}</td>
-                    <td>${room.direction}</td>
-                    <td>${room.description}</td>
-                    <td>${room.status}</td>
+                    <td>${room.room_id}</td>
+                    <td>${room.room_number}</td>
+                    <td>${room.room_type}</td>
+                    <td>${room.room_floor}</td>
+                    <td>${room.room_direction}</td>
+                    <td>${room.room_description}</td>
+                    <td>${room.room_square}</td>
+                    <td>${room.room_status}</td>
+                    <td>${room.bed_num}</td>
+                    <td>${room.can_addbed}</td>
                 </tr>
             </c:forEach>
             </tbody>
@@ -50,5 +59,6 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
+</body>
+</html>
 
