@@ -51,9 +51,13 @@ public class Helper {
             ArrayList<String> arrayListAllOrdersID = ordersService.getAllOrdersID(); //获取所有订单信息
             session.setAttribute("AllOrdersID", arrayListAllOrdersID);
 
-            //获取所有room信息
+            //获取所有房间Id
             ArrayList<String> arrayListAllRoomID = roomService.getAllRoomID();
             session.setAttribute("AllRoomID", arrayListAllRoomID);
+
+            //获取所有房间号
+            ArrayList<String> arrayListAllRoomName = roomService.getAllRoomName();
+            session.setAttribute("AllRoomName", arrayListAllRoomName);
 
             //获取所有房间类型信息
             ArrayList<String> arrayListAllRoomType = roomcategoryService.getAllCategory();

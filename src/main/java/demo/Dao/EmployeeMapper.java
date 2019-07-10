@@ -23,8 +23,6 @@ public interface EmployeeMapper {
 
     int updateEmployee(Employee employee);
 
-    int roomCheckOut(int roomId);
-
     //查
 
     Employee employeeconfirm(Employee employee);

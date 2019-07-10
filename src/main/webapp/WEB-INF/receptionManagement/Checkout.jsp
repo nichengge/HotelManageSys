@@ -6,12 +6,12 @@
     <h1>
         请输入退房的房间编号
     </h1>
-    <form action="/ReceptionManagemnt/Checkout.do" method="post">
+    <form action="EmployeeDoCheckout" method="post">
         客房ID:
         <select class="mdui-select" id="roomTypeSelect" name="checkoutRoomID">
-            <c:forEach var="roomID" items="${sessionScope.AllRoomID}"
+            <c:forEach var="roomName" items="${sessionScope.AllRoomName}"
                        varStatus="status">
-                <option>${roomID}</option>
+                <option>${roomName}</option>
             </c:forEach>
         </select>
         <button type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">提交</button>
@@ -30,6 +30,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-
-</body></html>
-

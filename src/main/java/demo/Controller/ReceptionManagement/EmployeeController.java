@@ -73,9 +73,8 @@ public class EmployeeController extends BaseController {
         return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
-    //房间续住
-    //ReceptionManagement/RoomExtend
-    @RequestMapping("ReceptionManagement/RoomExtend")
+    //员工办理房间续住
+    @RequestMapping("employeeRoomExtend")
     public ModelAndView employeeRoomExtend(HttpServletRequest request, HttpServletResponse response,
                                            @RequestParam("orderIDExtend") String orderIDExtend,
                                            @RequestParam("DateEndExtend") String DateEndExtend) {
@@ -95,8 +94,7 @@ public class EmployeeController extends BaseController {
 
 
     //预定入住的房间查询
-    //ReceptionManagement/PreservationCheckinRoomQuery.do
-    @RequestMapping("ReceptionManagement/PreservationCheckinRoomQuery")
+    @RequestMapping("employeePreservationCheckinRoomQuery")
     public ModelAndView employeePreservationCheckinRoomQuery(HttpServletRequest request, HttpServletResponse response,
                                                              @RequestParam("orderIDCheckin") Integer orderId) {
         HttpSession session = request.getSession();
@@ -116,15 +114,14 @@ public class EmployeeController extends BaseController {
         }
     }
 
-    //预定订单入住
-    //ReceptionManagement/PreservationCheckin.do
-    @RequestMapping("ReceptionManagement/PreservationCheckin")
+    //预定订单办理入住
+    @RequestMapping("employeePreservationCheckin")
     public ModelAndView employeeDoPreservationCheckin(HttpServletRequest request, HttpServletResponse response,
-                                                      @RequestParam("bookedRoomId") String bookedRoomId) {
+                                                      @RequestParam("bookedRoomNumber") String bookedRoomNum) {
         HttpSession session = request.getSession();
-        String orderIDCheckin = (String) session.getAttribute("orderIDCheckin");
-        if (bookedRoomId != null) {
-            ans = employeeService.preservationCheckin(Integer.valueOf(orderIDCheckin), bookedRoomId);
+        int orderIDCheckin = (int) session.getAttribute("orderIDCheckin");
+        if (bookedRoomNum != null) {
+            ans = employeeService.preservationCheckin(orderIDCheckin, bookedRoomNum);
             if (ans == 1) {
                 message = "入住成功！3秒后返回预定入住界面。";
             } else {

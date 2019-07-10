@@ -1,14 +1,34 @@
 package demo.Model.TempModel;
 
+import java.util.Date;
+
 public class Bill {
-    private int customerID = 0;
+    private String customerID = "";
+
+    public String getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
+    }
+
     private String customerName = null;
     private int OrderID = 0;
-    private int ID = 0;
+
+    public int getRoomID() {
+        return roomID;
+    }
+
+    public void setRoomID(int roomID) {
+        this.roomID = roomID;
+    }
+
+    private int roomID = 0;
     private String type = null;
     private String floor;
-    private String startTime;
-    private String endTime;
+    private Date startTime;
+    private Date endTime;
     private String roomNumber;
 
     public Bill() {
@@ -46,19 +66,19 @@ public class Bill {
         this.floor = floor;
     }
 
-    public String getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 
-    public String getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 

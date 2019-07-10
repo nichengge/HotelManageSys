@@ -2,7 +2,6 @@ package demo.ServerImpl;
 
 import demo.Model.Employee;
 import demo.Model.Room;
-import demo.Model.TempModel.Bill;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -91,17 +90,6 @@ public class EmployeeService extends BaseService {
         return employee;
     }
 
-    //获取账单信息
-    public Bill getBillByRoomId(String roomId) {
-        Bill bill = new Bill();
-        try {
-            bill = ordersMapper.getBillByRoomId(roomId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return bill;
-    }
-
     //预定签入查询
     public ArrayList<Room> preservationCheckinRoomQuery(int orderId) {
         ArrayList<Room> arrayList = null;
@@ -139,13 +127,4 @@ public class EmployeeService extends BaseService {
         return ans;
     }
 
-    //退房
-    public int roomCheckOut(int roomId) {
-        try {
-            ans = employeeMapper.roomCheckOut(roomId);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return ans;
-    }
 }

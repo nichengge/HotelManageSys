@@ -13,8 +13,6 @@ public interface HotelMapper {
 
     int insertSelective(Hotel record);
 
-    //删
-
     //改
 
     //修改酒店信息

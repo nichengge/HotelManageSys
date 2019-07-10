@@ -80,6 +80,16 @@ public class RoomService extends BaseService {
         return arrayList;
     }
 
+    public ArrayList<String> getAllRoomName() {
+        ArrayList<String> arrayList = null;
+        try {
+            arrayList = roomMapper.getAllRoomName();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return arrayList;
+    }
+
     //改****************************************************************
 
 
@@ -96,9 +106,9 @@ public class RoomService extends BaseService {
 
 
     //退房
-    public int roomCheckout(int roomId) {
+    public int roomCheckout(String roomNum) {
         try {
-            ans = roomMapper.updateStatusByRoomID(roomId, "可用");
+            ans = roomMapper.updateStatusByRoomNum(roomNum, "可用");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -136,6 +146,4 @@ public class RoomService extends BaseService {
         }
         return ans;
     }
-
-
 }

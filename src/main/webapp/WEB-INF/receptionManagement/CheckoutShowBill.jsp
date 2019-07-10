@@ -5,18 +5,15 @@
     <h1>
         退房账单信息
     </h1>
-    <jsp:useBean id="checkoutBill" type="entity.Bill" scope="session"></jsp:useBean>
-    客户ID：
-    <jsp:getProperty name="checkoutBill" property="customerID"></jsp:getProperty>
-    <br>
+    <jsp:useBean id="checkoutBill" type="demo.Model.TempModel.Bill" scope="session"></jsp:useBean>
     客户名：
-    <jsp:getProperty name="checkoutBill" property="customerName"></jsp:getProperty>
+    <jsp:getProperty name="checkoutBill" property="customerID"></jsp:getProperty>
     <br>
     订单ID：
     <jsp:getProperty name="checkoutBill" property="orderID"></jsp:getProperty>
     <br>
     房间ID：
-    <jsp:getProperty name="checkoutBill" property="ID"></jsp:getProperty>
+    <jsp:getProperty name="checkoutBill" property="roomID"></jsp:getProperty>
     <br>
     房间号：
     <jsp:getProperty name="checkoutBill" property="roomNumber"></jsp:getProperty>
@@ -28,10 +25,11 @@
     <jsp:getProperty name="checkoutBill" property="floor"></jsp:getProperty>
     <br>
     入住日期：
-    <jsp:getProperty name="checkoutBill" property="dateBegin"></jsp:getProperty>
+    <jsp:getProperty name="checkoutBill" property="startTime"></jsp:getProperty>
+<%--    <%= DateTransform.Date2String(((Bill) session.getAttribute("checkoutBill")).getStartTime()) %>--%>
     <br>
     退房日期：
-    <jsp:getProperty name="checkoutBill" property="dateEnd"></jsp:getProperty>
+    <jsp:getProperty name="checkoutBill" property="endTime"></jsp:getProperty>
     <br>
 </div>
 
@@ -47,6 +45,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-
-</body></html>
-

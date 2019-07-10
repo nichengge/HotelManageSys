@@ -7,7 +7,7 @@
     <h1>
         请输入要换房的相关信息
     </h1>
-    <form action="/ReceptionManagement/RoomChange.do" method="post">
+    <form action="employeeRoomChange" method="post">
         订单ID：
         <select class="mdui-select" name="orderIDChangeRoom">
             <c:forEach var="ordersID" items="${sessionScope.AllOrdersID}"
@@ -17,10 +17,10 @@
         </select>
         <br>
         新的房间ID:
-        <select class="mdui-select" name="roomChangeOfRoomID">
-            <c:forEach var="roomID" items="${sessionScope.AllRoomID}"
+        <select class="mdui-select" name="roomChangeOfRoomName">
+            <c:forEach var="roomName" items="${sessionScope.AllRoomName}"
                        varStatus="status">
-                <option>${roomID}</option>
+                <option>${roomName}</option>
             </c:forEach>
         </select>
         <button type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">提交</button>
@@ -38,6 +38,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-
-</body></html>
-

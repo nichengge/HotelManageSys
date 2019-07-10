@@ -2,13 +2,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@include file="DrawerBar.html" %>
-
-
 <div class="mdui-container main-container mdui-text-left">
     <h1>
         请选择要维修的房间ID号码
     </h1>
-    <form action="/ReceptionManagement/RoomRepair.do" method="post">
+    <form action="ReceptionManagement/RoomRepair" method="post">
         房间ID:
         <select class="mdui-select" name="roomRepairOfRoomID">
             <c:forEach var="roomID" items="${sessionScope.AllRoomID}"
@@ -22,7 +20,7 @@
     <h1>
         请选择维修完成的房间ID号码
     </h1>
-    <form action="/ReceptionManagement/RoomRepairDone.do" method="post">
+    <form action="ReceptionManagement/RoomRepairDone" method="post">
         房间ID:
         <select class="mdui-select" name="roomRepairDoneOfRoomID">
             <c:forEach var="roomID" items="${sessionScope.AllRoomID}"
@@ -35,7 +33,7 @@
 </div>
 
 
-<script src="../MDUI_files/mdui.min.js"></script>
+<script src="../../static/MDUI_files/mdui.min.js"></script>
 <script type="text/javascript">
     //p for parent bar
     var p = document.getElementById("RoomManagement");
@@ -46,7 +44,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-
-
-</body></html>
-

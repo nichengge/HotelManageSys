@@ -1,18 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <%@include file="DrawerBar.html" %>
-
 <div class="mdui-container main-container mdui-text-left">
     <h1>
         符合订单要求的可用房间如下
     </h1>
-    <form action="/ReceptionManagement/PreservationCheckin" method="post">
+    <form action="employeePreservationCheckin" method="post">
         <div class="mdui-table-fluid">
             <table class="mdui-table mdui-table-hoverable">
                 <thead>
                 <tr>
-                    <th>房间类ID</th>
+                    <th>房间ID</th>
                     <th>房间号</th>
                     <th>房间类型</th>
                     <th>房间楼层</th>
@@ -25,16 +23,16 @@
                 <c:forEach var="room" items="${requestScope.AvailableQueryResult}"
                            varStatus="status">
                     <tr>
-                        <td>${room.ID}</td>
-                        <td>${room.number}</td>
-                        <td>${room.type}</td>
-                        <td>${room.floor}</td>
-                        <td>${room.direction}</td>
-                        <td>${room.description}</td>
-                        <td>${room.status}</td>
+                        <td>${room.room_id}</td>
+                        <td>${room.room_number}</td>
+                        <td>${room.room_type}</td>
+                        <td>${room.room_floor}</td>
+                        <td>${room.room_direction}</td>
+                        <td>${room.room_description}</td>
+                        <td>${room.room_status}</td>
                         <td>
                             <label class="mdui-radio">
-                                <input id="bookChooseButton" type="radio" name="bookedRoomID" value=${room.ID}>
+                                <input id="bookChooseButton" type="radio" name="bookedRoomNumber" value=${room.room_number}>
                                 <i class="mdui-radio-icon"></i>
                             </label>
                         </td>
@@ -44,8 +42,6 @@
             </table>
         </div>
         <br>
-
-
         <button type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">提交</button>
     </form>
 
@@ -67,6 +63,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-
-</body></html>
-

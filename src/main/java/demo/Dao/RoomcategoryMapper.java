@@ -35,6 +35,4 @@ public interface RoomcategoryMapper {
 
     //获取所有房间类型的名字
     ArrayList<String> getAllCategoryName();
-
-
 }

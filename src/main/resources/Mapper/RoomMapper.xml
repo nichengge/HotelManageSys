@@ -42,6 +42,10 @@
         select * from room where room_id = #{param1};
     </select>
 
+    <select id="getAllRoomName" resultType="java.lang.String">
+        select room_number from hotelmanagementsystem.room;
+    </select>
+
 
     <!--    根据订单号查询可用房间-->
     <select id="getAvailableRoomByOrdersId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -51,6 +55,12 @@
         left join orders
         on orders.orders_type = room.room_type
         where orders.orders_id = #{param1} and room.room_status='可用'
+    </select>
+
+    <select id="selectRoomByNum" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+         from hotelmanagementsystem.room where room_number = #{param1};
     </select>
 
 
@@ -111,6 +121,11 @@
         update room
         set room_number = #{param2}
         where room_id = #{param1}
+    </update>
+    <update id="updateStatusByRoomNum">
+        update hotelmanagementsystem.room
+        set room_status = #{param2}
+        where room_number = #{param1}
     </update>
 
     <!--    新建-->

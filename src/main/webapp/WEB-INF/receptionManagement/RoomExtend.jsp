@@ -7,7 +7,7 @@
     <h1>
         请选择要续住的相关信息
     </h1>
-    <form action="/ReceptionManagement/RoomExtend" method="post">
+    <form action="employeeRoomExtend" method="post">
         订单ID：
         <select class="mdui-select" id="roomTypeSelect" name="orderIDExtend">
             <c:forEach var="ordersID" items="${sessionScope.AllOrdersID}"
@@ -37,6 +37,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-
-</body></html>
-

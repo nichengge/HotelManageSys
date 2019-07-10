@@ -37,6 +37,7 @@ public interface RoomMapper {
 
 
     int updateStatusByRoomID(int roomId, String status);
+    int updateStatusByRoomNum(String roomNum, String status);
 
 
     //查
@@ -56,4 +57,8 @@ public interface RoomMapper {
 
     //获取可用房间
     ArrayList<Room> getAvailableRoomByOrdersId(int orderId);
+
+    ArrayList<String> getAllRoomName();
+
+    Room selectRoomByNum(String roomNum);
 }

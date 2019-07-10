@@ -44,19 +44,22 @@ public class RoomInfomationUpdate extends BaseController {
     }
 
 
-    //退房    Checkout.do
+    //退房
     @RequestMapping("EmployeeDoCheckout")
     public ModelAndView CheckOut(HttpServletRequest request, HttpServletResponse response,
-                                 @RequestParam("checkoutRoomID") Integer roomId) {
+                                 @RequestParam("checkoutRoomID") String roomNum) {
         HttpSession session = request.getSession();
-        System.out.println(roomId);
-        Bill bill = employeeService.getBillByRoomId(String.valueOf(roomId));
+        System.out.println(roomNum);
+        Bill bill = ordersService.getBillByRoomNum(roomNum);
         if (bill != null) {
+            System.out.println("bill is not null");
             //可能存在问题
             int orderId = bill.getOrderID();
-            ans = (employeeService.roomCheckOut(roomId) == 1) && (ordersService.updateOrderInformationByOrderID(orderId) == 1
+            ans = (roomService.roomCheckout(roomNum) == 1) && (ordersService.updateOrderInformationByOrderID(orderId) == 1
                     && (ordersService.calculateBillByOrderID(orderId) == 1)) ? 1 : 0;
             session.setAttribute("checkoutBill", bill);
+        }else {
+            System.out.println("bill is null !");
         }
         if (ans == 1) {
             message = "退房成功！ 3秒后显示账单。";
@@ -70,14 +73,14 @@ public class RoomInfomationUpdate extends BaseController {
 
     //对用户订单换房
     //ReceptionManagement/RoomChange.do
-    @RequestMapping("ReceptionManagement/RoomChange")
+    @RequestMapping("employeeRoomChange")
     public ModelAndView employeeRoomChange(HttpServletRequest request, HttpServletResponse response,
                                            @RequestParam("orderIDChangeRoom") String orderIDChangeRoom,
-                                           @RequestParam("roomChangeOfRoomID") String roomChangeOfRoomID) {
+                                           @RequestParam("roomChangeOfRoomName") String roomChangeOfRoomName) {
         ans = 0;
         System.out.println("更改房间的订单号：" + orderIDChangeRoom);
         //根据房间号和订单号更新信息
-        ans = ordersService.updateRoomIDByOrderID(Integer.valueOf(orderIDChangeRoom), roomChangeOfRoomID);
+        ans = ordersService.updateRoomIDByOrderID(Integer.valueOf(orderIDChangeRoom), roomChangeOfRoomName);
         if (ans == 1) {
             message = "换房成功！ 3秒后返回换房页面。";
         } else {
