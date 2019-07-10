@@ -93,16 +93,15 @@ public class RoomManageController extends BaseController {
     //RoomInformationQuery.do
     @RequestMapping("RoomInformationQuery")
     public ModelAndView RoomInformationQuery(HttpServletRequest request, HttpServletResponse response,
-                                             @RequestParam("IDOfSettingRoom") String IDOfSettingRoom) {
+                                             @RequestParam("IDOfSettingRoom") Integer IDOfSettingRoom) {
         HttpSession session = request.getSession();
-        Room resRoom = roomService.roomQueryByID(Integer.valueOf(IDOfSettingRoom));
+        Room resRoom = roomService.roomQueryByID(IDOfSettingRoom);
         session.setAttribute("resultRoomOfSetting", resRoom);
 
         //获取全部房间类型属性
+        System.out.println("获取房间类型属性");
         ArrayList<String> allRoomType = roomcategoryService.getAllCategory();
         request.setAttribute("allRoomType", allRoomType);
         return dispatcher.goPage2(mv, request, response, "basicSetting/RoomInformationSetting");
     }
-
-
 }

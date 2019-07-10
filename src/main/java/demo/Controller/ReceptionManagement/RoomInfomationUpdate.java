@@ -15,22 +15,24 @@ import javax.servlet.http.HttpSession;
 @Controller("RoomInformationUpdate")
 public class RoomInfomationUpdate extends BaseController {
 
-    @RequestMapping("basicSetting/RoomInformationUpdate")
+    @RequestMapping("adminRoomInformationUpdate")
     public ModelAndView RoomInfoUpdate(HttpServletRequest request, HttpServletResponse response,
                                        @RequestParam("roomType") String roomType,
                                        @RequestParam("roomFloor") String roomFloor,
                                        @RequestParam("roomDirection") String roomDirection,
                                        @RequestParam("roomDescription") String roomDescription,
-                                       @RequestParam("roomStatus") String roomStatus) {
-
+                                       @RequestParam("roomStatus") String roomStatus,
+                                       @RequestParam("roomSquare") String roomSquare,
+                                       @RequestParam("roomNumber") String roomNumber) {
         HttpSession session = request.getSession();
         Room room = (Room) session.getAttribute("resultRoomOfSetting");
-        String roomID = String.valueOf(room.getRoom_id());
+        room.setRoom_number(roomNumber);
         room.setRoom_type(roomType);
         room.setRoom_floor(roomFloor);
         room.setRoom_direction(roomDirection);
         room.setRoom_description(roomDescription);
         room.setRoom_status(roomStatus);
+        room.setRoom_square(Double.valueOf(roomSquare));
         ans = roomService.updateRoomInformation(room);
         if (ans == 1) {
             message = "房间信息更新成功! 3秒后返回客房信息设置页.";

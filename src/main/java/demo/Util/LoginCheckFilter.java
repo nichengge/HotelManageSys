@@ -15,7 +15,6 @@ import java.io.IOException;
 @Order(FilterRegistrationBean.LOWEST_PRECEDENCE - 2)
 public class LoginCheckFilter implements Filter {
 
-    public static int m = 1;
 
     @Override
     public void init(FilterConfig filterConfig) {
@@ -24,20 +23,26 @@ public class LoginCheckFilter implements Filter {
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
+        String url = request.getParameter("url") == null ? "" : request.getParameter("url");
         HttpServletResponse response = (HttpServletResponse) resp;
         HttpSession session = request.getSession();
         Customer loginedCustomer = (Customer) session.getAttribute("LoginedCustomer");
         String requestPath = request.getServletPath();
+        chain.doFilter(req, resp);
+        /*
+        System.out.println(url);
+        System.out.println(requestPath);
         if (loginedCustomer != null
                 || requestPath.endsWith("Login")
-                || requestPath.endsWith("Register") || m == 1) {
-            m = 0;
+                || requestPath.endsWith("login")
+                || requestPath.endsWith("Register") || url.endsWith("Login")
+                || url.endsWith("Register") || url.endsWith("index")
+                || url.endsWith("login")) {
             chain.doFilter(req, resp);
         } else {
-            System.out.println("1");
-            m = 1;
             response.setHeader("Refresh", "1; URL=go?url=index");
         }
+        */
     }
 
 

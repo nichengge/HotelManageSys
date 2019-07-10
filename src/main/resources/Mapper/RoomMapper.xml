@@ -39,7 +39,7 @@
     </select>
 
     <select id="roomQueryByID" resultMap="BaseResultMap">
-        select * from room where room_number = #{param1};
+        select * from room where room_id = #{param1};
     </select>
 
 
@@ -87,6 +87,9 @@
             </if>
             <if test="room_status != null">
                 room_status = #{room_status,jdbcType=VARCHAR},
+            </if>
+            <if test="room_square != null">
+                room_square = #{room_square,jdbcType=DOUBLE},
             </if>
         </set>
         where room_id = #{room_id,jdbcType=INTEGER}

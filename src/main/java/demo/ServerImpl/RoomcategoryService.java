@@ -24,6 +24,11 @@ public class RoomcategoryService extends BaseService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        if (ans == 1) {
+            System.out.println("房间类型添加成功");
+        }else {
+            System.out.println("房间类型添加失败");
+        }
         return ans;
     }
 
@@ -59,10 +64,10 @@ public class RoomcategoryService extends BaseService {
 
     //获取房间种类和价格
     public HashMap<String, Double> getTypeAndPrice() {
-        HashMap<String ,Double> hashMap = null;
+        HashMap<String, Double> hashMap = null;
         try {
             hashMap = roomcategoryMapper.getTypeAndPrice();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return hashMap;

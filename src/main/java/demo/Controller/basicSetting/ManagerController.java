@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class ManagerController extends BaseController {
     //用户认证登录
-    @RequestMapping("/adminlogin")
+    @RequestMapping("adminlogin")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response,
                               @RequestParam("username") String username,
                               @RequestParam("password") String password) {
