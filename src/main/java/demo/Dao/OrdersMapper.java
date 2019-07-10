@@ -56,7 +56,7 @@ public interface OrdersMapper {
     int singleUpdate(String setAttribute, String setValue, String whereAttribute, String whereValue);
 
     //更换房间名
-    int updateRoomNameByOrderID(int orderId, String roomName);
+    int updateRoomNameByOrderID(int orderId, String roomNumber);
 
     ResultSet getOrderPrice(int orderId);
 

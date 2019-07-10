@@ -35,11 +35,11 @@
 
     <!--    通过房间类型获取房间-->
     <select id="getAllRoomByType" parameterType="java.lang.String" resultMap="BaseResultMap">
-        select * from room where room_type = #{0};
+        select * from room where room_type = #{param1};
     </select>
 
     <select id="roomQueryByID" resultMap="BaseResultMap">
-        select * from room where room_number = #{0};
+        select * from room where room_number = #{param1};
     </select>
 
 
@@ -50,17 +50,17 @@
         from room
         left join orders
         on orders.orders_type = room.room_type
-        where orders.orders_id = #{0} and room.room_status='可用'
+        where orders.orders_id = #{param1} and room.room_status='可用'
     </select>
 
 
     <!--    删除-->
 
     <delete id="deleteRoomById" parameterType="java.lang.Integer">
-        delete from room where room_id = #{0}
+        delete from room where room_id = #{param1}
     </delete>
     <delete id="deleteRoomByName" parameterType="java.lang.String">
-        delete from room where room_number = #{0}
+        delete from room where room_number = #{param1}
     </delete>
 
 
@@ -94,20 +94,20 @@
 
     <!--    更换房间号-->
     <update id="updateRoomNumberByRoomID">
-        update room set room_number = #{1} where room_id = #{0};
+        update room set room_number = #{param2} where room_id = #{param1};
     </update>
 
 
     <!--    更改房间信息-->
     <update id="updateStatusByRoomID">
         update room
-        set room_status = #{1}
-        where room_id = #{0}
+        set room_status = #{param2}
+        where room_id = #{param1}
     </update>
     <update id="updateRoomNumberByRoomId">
         update room
-        set room_number = #{1}
-        where room_id = #{0}
+        set room_number = #{param2}
+        where room_id = #{param1}
     </update>
 
     <!--    新建-->

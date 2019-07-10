@@ -107,7 +107,7 @@
 
     <delete id="deleteEmployeeeById" parameterType="java.lang.Integer">
         delete from employee
-        where employee_id = #{0}
+        where employee_id = param1
     </delete>
 
 </mapper>

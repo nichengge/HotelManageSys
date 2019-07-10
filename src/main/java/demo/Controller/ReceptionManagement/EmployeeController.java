@@ -2,6 +2,7 @@ package demo.Controller.ReceptionManagement;
 
 import demo.Controller.BaseController;
 import demo.Model.Employee;
+import demo.Model.Room;
 import demo.ServerImpl.Helper;
 import demo.Util.DateTransform;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 @Controller
 public class EmployeeController extends BaseController {
@@ -91,5 +93,48 @@ public class EmployeeController extends BaseController {
         return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
+
+    //预定入住的房间查询
+    //ReceptionManagement/PreservationCheckinRoomQuery.do
+    @RequestMapping("ReceptionManagement/PreservationCheckinRoomQuery")
+    public ModelAndView employeePreservationCheckinRoomQuery(HttpServletRequest request, HttpServletResponse response,
+                                                             @RequestParam("orderIDCheckin") Integer orderId) {
+        HttpSession session = request.getSession();
+        ans = 0;
+        ArrayList<Room> availableRoomQueryResult = employeeService.preservationCheckinRoomQuery(orderId);
+        if (availableRoomQueryResult != null) {
+            ans = 1;
+            request.setAttribute("AvailableQueryResult", availableRoomQueryResult);
+            session.setAttribute("orderIDCheckin", orderId);
+        }
+        if (ans == 1) {
+            return dispatcher.goPage2(mv, request, response, "receptionManagement/PreservationCheckinRoomQueryResult");
+        } else {
+            message = "查询失败，请重试。3秒后返回预定入住界面。";
+            nextURL = "receptionManagement/PreservationCheckin";
+            return dispatcher.goPage(request, response, mv, nextURL, message);
+        }
+    }
+
+    //预定订单入住
+    //ReceptionManagement/PreservationCheckin.do
+    @RequestMapping("ReceptionManagement/PreservationCheckin")
+    public ModelAndView employeeDoPreservationCheckin(HttpServletRequest request, HttpServletResponse response,
+                                                      @RequestParam("bookedRoomId") String bookedRoomId) {
+        HttpSession session = request.getSession();
+        String orderIDCheckin = (String) session.getAttribute("orderIDCheckin");
+        if (bookedRoomId != null) {
+            ans = employeeService.preservationCheckin(Integer.valueOf(orderIDCheckin), bookedRoomId);
+            if (ans == 1) {
+                message = "入住成功！3秒后返回预定入住界面。";
+            } else {
+                message = "入住失败！请重试！3秒后返回预定入住界面";
+            }
+        } else {
+            message = "请选择入住的房间！3秒后返回预定入住界面。";
+        }
+        nextURL = "receptionManagement/PreservationCheckin";
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
 
 }

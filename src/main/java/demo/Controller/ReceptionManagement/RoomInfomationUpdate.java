@@ -16,17 +16,16 @@ import javax.servlet.http.HttpSession;
 public class RoomInfomationUpdate extends BaseController {
 
     @RequestMapping("basicSetting/RoomInformationUpdate")
-    public ModelAndView RoomInfoUpdate(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView RoomInfoUpdate(HttpServletRequest request, HttpServletResponse response,
+                                       @RequestParam("roomType") String roomType,
+                                       @RequestParam("roomFloor") String roomFloor,
+                                       @RequestParam("roomDirection") String roomDirection,
+                                       @RequestParam("roomDescription") String roomDescription,
+                                       @RequestParam("roomStatus") String roomStatus) {
 
         HttpSession session = request.getSession();
         Room room = (Room) session.getAttribute("resultRoomOfSetting");
         String roomID = String.valueOf(room.getRoom_id());
-        String roomType = request.getParameter("roomType");
-        String roomFloor = request.getParameter("roomFloor");
-        String roomDirection = request.getParameter("roomDirection");
-        String roomDescription = request.getParameter("roomDescription");
-        String roomStatus = request.getParameter("roomStatus");
-
         room.setRoom_type(roomType);
         room.setRoom_floor(roomFloor);
         room.setRoom_direction(roomDirection);
@@ -64,6 +63,25 @@ public class RoomInfomationUpdate extends BaseController {
             message = "退房失败！ 请重试！ 3秒后回到退房界面。";
             nextURL = "receptionManagement/Checkout";
         }
+        return dispatcher.goPage(request, response, mv, nextURL, message);
+    }
+
+    //对用户订单换房
+    //ReceptionManagement/RoomChange.do
+    @RequestMapping("ReceptionManagement/RoomChange")
+    public ModelAndView employeeRoomChange(HttpServletRequest request, HttpServletResponse response,
+                                           @RequestParam("orderIDChangeRoom") String orderIDChangeRoom,
+                                           @RequestParam("roomChangeOfRoomID") String roomChangeOfRoomID) {
+        ans = 0;
+        System.out.println("更改房间的订单号：" + orderIDChangeRoom);
+        //根据房间号和订单号更新信息
+        ans = ordersService.updateRoomIDByOrderID(Integer.valueOf(orderIDChangeRoom), roomChangeOfRoomID);
+        if (ans == 1) {
+            message = "换房成功！ 3秒后返回换房页面。";
+        } else {
+            message = "换房失败！ 3秒后返回换房页面。";
+        }
+        nextURL = "receptionManagement/RoomChange";
         return dispatcher.goPage(request, response, mv, nextURL, message);
     }
 
