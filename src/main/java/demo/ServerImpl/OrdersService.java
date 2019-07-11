@@ -29,6 +29,11 @@ public class OrdersService extends BaseService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        if(ans==1){
+            System.out.println("预定成功！");
+        }else {
+            System.out.println("预定失败");
+        }
         return ans;
     }
 

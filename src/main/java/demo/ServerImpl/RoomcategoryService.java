@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 @Service("RoomcategoryService")
@@ -63,15 +64,21 @@ public class RoomcategoryService extends BaseService {
 
     //获取房间种类和价格
     public HashMap<String, Double> getTypeAndPrice() {
-        HashMap<String, Double> hashMap = null;
+        HashMap<String, Double> hashMap = new HashMap<>();
         try {
-            hashMap = roomcategoryMapper.getTypeAndPrice();
+            List<HashMap<String, Double>> hashMaps = null;
+            hashMaps = roomcategoryMapper.getTypeAndPrice();
+            for(HashMap<String,Double> hashMap1 :hashMaps){
+                hashMap.put(String.valueOf(hashMap1.get("name")),((Number)hashMap1.get("price")).doubleValue());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        if(hashMap!=null){
+            System.out.println("房间种类和价格获取成功！");
+        }
         return hashMap;
     }
-
 
     //改
 

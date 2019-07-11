@@ -90,11 +90,13 @@ public class CustomerOrderController extends BaseController {
         return dispatcher.goPage2(mv, request, response, "basicSetting/ReportOfLivingCustomer");
     }
 
-    //预定
+    //预定处理
     @RequestMapping("RoomQueryResultChosen")
     public ModelAndView RoomQueryResultChosen(HttpServletRequest request, HttpServletResponse response,
                                               @RequestParam("booked") String chosedRoomType) {
         HttpSession session = request.getSession();
+
+        //获取可用房间信息
         HashMap<String, Integer> AvailableQueryResult = (HashMap<String, Integer>) session.getAttribute("AvailableQueryResult");
         ans = AvailableQueryResult.get(chosedRoomType);
         if (ans == 0) {

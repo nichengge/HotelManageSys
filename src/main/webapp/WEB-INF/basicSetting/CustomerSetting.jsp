@@ -7,6 +7,7 @@
     <div class="mdui-container main-container" style="display: flex;flex-direction: column;justify-content: center;">
 
         <div class="mdui-list" style="size: 100px">
+            <a href="showAllUser" class="mdui-list-item mdui-ripple">查看客户账号</a>
             <a href="go?url=basicSetting/CustomerAccountAdd" class="mdui-list-item mdui-ripple">客户账号增加</a>
             <a href="go?url=basicSetting/CustomerAccountModifyID" class="mdui-list-item mdui-ripple">客户账号修改</a>
             <a href="go?url=basicSetting/CustomerAccountDelete" class="mdui-list-item mdui-ripple">客户账号删除</a>
@@ -41,5 +42,3 @@
     var active = "mdui-list-item mdui-ripple mdui-list-item-active";
     c.setAttribute('class', active);
 </script>
-</body></html>
-

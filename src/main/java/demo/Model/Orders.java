@@ -40,13 +40,15 @@ public class Orders {
 
     }
 
-    public Orders(String username, String real_name, Date dateBegin, Date dateEnd, String status, String type) {
+    public Orders(String username, String real_name, String id_card, Date dateBegin, Date dateEnd, String status, String type, Double cost) {
         this.customer_id = username;
         this.customer_name = real_name;
         this.start_time = dateBegin;
         this.end_time = dateEnd;
         this.orders_status = status;
         this.orders_type = type;
+        this.orders_cost = cost;
+        this.customer_idcard = id_card;
     }
 
     public Integer getOrders_id() {

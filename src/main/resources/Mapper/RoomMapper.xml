@@ -27,10 +27,9 @@
     <select id="getRoomUnavailableBetween" parameterType="java.util.Date" resultMap="BaseResultMap">
         select count(room_type), room_type from room group by room_type;
     </select>
-
     <select id="getAllRoomTypeWithNumber" resultType="java.util.HashMap">
-        select room_type,count(*)as number
-        from room group by room_type order by room_type;
+        select room_type,count(*)as number from room group by room_type
+        order by room_type;
     </select>
 
     <!--    通过房间类型获取房间-->
@@ -60,7 +59,7 @@
     <select id="selectRoomByNum" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-         from hotelmanagementsystem.room where room_number = #{param1};
+        from hotelmanagementsystem.room where room_number = #{param1};
     </select>
 
 

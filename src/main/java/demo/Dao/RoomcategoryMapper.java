@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Mapper
 @Service
@@ -28,7 +29,7 @@ public interface RoomcategoryMapper {
     //获取房间预留初始化
     ArrayList<Roomcategory> getRoomPreservationInitialize();
 
-    HashMap<String, Double> getTypeAndPrice();
+    List<HashMap<String, Double>> getTypeAndPrice();
 
     //获取所有房间类型的Id
     ArrayList<String> getallcategoryid();

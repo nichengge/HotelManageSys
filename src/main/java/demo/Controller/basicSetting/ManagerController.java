@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 @Controller
 public class ManagerController extends BaseController {
@@ -92,6 +93,15 @@ public class ManagerController extends BaseController {
     }
 
     //客户管理
+
+    //查看所有用户
+    @RequestMapping("showAllUser")
+    public ModelAndView showAllUser(HttpServletRequest request, HttpServletResponse response){
+        ArrayList<Customer> arrayList = customerService.getAllCustomers();
+        request.setAttribute("AllUserList", arrayList);
+        nextURL = "basicSetting/CustomerAccountShow";
+        return dispatcher.goPage2(mv, request, response, nextURL);
+    }
 
     //增加客户
     @RequestMapping("adminAddUser")

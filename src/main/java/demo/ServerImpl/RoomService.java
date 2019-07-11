@@ -55,10 +55,16 @@ public class RoomService extends BaseService {
     }
 
     //获取所有房间类型
-    public List<HashMap<String, Integer>> getAllroomType() {
-        List<HashMap<String, Integer>> hashMap = null;
+    public HashMap<String, Integer> getAllroomType() {
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
         try {
-            hashMap = roomMapper.getAllRoomTypeWithNumber();
+            List<HashMap<String, Integer>> hashMaps = null;
+            hashMaps = roomMapper.getAllRoomTypeWithNumber();
+            for(HashMap<String,Integer> hashMap1 :hashMaps){
+                //数据库的int型获取的是Long型，需要转换
+                hashMap.put(String.valueOf(hashMap1.get("room_type")),((Number)hashMap1.get("number")).intValue());
+            }
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("查询失败，数据库错误...from RoomService");

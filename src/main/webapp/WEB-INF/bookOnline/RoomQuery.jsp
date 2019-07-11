@@ -25,8 +25,6 @@
     //限制结束日期日期从今天开始
     document.getElementById("dateEndID").setAttribute("min", new Date().toISOString().substring(0, 10));
 </script>
-
-
 <script type="text/javascript">
     //p for parent bar
     var p = document.getElementById("BookRoom");

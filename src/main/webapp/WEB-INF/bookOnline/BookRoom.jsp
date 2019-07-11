@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@include file="DrawerBar.html" %>
 
 <form action="UserSubmitOrder" method="get">
@@ -9,21 +9,21 @@
             </h1>
             房间类型：${sessionScope.type}
             <br>
-            房间价格（元）：${sessionScope.price}
+            房间价格（元）：${sessionScope.startTime}
             <br>
-            入住时间：${sessionScope.dateBegin}
+            入住时间：${sessionScope.endTime}
             <br>
             退房时间：${sessionScope.dateEnd}
             <br>
-            <jsp:useBean id="LoginedCustomer" scope="session" type="entity.Customer"></jsp:useBean>
+            <jsp:useBean id="LoginedCustomer" scope="session" type="demo.Model.Customer"></jsp:useBean>
             客户ID：
-            <jsp:getProperty name="LoginedCustomer" property="userID"></jsp:getProperty>
+            <jsp:getProperty name="LoginedCustomer" property="customer_id"></jsp:getProperty>
             <br>
             客户姓名：
-            <jsp:getProperty name="LoginedCustomer" property="customerName"></jsp:getProperty>
+            <jsp:getProperty name="LoginedCustomer" property="real_name"></jsp:getProperty>
             <br>
             客户身份证号码：
-            <jsp:getProperty name="LoginedCustomer" property="IDNumber"></jsp:getProperty>
+            <jsp:getProperty name="LoginedCustomer" property="id_card"></jsp:getProperty>
             <br>
             <button type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">确认预定</button>
         </div>

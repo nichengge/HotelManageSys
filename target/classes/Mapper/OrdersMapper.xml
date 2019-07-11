@@ -58,11 +58,11 @@
 
     <!--    增加-->
     <insert id="insert" parameterType="demo.Model.Orders">
-    insert into orders (orders_id, room_number, record_time,
+    insert into orders (orders_id, room_number,
       start_time, end_time, customer_id,
       customer_idcard, customer_name, orders_status,
       orders_type, orders_cost)
-    values (#{orders_id,jdbcType=INTEGER}, #{room_number,jdbcType=VARCHAR}, #{record_time,jdbcType=TIMESTAMP},
+    values (#{orders_id,jdbcType=INTEGER}, #{room_number,jdbcType=VARCHAR},
       #{start_time,jdbcType=TIMESTAMP}, #{end_time,jdbcType=TIMESTAMP}, #{customer_id,jdbcType=VARCHAR},
       #{customer_idcard,jdbcType=VARCHAR}, #{customer_name,jdbcType=VARCHAR}, #{orders_status,jdbcType=VARCHAR},
       #{orders_type,jdbcType=VARCHAR}, #{orders_cost,jdbcType=DOUBLE})

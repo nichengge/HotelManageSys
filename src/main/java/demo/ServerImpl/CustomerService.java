@@ -2,13 +2,14 @@ package demo.ServerImpl;
 
 import demo.Model.Customer;
 import demo.Model.TempModel.CustomerReport;
+import demo.Util.DateTransform;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 @Service("CustomerService")
 @Transactional
@@ -114,33 +115,33 @@ public class CustomerService extends BaseService {
 
     }
 
-    //获取用户报告
+    //获取在住客人情况报告
     public ArrayList<CustomerReport> getCustomerReport() {
         ArrayList<CustomerReport> arrayList = new ArrayList<>();
         try {
-            ResultSet r = customerMapper.queryCustomersLiving();
-            if (r != null)
-                while (r.next()) {
-                    String userID = r.getString("customer_id");
-                    String IDNumber = r.getString("id_card");
-                    String customerName = r.getString("realname");
-                    String roomID = r.getString("roomn_umber");
-                    String dateBegin = r.getString("start_time");
-                    String dateEnd = r.getString("end_time");
+            List<HashMap<String, Object>> r = customerMapper.queryCustomersLiving();
+            for (HashMap<String, Object> hashMap : r) {
+                String userID = String.valueOf(hashMap.get("customer_id"));
+                String IDNumber = String.valueOf(hashMap.get("id_card"));
+                String customerName = String.valueOf(hashMap.get("realname"));
+                String roomID = String.valueOf(hashMap.get("room_number"));
+                String dateBegin = DateTransform.Date2String((Date)hashMap.get("start_time"));
+                String dateEnd = DateTransform.Date2String((Date)hashMap.get("end_time"));
 
-                    CustomerReport customerReport =
-                            new CustomerReport.
-                                    Builder(Integer.valueOf(userID)).
-                                    IDNumber(IDNumber).
-                                    customerName(customerName).
-                                    roomID(Integer.valueOf(roomID)).
-                                    startTime(dateBegin).
-                                    endTime(dateEnd).
-                                    build();
-                    arrayList.add(customerReport);
-                }
-        } catch (Exception e) {
+
+                CustomerReport customerReport1 = new CustomerReport.Builder(Integer.valueOf(userID)).IDNumber(IDNumber)
+                        .customerName(customerName).roomID(Integer.valueOf(roomID)).startTime(dateBegin).endTime(dateEnd)
+                        .build();
+                arrayList.add(customerReport1);
+            }
+        } catch (
+                Exception e) {
             e.printStackTrace();
+        }
+        if (arrayList != null && arrayList.size() != 0) {
+            System.out.println("查询客户情况报表成功");
+        } else {
+            System.out.println("查询客户情况报表失败！");
         }
         return arrayList;
     }
@@ -155,6 +156,18 @@ public class CustomerService extends BaseService {
         if (hashMap != null)
             System.out.println("查询成功...from CustomerService");
         return hashMap;
+    }
+
+    //获取所有用户
+    public ArrayList<Customer> getAllCustomers() {
+        ArrayList<Customer> arrayList = null;
+        try {
+            arrayList = customerMapper.getAllCustomers();
+        } catch (Exception e) {
+            System.out.println("something went wrong...from Service");
+            e.printStackTrace();
+        }
+        return arrayList;
     }
 
 

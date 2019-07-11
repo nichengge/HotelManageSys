@@ -33,8 +33,8 @@
                     <td>${customerReport.IDNumber}</td>
                     <td>${customerReport.customerName}</td>
                     <td>${customerReport.roomID}</td>
-                    <td>${customerReport.dateBegin}</td>
-                    <td>${customerReport.dateEnd}</td>
+                    <td>${customerReport.startTime}</td>
+                    <td>${customerReport.endTime}</td>
                 </tr>
             </c:forEach>
             </tbody>
@@ -56,4 +56,3 @@
 
 </body>
 </html>
-

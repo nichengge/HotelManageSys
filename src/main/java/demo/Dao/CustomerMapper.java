@@ -5,7 +5,6 @@ import demo.Model.Orders;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;
 
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -70,8 +69,8 @@ public interface CustomerMapper {
     //获取所有客户id
     ArrayList<String> getAllCustomersId();
 
-    //查询所有在住客户
-    ResultSet queryCustomersLiving();
+    //查询所有在住客户信息
+    List<HashMap<String,Object>> queryCustomersLiving();
 
     //显示客户订单
     List<Orders> showOrders();

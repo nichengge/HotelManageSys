@@ -17,7 +17,7 @@
                     <tr>
                         <th>房间类型</th>
                         <th>房间数量</th>
-                        <th>预定数量</th>
+                        <th>预定</th>
                     </tr>
                     </thead>
                     <tbody>

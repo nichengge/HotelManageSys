@@ -160,8 +160,7 @@
 
     <!--    获取所有用户对象-->
     <select id="getAllCustomers" resultMap="BaseResultMap">
-        select
-        *
+        select  <include refid="Base_Column_List"/>
         from customer
     </select>
 
@@ -191,13 +190,12 @@
 
 
     <!--    查询在住客户-->
-    <select id="queryCustomersLiving" resultType="java.sql.ResultSet">
+    <select id="queryCustomersLiving" resultType="HashMap">
         select
         customer.customer_id,customer.id_card,customer.real_name as realname,room_number,start_time,end_time
         from customer
         left join orders on customer.id_card = orders.customer_idcard
-        where (orders.orders_status='在住')and (end_time>=current_date)
-        order by customer.customer_id
+        where (orders.orders_status='在住') order by customer.customer_id
     </select>
 
     <!--    查询不可达房间类型和房间号  &lt;= 小于等于  &gt;=  大于等于-->
