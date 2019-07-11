@@ -116,17 +116,35 @@ public class CustomerService extends BaseService {
     }
 
     //获取在住客人情况报告
-    public ArrayList<CustomerReport> getCustomerReport() {
+    public ArrayList<CustomerReport> getCustomerReport(int choice) {
         ArrayList<CustomerReport> arrayList = new ArrayList<>();
         try {
-            List<HashMap<String, Object>> r = customerMapper.queryCustomersLiving();
+            List<HashMap<String, Object>> r = null;
+            switch (choice) {
+                case 1: {
+                    r = customerMapper.queryCustomersLiving();
+                    break;
+                }
+                case 2: {
+                    r = customerMapper.queryCustomersPreservation();
+                    break;
+                }
+                case 3: {
+                    r = customerMapper.queryCustomersLived();
+                    break;
+                }
+                default: {
+                    r = customerMapper.queryCustomersLiving();
+                    break;
+                }
+            }
             for (HashMap<String, Object> hashMap : r) {
                 String userID = String.valueOf(hashMap.get("customer_id"));
                 String IDNumber = String.valueOf(hashMap.get("id_card"));
                 String customerName = String.valueOf(hashMap.get("realname"));
                 String roomID = String.valueOf(hashMap.get("room_number"));
-                String dateBegin = DateTransform.Date2String((Date)hashMap.get("start_time"));
-                String dateEnd = DateTransform.Date2String((Date)hashMap.get("end_time"));
+                String dateBegin = DateTransform.Date2String((Date) hashMap.get("start_time"));
+                String dateEnd = DateTransform.Date2String((Date) hashMap.get("end_time"));
 
 
                 CustomerReport customerReport1 = new CustomerReport.Builder(Integer.valueOf(userID)).IDNumber(IDNumber)
@@ -147,14 +165,22 @@ public class CustomerService extends BaseService {
     }
 
     public HashMap<String, Integer> getUnavailableRoom(Date startTime, Date endTime) {
-        HashMap<String, Integer> hashMap = null;
+        HashMap<String, Integer> hashMap = new HashMap<>(); //注意这个不能设置为null初始值，否则无法放入内容
         try {
-            hashMap = customerMapper.getUnavailableRoomTypeWithNumber(startTime, endTime);
+            List<HashMap<String, Integer>> hashMaps = null;
+            hashMaps = customerMapper.getUnavailableRoomTypeWithNumber(startTime, endTime);
+            if (hashMaps != null)
+                for (HashMap<String, Integer> hashMap1 : hashMaps) {
+                    //数据库的int型获取的是Long型，需要转换
+                    hashMap.put(String.valueOf(hashMap1.get("room_type")), ((Number) hashMap1.get("number")).intValue());
+                }
         } catch (Exception e) {
             e.printStackTrace();
         }
         if (hashMap != null)
             System.out.println("查询成功...from CustomerService");
+        else
+            System.out.println("查询失败...from CustomerService");
         return hashMap;
     }
 

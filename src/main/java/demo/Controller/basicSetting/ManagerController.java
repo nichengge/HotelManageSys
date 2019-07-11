@@ -99,6 +99,7 @@ public class ManagerController extends BaseController {
     public ModelAndView showAllUser(HttpServletRequest request, HttpServletResponse response){
         ArrayList<Customer> arrayList = customerService.getAllCustomers();
         request.setAttribute("AllUserList", arrayList);
+
         nextURL = "basicSetting/CustomerAccountShow";
         return dispatcher.goPage2(mv, request, response, nextURL);
     }
@@ -116,6 +117,10 @@ public class ManagerController extends BaseController {
         if (ans == 1) {
             message = "操作成功！3秒后跳转到客户账号管理界面。";
             nextURL = "basicSetting/CustomerSetting";
+
+            request.getSession().removeAttribute("AllCustomerID");
+            ArrayList<String> arrayListAllCustomerID = customerService.getAllCustomersID();
+            request.getSession().setAttribute("AllCustomerID", arrayListAllCustomerID);
         } else {
             message = "操作失败！3秒后返回到客户账号添加界面。";
             nextURL = "basicSetting/CustomerAccountAdd";
@@ -133,6 +138,9 @@ public class ManagerController extends BaseController {
         if (ans == 1) {
             message = "删除操作成功!3秒后返回客户账号管理界面。";
             nextURL = "basicSetting/CustomerSetting";
+            request.getSession().removeAttribute("AllCustomerID");
+            ArrayList<String> arrayListAllCustomerID = customerService.getAllCustomersID();
+            request.getSession().setAttribute("AllCustomerID", arrayListAllCustomerID);
         } else {
             message = "删除操作失败! 无对应的客户账号ID! 请重试!";
             nextURL = "basicSetting/CustomerAccountDelete";
@@ -177,6 +185,9 @@ public class ManagerController extends BaseController {
         if (ans == 1) {
             message = "修改操作成功!3秒后返回客户账号管理界面。";
             nextURL = "basicSetting/CustomerSetting";
+            request.getSession().removeAttribute("AllCustomerID");
+            ArrayList<String> arrayListAllCustomerID = customerService.getAllCustomersID();
+            request.getSession().setAttribute("AllCustomerID", arrayListAllCustomerID);
         } else {
             message = "修改操作失败 ! 请重试!";
             nextURL = "basicSetting/CustomerAccountModify";

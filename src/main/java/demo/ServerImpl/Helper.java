@@ -48,8 +48,10 @@ public class Helper {
         HttpSession session = request.getSession();
         //对会话信息进行初始化
         try {
+
+            //获取所有用户id
             ArrayList<String> arrayListAllCustomerID;
-            arrayListAllCustomerID = customerService.getAllCustomersID(); //获取所有用户id
+            arrayListAllCustomerID = customerService.getAllCustomersID();
             session.setAttribute("AllCustomerID", arrayListAllCustomerID);
 
             ArrayList<String> arrayListAllOrdersID = ordersService.getAllOrdersID(); //获取所有订单信息
@@ -67,7 +69,7 @@ public class Helper {
             ArrayList<String> arrayListAllRoomType = roomcategoryService.getAllCategory();
             session.setAttribute("AllRoomType", arrayListAllRoomType);
 
-            //获取所有雇员信息
+            //获取所有雇员Id
             ArrayList<String> allemployeeid = employeeService.getAllEmployeesId();
             session.setAttribute("AllReceptionistID", allemployeeid);
 

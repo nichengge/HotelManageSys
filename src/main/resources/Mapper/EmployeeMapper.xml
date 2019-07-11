@@ -23,6 +23,13 @@
         where employee_username = #{employee_username,jdbcType=VARCHAR};
     </select>
 
+
+    <!--    获取所有对象-->
+    <select id="getAllEmployee" resultMap="BaseResultMap">
+        select  <include refid="Base_Column_List"/>
+        from hotelmanagementsystem.employee
+    </select>
+
     <!--    按照Id查找员工-->
     <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
@@ -112,7 +119,7 @@
 
     <delete id="deleteEmployeeeById" parameterType="java.lang.Integer">
         delete from employee
-        where employee_id = param1
+        where employee_id = #{param1}
     </delete>
 
 </mapper>

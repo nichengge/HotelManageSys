@@ -33,4 +33,6 @@ public interface EmployeeMapper {
 
 
     Employee getEmployeeByUsername(String username);
+
+    ArrayList<Employee> getAllEmployee();
 }

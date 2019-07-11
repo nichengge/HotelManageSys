@@ -70,14 +70,17 @@ public interface CustomerMapper {
     ArrayList<String> getAllCustomersId();
 
     //查询所有在住客户信息
-    List<HashMap<String,Object>> queryCustomersLiving();
+    List<HashMap<String, Object>> queryCustomersLiving();
+
+    List<HashMap<String, Object>> queryCustomersPreservation();
+
+    List<HashMap<String, Object>> queryCustomersLived();
 
     //显示客户订单
     List<Orders> showOrders();
 
     //显示不可用房间类型号
-    HashMap<String, Integer> getUnavailableRoomTypeWithNumber(Date starttime, Date endtime);
-
+    List<HashMap<String, Integer>> getUnavailableRoomTypeWithNumber(Date starttime, Date endtime);
 
 
 }

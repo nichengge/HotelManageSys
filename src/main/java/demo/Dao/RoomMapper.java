@@ -45,7 +45,6 @@ public interface RoomMapper {
     //按照房间id查找
     Room roomQueryByID(int roomId);
 
-    //@MapKey("room_type")
     List<HashMap<String, Integer>> getAllRoomTypeWithNumber();
 
     //获取所有时间段内不可用房间

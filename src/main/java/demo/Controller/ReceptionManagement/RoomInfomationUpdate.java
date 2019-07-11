@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 @Controller("RoomInformationUpdate")
 public class RoomInfomationUpdate extends BaseController {
 
+    //房间信息更新
     @RequestMapping("adminRoomInformationUpdate")
     public ModelAndView RoomInfoUpdate(HttpServletRequest request, HttpServletResponse response,
                                        @RequestParam("roomType") String roomType,

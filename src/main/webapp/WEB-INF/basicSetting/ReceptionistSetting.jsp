@@ -9,6 +9,7 @@
 
 
         <div class="mdui-list" style="size: 100px">
+            <a href="showAllEmployee" class="mdui-list-item mdui-ripple">查看员工账号</a>
             <a href="go?url=basicSetting/ReceptionistAccountAdd" class="mdui-list-item mdui-ripple">接待员账号增加</a>
             <a href="go?url=basicSetting/ReceptionistAccountModify" class="mdui-list-item mdui-ripple">接待员账号修改</a>
             <a href="go?url=basicSetting/ReceptionistAccountDelete" class="mdui-list-item mdui-ripple">接待员账号删除</a>

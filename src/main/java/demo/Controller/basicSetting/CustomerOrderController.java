@@ -85,9 +85,25 @@ public class CustomerOrderController extends BaseController {
     //在住客人报表
     @RequestMapping("adminReportOfLivingCustomer")
     public ModelAndView ReportOfLivingCustomer(HttpServletRequest request, HttpServletResponse response) {
-        ArrayList<CustomerReport> customerReportArrayList = customerService.getCustomerReport();
+        ArrayList<CustomerReport> customerReportArrayList = customerService.getCustomerReport(1);
         request.setAttribute("customerReportArrayList", customerReportArrayList);
         return dispatcher.goPage2(mv, request, response, "basicSetting/ReportOfLivingCustomer");
+    }
+
+    //预定客人列表
+    @RequestMapping("adminReportOfPreservationCustomer")
+    public ModelAndView ReportOfPreservationCustomer(HttpServletRequest request, HttpServletResponse response) {
+        ArrayList<CustomerReport> customerReportArrayList = customerService.getCustomerReport(2);
+        request.setAttribute("customerReportArrayList", customerReportArrayList);
+        return dispatcher.goPage2(mv, request, response, "basicSetting/ReportOfPreservationCustomer");
+    }
+
+    //历史客人列表
+    @RequestMapping("adminReportOfLivedCustomer")
+    public ModelAndView ReportOfLivedCustomer(HttpServletRequest request, HttpServletResponse response) {
+        ArrayList<CustomerReport> customerReportArrayList = customerService.getCustomerReport(3);
+        request.setAttribute("customerReportArrayList", customerReportArrayList);
+        return dispatcher.goPage2(mv, request, response, "basicSetting/ReportOfLivedCustomer");
     }
 
     //预定处理

@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  * Author YZQ
@@ -23,6 +24,15 @@ public class EmployeeManageController extends BaseController {
     }
 
 
+    //查看所有员工帐号
+    @RequestMapping("showAllEmployee")
+    public ModelAndView showAllEmployee(HttpServletRequest request, HttpServletResponse response){
+        ArrayList<Employee> arrayList = employeeService.getAllEmployee();
+        request.setAttribute("AllEmployeeList", arrayList);
+        nextURL = "basicSetting/ReceptionistAccountShow";
+        return dispatcher.goPage2(mv, request, response, nextURL);
+    }
+
     //增加员工帐号
     @RequestMapping("adminAddEmployee")
     public ModelAndView employeeAccountAdd(HttpServletRequest request, HttpServletResponse response,
@@ -35,6 +45,10 @@ public class EmployeeManageController extends BaseController {
         if (ans == 1) {
             message = "接待员账号添加成功！ 3秒后返回接待员账号管理界面。";
             nextURL = "basicSetting/ReceptionistSetting";
+            //获取所有雇员信息
+            request.getSession().removeAttribute("AllReceptionistID");
+            ArrayList<String> allemployeeid = employeeService.getAllEmployeesId();
+            request.getSession().setAttribute("AllReceptionistID", allemployeeid);
         } else {
             message = "接待员账号添加失败！ 请重试！ 3秒后返回接待员账号管理界面。";
             nextURL = "basicSetting/ReceptionistAccountAdd";
@@ -50,6 +64,9 @@ public class EmployeeManageController extends BaseController {
         if (ans == 1) {
             message = "删除成功！ 3秒后返回接待员账号管理界面。";
             nextURL = "basicSetting/ReceptionistSetting";
+            request.getSession().removeAttribute("AllReceptionistID");
+            ArrayList<String> allemployeeid = employeeService.getAllEmployeesId();
+            request.getSession().setAttribute("AllReceptionistID", allemployeeid);
         } else {
             message = "删除失败！ 请重试！ 3秒返回接待员账号删除界面。";
             nextURL = "basicSetting/ReceptionistAccountDelete";
@@ -93,6 +110,9 @@ public class EmployeeManageController extends BaseController {
         if (ans == 1) {
             message = "修改操作成功!3秒后返回客户账号管理界面。";
             nextURL = "basicSetting/ReceptionistSetting";
+            request.getSession().removeAttribute("AllReceptionistID");
+            ArrayList<String> allemployeeid = employeeService.getAllEmployeesId();
+            request.getSession().setAttribute("AllReceptionistID", allemployeeid);
         } else {
             message = "修改操作失败 ! 请重试!";
             nextURL = "basicSetting/ReceptionistAccountModifydetail";
